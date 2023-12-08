@@ -1,6 +1,6 @@
 ﻿namespace BankApplikationForm
 {
-    partial class AdminAccount
+    partial class AdminAccountForm
     {
         /// <summary>
         /// Required designer variable.
@@ -38,13 +38,13 @@
             listBox1 = new ListBox();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
-            button4 = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
             label3 = new Label();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            button4 = new Button();
             tabPage1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -52,20 +52,22 @@
             // 
             // tabPage4
             // 
-            tabPage4.Location = new Point(4, 34);
+            tabPage4.Location = new Point(4, 24);
+            tabPage4.Margin = new Padding(2);
             tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(792, 412);
+            tabPage4.Padding = new Padding(2);
+            tabPage4.Size = new Size(552, 242);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Change User info";
             tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
-            tabPage3.Location = new Point(4, 34);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Margin = new Padding(2);
             tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(792, 412);
+            tabPage3.Padding = new Padding(2);
+            tabPage3.Size = new Size(552, 242);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Transaction";
             tabPage3.UseVisualStyleBackColor = true;
@@ -77,10 +79,11 @@
             tabPage1.Controls.Add(button2);
             tabPage1.Controls.Add(button1);
             tabPage1.Controls.Add(listBox1);
-            tabPage1.Location = new Point(4, 34);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Margin = new Padding(2);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(792, 412);
+            tabPage1.Padding = new Padding(2);
+            tabPage1.Size = new Size(552, 242);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "List Users";
             tabPage1.UseVisualStyleBackColor = true;
@@ -88,35 +91,39 @@
             // listBox2
             // 
             listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 25;
-            listBox2.Location = new Point(538, 18);
+            listBox2.ItemHeight = 15;
+            listBox2.Location = new Point(377, 11);
+            listBox2.Margin = new Padding(2);
             listBox2.Name = "listBox2";
-            listBox2.Size = new Size(231, 254);
+            listBox2.Size = new Size(163, 154);
             listBox2.TabIndex = 4;
             // 
             // button3
             // 
-            button3.Location = new Point(52, 111);
+            button3.Location = new Point(36, 67);
+            button3.Margin = new Padding(2);
             button3.Name = "button3";
-            button3.Size = new Size(131, 41);
+            button3.Size = new Size(92, 25);
             button3.TabIndex = 3;
             button3.Text = "Create";
             button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(52, 175);
+            button2.Location = new Point(36, 105);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(131, 44);
+            button2.Size = new Size(92, 26);
             button2.TabIndex = 2;
             button2.Text = "Change";
             button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            button1.Location = new Point(42, 18);
+            button1.Location = new Point(29, 11);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(131, 44);
+            button1.Size = new Size(92, 26);
             button1.TabIndex = 1;
             button1.Text = "Load";
             button1.UseVisualStyleBackColor = true;
@@ -125,10 +132,11 @@
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 25;
-            listBox1.Location = new Point(261, 18);
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(183, 11);
+            listBox1.Margin = new Padding(2);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(232, 254);
+            listBox1.Size = new Size(164, 154);
             listBox1.TabIndex = 0;
             // 
             // tabControl1
@@ -139,9 +147,10 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
+            tabControl1.Margin = new Padding(2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(800, 450);
+            tabControl1.Size = new Size(560, 270);
             tabControl1.TabIndex = 0;
             // 
             // tabPage2
@@ -153,80 +162,91 @@
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(button4);
-            tabPage2.Location = new Point(4, 34);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Margin = new Padding(2);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(792, 412);
+            tabPage2.Padding = new Padding(2);
+            tabPage2.Size = new Size(552, 242);
             tabPage2.TabIndex = 4;
             tabPage2.Text = "Create Account";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(73, 100);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(69, 15);
+            label3.TabIndex = 7;
+            label3.Text = "Occupation";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(277, 100);
+            textBox3.Margin = new Padding(2);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(150, 23);
+            textBox3.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(277, 63);
+            textBox2.Margin = new Padding(2);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(150, 23);
+            textBox2.TabIndex = 5;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(277, 26);
+            textBox1.Margin = new Padding(2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 23);
+            textBox1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(73, 63);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(111, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Opening Ammount";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(73, 29);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(78, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Select User ID";
+            // 
             // button4
             // 
-            button4.Location = new Point(275, 234);
+            button4.Location = new Point(192, 140);
+            button4.Margin = new Padding(2);
             button4.Name = "button4";
-            button4.Size = new Size(160, 44);
+            button4.Size = new Size(112, 26);
             button4.TabIndex = 0;
             button4.Text = "Create Account";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
-            // label1
+            // AdminAccountForm
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(104, 49);
-            label1.Name = "label1";
-            label1.Size = new Size(121, 25);
-            label1.TabIndex = 1;
-            label1.Text = "Select User ID";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(104, 105);
-            label2.Name = "label2";
-            label2.Size = new Size(167, 25);
-            label2.TabIndex = 2;
-            label2.Text = "Opening Ammount";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(396, 43);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(212, 31);
-            textBox1.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(396, 105);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(212, 31);
-            textBox2.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(396, 167);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(212, 31);
-            textBox3.TabIndex = 6;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(104, 167);
-            label3.Name = "label3";
-            label3.Size = new Size(103, 25);
-            label3.TabIndex = 7;
-            label3.Text = "Occupation";
-            // 
-            // Admin
-            // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(560, 270);
             Controls.Add(tabControl1);
-            Name = "Admin";
+            Margin = new Padding(2);
+            Name = "AdminAccountForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin";
+            FormClosing += AdminAccountForm_FormClosing;
             tabPage1.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);

@@ -11,5 +11,18 @@
     "Password": "lol123",
     "Email": "emil@gmail.com",
     "Address": "emilgatan 1"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 2
+      }
+    ],
+    "Name": "Jocke",
+    "Password": "hej123",
+    "Email": "jocke@gmail.com",
+    "Address": "jockegatan 1"
   }
 ]

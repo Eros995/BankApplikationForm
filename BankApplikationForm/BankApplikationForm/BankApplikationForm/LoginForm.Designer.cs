@@ -1,6 +1,6 @@
 ﻿namespace BankApplikationForm
 {
-    partial class loginForm
+    partial class LoginForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -47,6 +47,7 @@
             logInButton.TabIndex = 0;
             logInButton.Text = "Logga in";
             logInButton.UseVisualStyleBackColor = true;
+            logInButton.Click += logInButton_Click;
             // 
             // newUserButton
             // 
@@ -63,7 +64,7 @@
             userNameLabel.AutoSize = true;
             userNameLabel.Location = new Point(509, 57);
             userNameLabel.Name = "userNameLabel";
-            userNameLabel.Size = new Size(105, 25);
+            userNameLabel.Size = new Size(69, 15);
             userNameLabel.TabIndex = 2;
             userNameLabel.Text = "User Name";
             // 
@@ -72,7 +73,7 @@
             passwordLabel.AutoSize = true;
             passwordLabel.Location = new Point(509, 170);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(92, 25);
+            passwordLabel.Size = new Size(59, 15);
             passwordLabel.TabIndex = 3;
             passwordLabel.Text = "Password";
             // 
@@ -80,14 +81,14 @@
             // 
             userNameTextbox.Location = new Point(509, 104);
             userNameTextbox.Name = "userNameTextbox";
-            userNameTextbox.Size = new Size(288, 31);
+            userNameTextbox.Size = new Size(288, 23);
             userNameTextbox.TabIndex = 4;
             // 
             // passwordTextBox
             // 
             passwordTextBox.Location = new Point(509, 232);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(288, 31);
+            passwordTextBox.Size = new Size(288, 23);
             passwordTextBox.TabIndex = 5;
             // 
             // bankNameLabel
@@ -98,7 +99,7 @@
             bankNameLabel.ForeColor = SystemColors.HotTrack;
             bankNameLabel.Location = new Point(12, 261);
             bankNameLabel.Name = "bankNameLabel";
-            bankNameLabel.Size = new Size(403, 73);
+            bankNameLabel.Size = new Size(269, 50);
             bankNameLabel.TabIndex = 8;
             bankNameLabel.Text = "The Popular Bank";
             bankNameLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -115,9 +116,9 @@
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
-            // loginForm
+            // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(11F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackgroundImageLayout = ImageLayout.Zoom;
@@ -132,7 +133,8 @@
             Controls.Add(logInButton);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.Fixed3D;
-            Name = "loginForm";
+            Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

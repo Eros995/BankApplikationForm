@@ -32,5 +32,26 @@ namespace BankApplikationForm
             fileManager.CreateNewUser(users);
             return true;
         }
+
+        public bool LoginAsAdmin(string adminName, string adminPassword)
+        {
+            if (adminName == admin.Name && adminPassword == admin.Password)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool LoginAsUser(string email, string password)
+        {
+            foreach (User u in users)
+            {
+                if (u.Email == email && u.Password == password)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

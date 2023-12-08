@@ -10,17 +10,14 @@ using System.Windows.Forms;
 
 namespace BankApplikationForm
 {
-    public partial class AdminAccount : Form
+    public partial class AdminAccountForm : Form
     {
-        private List<User> UserList;
+        LoginForm loginForm;
 
-
-        public AdminAccount(List<User> UserList)
+        public AdminAccountForm(LoginForm loginForm)
         {
             InitializeComponent();
-            this.UserList = UserList;
-          
-
+            this.loginForm = loginForm;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,6 +28,11 @@ namespace BankApplikationForm
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AdminAccountForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            loginForm.Close();
         }
     }
 }

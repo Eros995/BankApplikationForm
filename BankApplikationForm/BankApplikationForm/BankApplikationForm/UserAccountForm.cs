@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace BankApplikationForm
 {
-    public partial class UserAccount : Form
+    public partial class UserAccountForm : Form
     {
-        public UserAccount(bool authenticatedUses)
+        LoginForm loginForm;
+        public UserAccountForm(LoginForm loginForm)
         {
             InitializeComponent();
+            this.loginForm = loginForm;
+        }
+
+        private void UserAccountForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            loginForm.Close();
         }
     }
 }
