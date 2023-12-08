@@ -12,7 +12,7 @@ namespace BankApplikationForm
 
         private void newUserButton_Click(object sender, EventArgs e)
         {
-            NewUserForm newUserForm = new NewUserForm();
+            NewUserForm newUserForm = new NewUserForm(bankManager);
             newUserForm.ShowDialog();
 
         }

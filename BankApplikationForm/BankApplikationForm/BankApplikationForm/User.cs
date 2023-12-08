@@ -16,7 +16,7 @@ namespace BankApplikationForm
         public string Password { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
-        private List<Account> accounts = new List<Account>();
+        public List<Account> accounts = new List<Account>();
 
         public User(string name, string password, string email, string address)
         {

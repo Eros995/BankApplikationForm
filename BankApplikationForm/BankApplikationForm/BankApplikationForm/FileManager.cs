@@ -9,12 +9,10 @@ namespace BankApplikationForm
 {
     public class FileManager
     {
-        private readonly string usersFile = "\\users.json";
+        private readonly string usersFile = Directory.GetCurrentDirectory() + "\\users.json";
 
-        public void CreateNewUser(List<User> users, User user)
+        public void CreateNewUser(List<User> users)
         {
-            users = ReadUsers(users);
-            users.Add(user);
             var json = JsonConvert.SerializeObject(users, Formatting.Indented);
             File.WriteAllText(usersFile, json);
         }

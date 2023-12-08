@@ -12,7 +12,7 @@ namespace BankApplikationForm
         public static int nextId = 0;
         public double Balance { get; set; }
         public int AccountId { get; set; }
-        private List<Transaction> transactions = new List<Transaction>();
+        public List<Transaction> transactions = new List<Transaction>();
 
         public Account()
         {

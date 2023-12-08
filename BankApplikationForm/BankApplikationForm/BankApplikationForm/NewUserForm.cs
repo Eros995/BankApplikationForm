@@ -13,14 +13,31 @@ namespace BankApplikationForm
 {
     public partial class NewUserForm : Form
     {
-        public NewUserForm()
+        BankManager bankManager;
+        public NewUserForm(BankManager bankManager)
         {
             InitializeComponent();
+            this.bankManager = bankManager;
         }
+
+
 
         private void NewAccount_BackgroundImageLayoutChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void createUserButton_Click(object sender, EventArgs e)
+        {
+            if (bankManager.CreateNewUser(nameTextbox.Text, passwordTexbox.Text, emailTextbox.Text, addressTextbox.Text))
+            {
+                MessageBox.Show("New user created!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Email already exists");
+            }
         }
     }
 }

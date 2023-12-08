@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 0
+      }
+    ],
+    "Name": "Emil",
+    "Password": "lol123",
+    "Email": "emil@gmail.com",
+    "Address": "emilgatan 1"
+  }
+]

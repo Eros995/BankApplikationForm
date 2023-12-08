@@ -32,11 +32,11 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            button1 = new Button();
+            nameTextbox = new TextBox();
+            passwordTexbox = new TextBox();
+            addressTextbox = new TextBox();
+            emailTextbox = new TextBox();
+            createUserButton = new Button();
             SuspendLayout();
             // 
             // label1
@@ -60,7 +60,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(49, 203);
+            label3.Location = new Point(49, 253);
             label3.Name = "label3";
             label3.Size = new Size(79, 25);
             label3.TabIndex = 2;
@@ -69,48 +69,49 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(49, 265);
+            label4.Location = new Point(49, 199);
             label4.Name = "label4";
             label4.Size = new Size(56, 25);
             label4.TabIndex = 3;
             label4.Text = "Email";
             // 
-            // textBox1
+            // nameTextbox
             // 
-            textBox1.Location = new Point(271, 88);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(250, 31);
-            textBox1.TabIndex = 7;
+            nameTextbox.Location = new Point(271, 88);
+            nameTextbox.Name = "nameTextbox";
+            nameTextbox.Size = new Size(250, 31);
+            nameTextbox.TabIndex = 7;
             // 
-            // textBox2
+            // passwordTexbox
             // 
-            textBox2.Location = new Point(271, 140);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(250, 31);
-            textBox2.TabIndex = 8;
+            passwordTexbox.Location = new Point(271, 140);
+            passwordTexbox.Name = "passwordTexbox";
+            passwordTexbox.Size = new Size(250, 31);
+            passwordTexbox.TabIndex = 8;
             // 
-            // textBox3
+            // addressTextbox
             // 
-            textBox3.Location = new Point(271, 197);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(250, 31);
-            textBox3.TabIndex = 9;
+            addressTextbox.Location = new Point(271, 247);
+            addressTextbox.Name = "addressTextbox";
+            addressTextbox.Size = new Size(250, 31);
+            addressTextbox.TabIndex = 9;
             // 
-            // textBox4
+            // emailTextbox
             // 
-            textBox4.Location = new Point(271, 259);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(250, 31);
-            textBox4.TabIndex = 10;
+            emailTextbox.Location = new Point(271, 193);
+            emailTextbox.Name = "emailTextbox";
+            emailTextbox.Size = new Size(250, 31);
+            emailTextbox.TabIndex = 10;
             // 
-            // button1
+            // createUserButton
             // 
-            button1.Location = new Point(271, 352);
-            button1.Name = "button1";
-            button1.Size = new Size(141, 44);
-            button1.TabIndex = 14;
-            button1.Text = "Create";
-            button1.UseVisualStyleBackColor = true;
+            createUserButton.Location = new Point(271, 352);
+            createUserButton.Name = "createUserButton";
+            createUserButton.Size = new Size(141, 44);
+            createUserButton.TabIndex = 14;
+            createUserButton.Text = "Create";
+            createUserButton.UseVisualStyleBackColor = true;
+            createUserButton.Click += createUserButton_Click;
             // 
             // NewUserForm
             // 
@@ -119,11 +120,11 @@
             BackColor = SystemColors.InactiveCaption;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(800, 529);
-            Controls.Add(button1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(createUserButton);
+            Controls.Add(emailTextbox);
+            Controls.Add(addressTextbox);
+            Controls.Add(passwordTexbox);
+            Controls.Add(nameTextbox);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -142,10 +143,10 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Button button1;
+        private TextBox nameTextbox;
+        private TextBox passwordTexbox;
+        private TextBox addressTextbox;
+        private TextBox emailTextbox;
+        private Button createUserButton;
     }
 }
