@@ -26,6 +26,38 @@ namespace BankApplikationForm
             }
             return users;
         }
+        public void UpdateUser(User userToUpdate)
+        {
+            List<User> users = ReadUsers(); 
+            int index = users.FindIndex(u => u.Email == userToUpdate.Email); 
 
+            if (index != -1)
+            {
+                users[index] = userToUpdate; 
+
+                var json = JsonConvert.SerializeObject(users, Formatting.Indented);
+                File.WriteAllText(usersFile, json); 
+            }
+            else
+            {
+                MessageBox.Show("User not found for update.");
+            }
+        }
+
+        private List<User> ReadUsers()
+        {
+            List<User> users = new List<User>();
+
+            if (File.Exists(usersFile))
+            {
+                string json = File.ReadAllText(usersFile);
+                users = JsonConvert.DeserializeObject<List<User>>(json);
+            }
+
+            return users;
+        }
     }
+
+
 }
+
