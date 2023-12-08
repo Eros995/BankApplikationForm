@@ -1,0 +1,6 @@
+ UserId; AccountNumber; Name; Password; Address; Email; Title 
+1; 238967;Sara;1234;kungsgatan12;sara@gmail.com;User
+2; 653489;Conny;1212;goteborg;conny@gmail.com;User
+3; ;Maria;4321;stockholm;maria@gmail.com;Admin
+4; 213;asd;asd;asd;asd;asd
+5; 999;hjhk;hjkk;hjkj;hjkhk;Admin

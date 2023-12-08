@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "BoRRu88hPX6/IUrRNaczu0N1YQOezxa9CONeBMXv6O7D1UjX3ywyF+SxKsOtWx3z+TQYFlJQPMfTRG74T/3G8w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\erosa\\Documents\\GitHub\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\erosa\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
