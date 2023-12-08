@@ -9,6 +9,6 @@ namespace BankApplikationForm
     public class BankManager
     {
         List<User> users = new List<User>(); // test test
-        
+        // hej
     }
 }

@@ -55,19 +55,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\erosa\\.nuget\\packages\\": {}
+    "C:\\Users\\Emil\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erosa\\Documents\\GitHub\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj",
+      "projectUniqueName": "C:\\Users\\Emil\\source\\repos\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj",
       "projectName": "BankApplikationForm",
-      "projectPath": "C:\\Users\\erosa\\Documents\\GitHub\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj",
-      "packagesPath": "C:\\Users\\erosa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\erosa\\Documents\\GitHub\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\obj\\",
+      "projectPath": "C:\\Users\\Emil\\source\\repos\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj",
+      "packagesPath": "C:\\Users\\Emil\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Emil\\source\\repos\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\erosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Emil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
