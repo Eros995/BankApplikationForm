@@ -10,7 +10,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace BankApplikationForm
 {
-    public class User 
+    public class User
     {
         public string Name { get; set; }
         public string Password { get; set; }
@@ -40,6 +40,21 @@ namespace BankApplikationForm
         public void ChangePassword()
         {
 
+        }
+        public List<Account> GetAccounts()
+        {
+            return accounts;
+        }
+
+        public List<string> GetAccountInfo()
+        {
+            List<string> accountInfoList = new List<string>();
+            foreach (Account account in accounts)
+            {
+                string accountInfo = $"Account ID: {account.AccountId}, Balance: {account.Balance}";
+                accountInfoList.Add(accountInfo);
+            }
+            return accountInfoList;
         }
     }
 }

@@ -42,16 +42,21 @@ namespace BankApplikationForm
             return false;
         }
 
-        public bool LoginAsUser(string email, string password)
+        public bool LoginAsUser(string email, string password, out User loggedInUser)
         {
+            loggedInUser = null;
+
             foreach (User u in users)
             {
                 if (u.Email == email && u.Password == password)
                 {
-                    return true;
+                    loggedInUser = u; 
+                    return true; 
                 }
             }
-            return false;
+
+            return false; 
         }
+
     }
 }

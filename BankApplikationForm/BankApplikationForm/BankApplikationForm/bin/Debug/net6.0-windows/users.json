@@ -24,5 +24,18 @@
     "Password": "hej123",
     "Email": "jocke@gmail.com",
     "Address": "jockegatan 1"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 4
+      }
+    ],
+    "Name": "messi",
+    "Password": "123",
+    "Email": "messi@mail.com",
+    "Address": "messigatan"
   }
 ]

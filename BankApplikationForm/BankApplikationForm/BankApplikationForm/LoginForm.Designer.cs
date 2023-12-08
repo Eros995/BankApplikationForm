@@ -30,7 +30,7 @@
         {
             logInButton = new Button();
             newUserButton = new Button();
-            userNameLabel = new Label();
+            emailLabel = new Label();
             passwordLabel = new Label();
             userNameTextbox = new TextBox();
             passwordTextBox = new TextBox();
@@ -59,21 +59,21 @@
             newUserButton.UseVisualStyleBackColor = true;
             newUserButton.Click += newUserButton_Click;
             // 
-            // userNameLabel
+            // emailLabel
             // 
-            userNameLabel.AutoSize = true;
-            userNameLabel.Location = new Point(509, 57);
-            userNameLabel.Name = "userNameLabel";
-            userNameLabel.Size = new Size(69, 15);
-            userNameLabel.TabIndex = 2;
-            userNameLabel.Text = "User Name";
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new Point(509, 57);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new Size(47, 20);
+            emailLabel.TabIndex = 2;
+            emailLabel.Text = "Email";
             // 
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
             passwordLabel.Location = new Point(509, 170);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(59, 15);
+            passwordLabel.Size = new Size(76, 20);
             passwordLabel.TabIndex = 3;
             passwordLabel.Text = "Password";
             // 
@@ -81,14 +81,14 @@
             // 
             userNameTextbox.Location = new Point(509, 104);
             userNameTextbox.Name = "userNameTextbox";
-            userNameTextbox.Size = new Size(288, 23);
+            userNameTextbox.Size = new Size(288, 27);
             userNameTextbox.TabIndex = 4;
             // 
             // passwordTextBox
             // 
             passwordTextBox.Location = new Point(509, 232);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(288, 23);
+            passwordTextBox.Size = new Size(288, 27);
             passwordTextBox.TabIndex = 5;
             // 
             // bankNameLabel
@@ -99,7 +99,7 @@
             bankNameLabel.ForeColor = SystemColors.HotTrack;
             bankNameLabel.Location = new Point(12, 261);
             bankNameLabel.Name = "bankNameLabel";
-            bankNameLabel.Size = new Size(269, 50);
+            bankNameLabel.Size = new Size(336, 61);
             bankNameLabel.TabIndex = 8;
             bankNameLabel.Text = "The Popular Bank";
             bankNameLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -118,7 +118,7 @@
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackgroundImageLayout = ImageLayout.Zoom;
@@ -128,7 +128,7 @@
             Controls.Add(passwordTextBox);
             Controls.Add(userNameTextbox);
             Controls.Add(passwordLabel);
-            Controls.Add(userNameLabel);
+            Controls.Add(emailLabel);
             Controls.Add(newUserButton);
             Controls.Add(logInButton);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -136,6 +136,7 @@
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            FormClosing += LoginForm_FormClosing;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -145,7 +146,7 @@
 
         private Button logInButton;
         private Button newUserButton;
-        private Label userNameLabel;
+        private Label emailLabel;
         private Label passwordLabel;
         private TextBox userNameTextbox;
         private TextBox passwordTextBox;

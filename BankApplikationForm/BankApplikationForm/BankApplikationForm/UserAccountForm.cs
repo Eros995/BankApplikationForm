@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +13,24 @@ namespace BankApplikationForm
 {
     public partial class UserAccountForm : Form
     {
-        LoginForm loginForm;
-        public UserAccountForm(LoginForm loginForm)
+        private User loggedInUser;
+        public UserAccountForm(User loggedInUser)
         {
             InitializeComponent();
-            this.loginForm = loginForm;
+            this.loggedInUser = loggedInUser;
+            this.DisplayAccountInfo();
         }
 
         private void UserAccountForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            loginForm.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+
+        }
+        private void DisplayAccountInfo()
+        {
+            List<string> accountInfoList = loggedInUser.GetAccountInfo();
+            accountsListBox.Items.AddRange(accountInfoList.ToArray());
         }
     }
 }
