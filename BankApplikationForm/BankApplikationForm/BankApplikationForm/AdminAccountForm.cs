@@ -13,13 +13,22 @@ namespace BankApplikationForm
     public partial class AdminAccountForm : Form
     {
         LoginForm loginForm;
-
+        BankManager bankManager = new BankManager();
+        List<User> users = new List<User>();
         public AdminAccountForm(LoginForm loginForm)
         {
             InitializeComponent();
             this.loginForm = loginForm;
+           this.GetUserList();
         }
-
+        public void GetUserList()
+        {
+            users = bankManager.GetUsers();
+            foreach (User user in users)
+            {
+                listBox1.Items.Add(user.Name);
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 

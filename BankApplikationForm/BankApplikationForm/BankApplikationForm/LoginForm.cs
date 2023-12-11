@@ -5,9 +5,11 @@ namespace BankApplikationForm
     public partial class LoginForm : Form
     {
         BankManager bankManager = new BankManager();
-        public LoginForm()
+        private User loggedInUser;
+        public LoginForm(User user = null)
         {
             InitializeComponent();
+            loggedInUser = user;
         }
 
         private void newUserButton_Click(object sender, EventArgs e)
@@ -19,32 +21,33 @@ namespace BankApplikationForm
 
         private void logInButton_Click(object sender, EventArgs e)
         {
-            if (userNameTextbox.Text == "admin")
+            string username = userNameTextbox.Text;
+            string password = passwordTextBox.Text;
+
+
+            if (bankManager.LoginAsAdmin(username, password))
             {
-                if (bankManager.LoginAsAdmin(userNameTextbox.Text, passwordTextBox.Text))
-                {
-                    AdminAccountForm adminForm = new AdminAccountForm(this);
-                    adminForm.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Wrong Email or Password");
-                }
+                AdminAccountForm adminForm = new AdminAccountForm(this);
+                MessageBox.Show("Welcome Admin!");
+                adminForm.Show();
+                this.Hide();
+            }
+            else if (bankManager.LoginAsUser(username, password, out loggedInUser) && loggedInUser != null)
+            {
+                UserAccountForm userForm = new UserAccountForm(loggedInUser);
+                MessageBox.Show("Welcome " + loggedInUser.Name + "!");
+                userForm.Show();
+                this.Hide();
             }
             else
             {
-                if (bankManager.LoginAsUser(userNameTextbox.Text, passwordTextBox.Text))
-                {
-                    UserAccountForm userForm = new UserAccountForm(this);
-                    userForm.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Wrong Email or Password");
-                }
+                MessageBox.Show("Wrong Email or Password");
             }
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
