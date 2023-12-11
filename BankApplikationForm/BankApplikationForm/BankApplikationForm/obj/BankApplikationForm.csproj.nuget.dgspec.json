@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erosa\\Documents\\GitHub\\BankApplikationForm2\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj": {}
+    "C:\\Users\\Branislav\\OneDrive\\Documents\\GitHub\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erosa\\Documents\\GitHub\\BankApplikationForm2\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj": {
+    "C:\\Users\\Branislav\\OneDrive\\Documents\\GitHub\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erosa\\Documents\\GitHub\\BankApplikationForm2\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj",
+        "projectUniqueName": "C:\\Users\\Branislav\\OneDrive\\Documents\\GitHub\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj",
         "projectName": "BankApplikationForm",
-        "projectPath": "C:\\Users\\erosa\\Documents\\GitHub\\BankApplikationForm2\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj",
-        "packagesPath": "C:\\Users\\erosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erosa\\Documents\\GitHub\\BankApplikationForm2\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\obj\\",
+        "projectPath": "C:\\Users\\Branislav\\OneDrive\\Documents\\GitHub\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj",
+        "packagesPath": "C:\\Users\\Branislav\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Branislav\\OneDrive\\Documents\\GitHub\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\erosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Branislav\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

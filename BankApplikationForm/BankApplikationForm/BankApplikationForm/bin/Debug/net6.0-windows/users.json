@@ -144,5 +144,19 @@
     "Password": "123",
     "Email": "ronaldo@mail.com",
     "Address": "ronaldogatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 23,
+        "AccountName": "Branislav"
+      }
+    ],
+    "Name": "Branislav",
+    "Password": "Branislav",
+    "Email": "Branislav",
+    "Address": "branislav"
   }
 ]

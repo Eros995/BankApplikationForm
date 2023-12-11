@@ -58,5 +58,11 @@ namespace BankApplikationForm
             return false; 
         }
 
+        public List<User> GetUsers()
+        {
+            return users;
+        }
+    
+
     }
 }
