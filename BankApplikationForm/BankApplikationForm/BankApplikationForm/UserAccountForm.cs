@@ -44,8 +44,8 @@ namespace BankApplikationForm
         }
 
         private void RefreshAccountListBox(User user)
-        { 
-            accountsListBox.Items.Clear(); 
+        {
+            accountsListBox.Items.Clear();
             List<string> accountInfoList = user.GetAccountInfo();
             foreach (string accountInfo in accountInfoList)
             {
@@ -60,7 +60,7 @@ namespace BankApplikationForm
                 if (!string.IsNullOrEmpty(accountName))
                 {
                     loggedInUser.CreateNewAccount(accountName);
-                    RefreshAccountListBox(loggedInUser); 
+                    RefreshAccountListBox(loggedInUser);
                 }
 
                 accountNameTextBox.Visible = false;
@@ -68,7 +68,5 @@ namespace BankApplikationForm
                 createNewAccountButton.Visible = true;
             }
         }
-
-
     }
 }
