@@ -53,7 +53,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            accountInfoLabel = new Label();
             settingsTab = new TabPage();
             button6 = new Button();
             button5 = new Button();
@@ -197,7 +196,6 @@
             transactionTab.Controls.Add(label3);
             transactionTab.Controls.Add(label2);
             transactionTab.Controls.Add(label1);
-            transactionTab.Controls.Add(accountInfoLabel);
             transactionTab.Location = new Point(4, 29);
             transactionTab.Margin = new Padding(2);
             transactionTab.Name = "transactionTab";
@@ -344,17 +342,6 @@
             label1.Size = new Size(68, 23);
             label1.TabIndex = 1;
             label1.Text = "Deposit";
-            // 
-            // accountInfoLabel
-            // 
-            accountInfoLabel.AutoSize = true;
-            accountInfoLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            accountInfoLabel.Location = new Point(209, 17);
-            accountInfoLabel.Margin = new Padding(2, 0, 2, 0);
-            accountInfoLabel.Name = "accountInfoLabel";
-            accountInfoLabel.Size = new Size(150, 32);
-            accountInfoLabel.TabIndex = 0;
-            accountInfoLabel.Text = "Account Info";
             // 
             // settingsTab
             // 
@@ -516,7 +503,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private Label accountInfoLabel;
         private TabPage settingsTab;
         private Button button2;
         private Button button1;
