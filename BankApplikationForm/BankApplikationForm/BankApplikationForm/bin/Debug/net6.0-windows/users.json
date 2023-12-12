@@ -2,7 +2,6 @@
   {
     "accounts": [
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 0,
         "AccountName": "Emil"
@@ -16,43 +15,36 @@
   {
     "accounts": [
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 2,
         "AccountName": "Jocke1"
       },
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 104,
         "AccountName": "Jocke2"
       },
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 119,
         "AccountName": "Jocke3"
       },
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 135,
         "AccountName": "Jocke4"
       },
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 152,
         "AccountName": "Jocke5"
       },
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 170,
         "AccountName": "Jocke6"
       },
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 189,
         "AccountName": "Jocke7"
@@ -66,64 +58,44 @@
   {
     "accounts": [
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 4,
         "AccountName": "Messi"
       },
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 6,
         "AccountName": "Messi2"
       },
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 13,
         "AccountName": "Messi3"
       },
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 21,
         "AccountName": "Messi4"
       },
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 30,
         "AccountName": "Messi5"
       },
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 40,
         "AccountName": "messi6"
       },
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 51,
         "AccountName": "Messi7"
       },
       {
-        "transactions": [],
         "Balance": 0.0,
-        "AccountId": 63,
-        "AccountName": "Messi8"
-      },
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 76,
-        "AccountName": "Messi9"
-      },
-      {
-        "transactions": [],
-        "Balance": 1110.0,
-        "AccountId": 22,
-        "AccountName": "messi10"
+        "AccountId": 92,
+        "AccountName": "messi20"
       }
     ],
     "Name": "messi",
@@ -134,7 +106,6 @@
   {
     "accounts": [
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 20,
         "AccountName": "ronaldo"
@@ -148,7 +119,6 @@
   {
     "accounts": [
       {
-        "transactions": [],
         "Balance": 0.0,
         "AccountId": 23,
         "AccountName": "Branislav"

@@ -51,5 +51,10 @@ namespace BankApplikationForm
         {
             return transactions;
         }
+
+        public void RenameAccount(string newAccountName)
+        {
+            AccountName = newAccountName;
+        }
     }
 }

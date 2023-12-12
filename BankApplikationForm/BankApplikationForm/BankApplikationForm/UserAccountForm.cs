@@ -80,15 +80,15 @@ namespace BankApplikationForm
         {
             if (selectedAccountInfo != null)
             {
-                string[] accountDetails = selectedAccountInfo.Split('|'); 
+                string[] accountDetails = selectedAccountInfo.Split('|');
 
                 if (accountDetails.Length == 3)
                 {
-                    string accountName = accountDetails[0].Split(':')[1].Trim(); 
-                    string accountId = accountDetails[1].Split(':')[1].Trim(); 
-                    string balance = accountDetails[2].Split(':')[1].Trim(); 
+                    string accountName = accountDetails[0].Split(':')[1].Trim();
+                    string accountId = accountDetails[1].Split(':')[1].Trim();
+                    string balance = accountDetails[2].Split(':')[1].Trim();
 
-                    
+
                     accountNameLabel.Text = "Account Name:\n" + accountName;
                     accountIdLabel.Text = "Account ID:\n " + accountId;
                     balanceLabel.Text = $"Balance:\n {balance.ToString()}";
@@ -101,6 +101,69 @@ namespace BankApplikationForm
                 userTabControl.SelectedTab = transactionTab;
             }
         }
+
+        private void deleteAccountButton_Click(object sender, EventArgs e)
+        {
+            {
+                if (selectedAccountInfo != null)
+                {
+                    string[] accountDetails = selectedAccountInfo.Split('|');
+                    if (accountDetails.Length > 1 && int.TryParse(accountDetails[1].Split(':')[1].Trim(), out int accountId))
+                    {
+                        if (MessageBox.Show("Are you sure you want to delete this account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            DeleteAccount(accountId);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void DeleteAccount(int accountId)
+        {
+            loggedInUser.DeleteAccount(accountId);
+            RefreshAccountListBox(loggedInUser);
+        }
+
+        private void renameAccountButton_Click(object sender, EventArgs e)
+        {
+            if (selectedAccountInfo != null &&
+                TryParseAccountId(selectedAccountInfo, out int accountId) &&
+                !string.IsNullOrEmpty(selectedAccountInfo))
+            {
+                string newAccountName = Microsoft.VisualBasic.Interaction.InputBox("Enter a new account name:", "Rename Account", "");
+
+                if (!string.IsNullOrEmpty(newAccountName))
+                {
+                    Account accountToRename = loggedInUser.GetUserAccounts().FirstOrDefault(acc => acc.AccountId == accountId);
+                    if (accountToRename != null)
+                    {
+                        accountToRename.RenameAccount(newAccountName);
+                        FileManager fileManager = new FileManager();
+                        fileManager.UpdateUser(loggedInUser); 
+
+                        RefreshAccountListBox(loggedInUser); 
+                    }
+                }
+            }
+        }
+
+
+        private bool TryParseAccountId(string selectedAccountInfo, out int accountId)
+        {
+            accountId = 0;
+            string[] accountDetails = selectedAccountInfo.Split('|');
+            if (accountDetails.Length > 1)
+            {
+                string[] idDetails = accountDetails[1].Split(':');
+                if (idDetails.Length > 1 && int.TryParse(idDetails[1].Trim(), out accountId))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
 
     }
 }

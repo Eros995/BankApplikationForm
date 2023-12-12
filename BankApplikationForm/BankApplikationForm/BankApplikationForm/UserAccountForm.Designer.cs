@@ -30,6 +30,8 @@
         {
             userTabControl = new TabControl();
             accountTab = new TabPage();
+            renameAccountButton = new Button();
+            deleteAccountButton = new Button();
             newAccountNameLabel2 = new Label();
             loggedInAsLabel = new Label();
             newAccountNameLabel = new Label();
@@ -86,6 +88,8 @@
             // 
             // accountTab
             // 
+            accountTab.Controls.Add(renameAccountButton);
+            accountTab.Controls.Add(deleteAccountButton);
             accountTab.Controls.Add(newAccountNameLabel2);
             accountTab.Controls.Add(loggedInAsLabel);
             accountTab.Controls.Add(newAccountNameLabel);
@@ -102,6 +106,26 @@
             accountTab.TabIndex = 0;
             accountTab.Text = "Account";
             accountTab.UseVisualStyleBackColor = true;
+            // 
+            // renameAccountButton
+            // 
+            renameAccountButton.Location = new Point(129, 276);
+            renameAccountButton.Name = "renameAccountButton";
+            renameAccountButton.Size = new Size(129, 29);
+            renameAccountButton.TabIndex = 9;
+            renameAccountButton.Text = "Rename Account";
+            renameAccountButton.UseVisualStyleBackColor = true;
+            renameAccountButton.Click += renameAccountButton_Click;
+            // 
+            // deleteAccountButton
+            // 
+            deleteAccountButton.Location = new Point(264, 276);
+            deleteAccountButton.Name = "deleteAccountButton";
+            deleteAccountButton.Size = new Size(119, 29);
+            deleteAccountButton.TabIndex = 8;
+            deleteAccountButton.Text = "Delete Account";
+            deleteAccountButton.UseVisualStyleBackColor = true;
+            deleteAccountButton.Click += deleteAccountButton_Click;
             // 
             // newAccountNameLabel2
             // 
@@ -153,7 +177,7 @@
             // 
             // loadAccountButton
             // 
-            loadAccountButton.Location = new Point(51, 276);
+            loadAccountButton.Location = new Point(8, 276);
             loadAccountButton.Name = "loadAccountButton";
             loadAccountButton.Size = new Size(115, 29);
             loadAccountButton.TabIndex = 2;
@@ -525,5 +549,7 @@
         private Label balanceLabel;
         private Label accountIdLabel;
         private Label accountNameLabel;
+        private Button renameAccountButton;
+        private Button deleteAccountButton;
     }
 }

@@ -79,6 +79,18 @@ namespace BankApplikationForm
             fileManager.UpdateUser(this);
             
         }
+
+        public void DeleteAccount(int accountId)
+        {
+            Account accountToRemove = accounts.Find(acc => acc.AccountId == accountId);
+            if (accountToRemove != null)
+            {
+                accounts.Remove(accountToRemove);
+                FileManager fileManager = new FileManager();
+                fileManager.UpdateUser(this);
+            }
+        }
+
     }
 
 }
