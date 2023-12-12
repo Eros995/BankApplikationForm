@@ -41,7 +41,7 @@ namespace BankApplikationForm
 
         private void AdminAccountForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            loginForm.Close();
+            loginForm.Show();
         }
     }
 }
