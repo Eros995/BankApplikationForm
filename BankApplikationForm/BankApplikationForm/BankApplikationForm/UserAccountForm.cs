@@ -419,5 +419,61 @@ namespace BankApplikationForm
                 }
             }
         }
+
+        private void UpdatePassword_click(object sender, EventArgs e)
+        {
+
+            string currentPassword = currentPasswordTextBox.Text;
+            string newPassword = newPasswordTextBox.Text;
+            string confirmPassword = confirmTextBox.Text;
+
+            if (currentPassword == loggedInUser.Password)
+            {
+                if (newPassword == confirmPassword)
+                {
+                    loggedInUser.Password = newPassword;
+                    FileManager fileManager = new FileManager();
+                    fileManager.UpdateUser(loggedInUser);
+                    MessageBox.Show("Password updated successfully!");
+                    //usersPasswordLabel.Text = $"Password:\n{loggedInUser.Password}";
+                }
+                else
+                {
+                    MessageBox.Show("New password and confirm password don't match!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Current password is incorrect!");
+            }
+        }
+
+        private void changeUserInformation_click(object sender, EventArgs e)
+        {
+            string newName = newNameTextBox.Text;
+            string newAddress = newAddressTextBox.Text;
+            var selectedUser = loggedInUser;
+
+            int originalId = selectedUser.UserId;
+            if (!string.IsNullOrEmpty(newName))
+            {
+                selectedUser.Name = newName;
+                newNameTextBox.Text = "";
+            }
+
+            if (!string.IsNullOrEmpty(newAddress))
+            {
+                selectedUser.Address = newAddress;
+                newAddressTextBox.Text = "";
+            }
+
+            selectedUser.UserId = originalId;
+
+            FileManager fileManager = new FileManager();
+            fileManager.UpdateUser(selectedUser);
+            loggedInAsLabel.Text = "You are logged in as:\n" + loggedInUser.Name;
+            MessageBox.Show("User information updated!");
+
+        }
     }
 }
