@@ -13,7 +13,7 @@ namespace BankApplikationForm
         public double Balance { get; set; }
         public int AccountId { get; set; }
         public string AccountName { get; set; }
-        public List<Transaction> transactions = new List<Transaction>();
+        private List<Transaction> transactions = new List<Transaction>();
 
         public Account(string accountName)
         {
@@ -22,24 +22,34 @@ namespace BankApplikationForm
             AccountName = accountName;
         }
 
-        public void Deposit()
+        public void Deposit(double amount)
         {
-
+            Balance += amount;
+            transactions.Add(new Transaction("Deposit", amount));
         }
 
-        public void Withdrawal()
+        public void Withdrawal(double amount)
         {
-
+            if (amount < Balance)
+            {
+                Balance -= amount;
+                transactions.Add(new Transaction("Withdrawal", -amount));
+            }
         }
 
-        public void TransferMoney()
+        public void TransferMoney(Account receiverAccount, double amount)
         {
-
+            if (amount < Balance)
+            {
+                Balance -= amount;
+                receiverAccount.Balance += amount;
+                transactions.Add(new Transaction(this, receiverAccount, amount));
+            }
         }
 
-        public void GetTransactionHistory()
+        public List<Transaction> GetTransactionHistory()
         {
-
+            return transactions;
         }
     }
 }
