@@ -42,24 +42,9 @@
             "Type": "Withdrawal",
             "Amount": -500.0,
             "Date": "2023-12-12"
-          }
-        ],
-        "Balance": 400.0,
-        "AccountId": 0,
-        "AccountName": "emil"
-      },
-      {
-        "transactions": [
-          {
-            "TransactionId": 17,
-            "SenderAccount": null,
-            "ReceiverAccount": null,
-            "Type": "Deposit",
-            "Amount": 500.0,
-            "Date": "2023-12-12"
           },
           {
-            "TransactionId": 23,
+            "TransactionId": 10,
             "SenderAccount": null,
             "ReceiverAccount": null,
             "Type": "Deposit",
@@ -67,25 +52,39 @@
             "Date": "2023-12-12"
           },
           {
-            "TransactionId": 30,
+            "TransactionId": 16,
             "SenderAccount": null,
             "ReceiverAccount": null,
-            "Type": "Withdrawal",
-            "Amount": -400.0,
+            "Type": "Deposit",
+            "Amount": 200.0,
             "Date": "2023-12-12"
           },
           {
-            "TransactionId": 38,
+            "TransactionId": 23,
+            "SenderAccount": null,
+            "ReceiverAccount": null,
+            "Type": "Deposit",
+            "Amount": 1000.0,
+            "Date": "2023-12-12"
+          },
+          {
+            "TransactionId": 31,
             "SenderAccount": null,
             "ReceiverAccount": null,
             "Type": "Withdrawal",
-            "Amount": -100.0,
+            "Amount": -500.0,
             "Date": "2023-12-12"
           }
         ],
-        "Balance": 200.0,
-        "AccountId": 6,
-        "AccountName": "savings"
+        "Balance": 1300.0,
+        "AccountId": 0,
+        "AccountName": "emil"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 2,
+        "AccountName": "Savings"
       }
     ],
     "UserId": 0,
