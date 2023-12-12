@@ -67,6 +67,7 @@
             textBox5 = new TextBox();
             textBox4 = new TextBox();
             label5 = new Label();
+            tabPage1 = new TabPage();
             userTabControl.SuspendLayout();
             accountTab.SuspendLayout();
             transactionTab.SuspendLayout();
@@ -78,6 +79,7 @@
             userTabControl.Controls.Add(accountTab);
             userTabControl.Controls.Add(transactionTab);
             userTabControl.Controls.Add(settingsTab);
+            userTabControl.Controls.Add(tabPage1);
             userTabControl.Dock = DockStyle.Fill;
             userTabControl.Location = new Point(0, 0);
             userTabControl.Margin = new Padding(2);
@@ -88,6 +90,7 @@
             // 
             // accountTab
             // 
+            accountTab.BackColor = SystemColors.InactiveCaption;
             accountTab.Controls.Add(renameAccountButton);
             accountTab.Controls.Add(deleteAccountButton);
             accountTab.Controls.Add(newAccountNameLabel2);
@@ -105,7 +108,6 @@
             accountTab.Size = new Size(636, 387);
             accountTab.TabIndex = 0;
             accountTab.Text = "Account";
-            accountTab.UseVisualStyleBackColor = true;
             // 
             // renameAccountButton
             // 
@@ -212,6 +214,7 @@
             // 
             // transactionTab
             // 
+            transactionTab.BackColor = SystemColors.InactiveCaption;
             transactionTab.Controls.Add(listBox2);
             transactionTab.Controls.Add(listBox1);
             transactionTab.Controls.Add(balanceLabel);
@@ -233,7 +236,6 @@
             transactionTab.Size = new Size(636, 387);
             transactionTab.TabIndex = 1;
             transactionTab.Text = "Transactions";
-            transactionTab.UseVisualStyleBackColor = true;
             // 
             // listBox2
             // 
@@ -379,6 +381,7 @@
             // 
             // settingsTab
             // 
+            settingsTab.BackColor = SystemColors.InactiveCaption;
             settingsTab.Controls.Add(button1);
             settingsTab.Controls.Add(textBox1);
             settingsTab.Controls.Add(textBox2);
@@ -397,7 +400,6 @@
             settingsTab.Size = new Size(636, 387);
             settingsTab.TabIndex = 2;
             settingsTab.Text = "Settings";
-            settingsTab.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -505,6 +507,16 @@
             label5.TabIndex = 0;
             label5.Text = "Change Password";
             // 
+            // tabPage1
+            // 
+            tabPage1.BackColor = SystemColors.InactiveCaption;
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(636, 387);
+            tabPage1.TabIndex = 3;
+            tabPage1.Text = "Transaction History";
+            // 
             // UserAccountForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -567,5 +579,6 @@
         private TextBox textBox2;
         private TextBox textBox7;
         private Label label4;
+        private TabPage tabPage1;
     }
 }

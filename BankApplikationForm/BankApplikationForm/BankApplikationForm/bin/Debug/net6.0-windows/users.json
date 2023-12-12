@@ -92,5 +92,20 @@
     "Password": "lol123",
     "Email": "emil@gmail.com",
     "Address": "emilgatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 3,
+        "AccountName": "neymar"
+      }
+    ],
+    "UserId": 1,
+    "Name": "neymar",
+    "Password": "lol123",
+    "Email": "neymar@gmail.com",
+    "Address": "neymargatan"
   }
 ]
