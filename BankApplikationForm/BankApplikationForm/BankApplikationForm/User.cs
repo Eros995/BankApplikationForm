@@ -52,7 +52,7 @@ namespace BankApplikationForm
             List<string> accountInfoList = new List<string>();
             foreach (Account account in accounts)
             {
-                string accountInfo = $"Name: {account.AccountName} | Account ID: {account.AccountId} | Balance: {account.Balance}";
+                string accountInfo = $"Name: {account.AccountName} | Account ID: {account.AccountId} | Balance: {account.Balance} kr";
                 accountInfoList.Add(accountInfo);
             }
             return accountInfoList;
