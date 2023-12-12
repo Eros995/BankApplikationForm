@@ -2,131 +2,96 @@
   {
     "accounts": [
       {
-        "Balance": 0.0,
+        "transactions": [
+          {
+            "TransactionId": 0,
+            "SenderAccount": null,
+            "ReceiverAccount": null,
+            "Type": "Deposit",
+            "Amount": 500.0,
+            "Date": "2023-12-12"
+          },
+          {
+            "TransactionId": 1,
+            "SenderAccount": null,
+            "ReceiverAccount": null,
+            "Type": "Deposit",
+            "Amount": 200.0,
+            "Date": "2023-12-12"
+          },
+          {
+            "TransactionId": 3,
+            "SenderAccount": null,
+            "ReceiverAccount": null,
+            "Type": "Withdrawal",
+            "Amount": -300.0,
+            "Date": "2023-12-12"
+          },
+          {
+            "TransactionId": 3,
+            "SenderAccount": null,
+            "ReceiverAccount": null,
+            "Type": "Deposit",
+            "Amount": 500.0,
+            "Date": "2023-12-12"
+          },
+          {
+            "TransactionId": 7,
+            "SenderAccount": null,
+            "ReceiverAccount": null,
+            "Type": "Withdrawal",
+            "Amount": -500.0,
+            "Date": "2023-12-12"
+          }
+        ],
+        "Balance": 400.0,
         "AccountId": 0,
-        "AccountName": "Emil"
+        "AccountName": "emil"
+      },
+      {
+        "transactions": [
+          {
+            "TransactionId": 17,
+            "SenderAccount": null,
+            "ReceiverAccount": null,
+            "Type": "Deposit",
+            "Amount": 500.0,
+            "Date": "2023-12-12"
+          },
+          {
+            "TransactionId": 23,
+            "SenderAccount": null,
+            "ReceiverAccount": null,
+            "Type": "Deposit",
+            "Amount": 200.0,
+            "Date": "2023-12-12"
+          },
+          {
+            "TransactionId": 30,
+            "SenderAccount": null,
+            "ReceiverAccount": null,
+            "Type": "Withdrawal",
+            "Amount": -400.0,
+            "Date": "2023-12-12"
+          },
+          {
+            "TransactionId": 38,
+            "SenderAccount": null,
+            "ReceiverAccount": null,
+            "Type": "Withdrawal",
+            "Amount": -100.0,
+            "Date": "2023-12-12"
+          }
+        ],
+        "Balance": 200.0,
+        "AccountId": 6,
+        "AccountName": "savings"
       }
     ],
-    "Name": "Emil",
+    "UserId": 0,
+    "Name": "emil",
     "Password": "lol123",
     "Email": "emil@gmail.com",
-    "Address": "emilgatan 1"
-  },
-  {
-    "accounts": [
-      {
-        "Balance": 0.0,
-        "AccountId": 2,
-        "AccountName": "Jocke1"
-      },
-      {
-        "Balance": 0.0,
-        "AccountId": 104,
-        "AccountName": "Jocke2"
-      },
-      {
-        "Balance": 0.0,
-        "AccountId": 119,
-        "AccountName": "Jocke3"
-      },
-      {
-        "Balance": 0.0,
-        "AccountId": 135,
-        "AccountName": "Jocke4"
-      },
-      {
-        "Balance": 0.0,
-        "AccountId": 152,
-        "AccountName": "Jocke5"
-      },
-      {
-        "Balance": 0.0,
-        "AccountId": 170,
-        "AccountName": "Jocke6"
-      },
-      {
-        "Balance": 0.0,
-        "AccountId": 189,
-        "AccountName": "Jocke7"
-      }
-    ],
-    "Name": "Jocke",
-    "Password": "hej123",
-    "Email": "jocke@gmail.com",
-    "Address": "jockegatan 1"
-  },
-  {
-    "accounts": [
-      {
-        "Balance": 0.0,
-        "AccountId": 4,
-        "AccountName": "Messi"
-      },
-      {
-        "Balance": 0.0,
-        "AccountId": 6,
-        "AccountName": "Messi2"
-      },
-      {
-        "Balance": 0.0,
-        "AccountId": 13,
-        "AccountName": "Messi3"
-      },
-      {
-        "Balance": 0.0,
-        "AccountId": 21,
-        "AccountName": "Messi4"
-      },
-      {
-        "Balance": 0.0,
-        "AccountId": 30,
-        "AccountName": "Messi5"
-      },
-      {
-        "Balance": 0.0,
-        "AccountId": 40,
-        "AccountName": "messi6"
-      },
-      {
-        "Balance": 0.0,
-        "AccountId": 51,
-        "AccountName": "Messi7"
-      },
-      {
-        "Balance": 0.0,
-        "AccountId": 92,
-        "AccountName": "messi20"
-      }
-    ],
-    "Name": "messi",
-    "Password": "123",
-    "Email": "messi@mail.com",
-    "Address": "messigatan"
-  },
-  {
-    "accounts": [
-      {
-        "Balance": 0.0,
-        "AccountId": 20,
-        "AccountName": "ronaldo"
-      }
-    ],
-    "Name": "ronaldo",
-    "Password": "123",
-    "Email": "ronaldo@mail.com",
-    "Address": "ronaldogatan"
-  },
-  {
-    "accounts": [
-      {
-        "Balance": 0.0,
-        "AccountId": 23,
-        "AccountName": "Branislav"
-      }
-    ],
-    "Name": "Branislav",
-    "Password": "Branislav",
-    "Email": "Branislav",
-    "Address": "branislav"
+    "Address": "emilgatan"
   }
 ]

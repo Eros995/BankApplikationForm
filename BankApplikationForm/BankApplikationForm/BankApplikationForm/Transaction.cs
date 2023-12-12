@@ -8,7 +8,8 @@ namespace BankApplikationForm
 {
     public class Transaction
     {
-        private int nextId = 0;
+        private static int nextId = 0;
+
         public int TransactionId { get; set; }
         public Account? SenderAccount { get; set; }
         public Account? ReceiverAccount { get; set; }
@@ -23,7 +24,7 @@ namespace BankApplikationForm
             ReceiverAccount = receiverAccount;
             Type = "Transfer";
             Amount = amount;
-            Date = DateTime.Today.ToLongDateString();
+            Date = DateTime.Today.ToShortDateString();
         }
 
         public Transaction(string type, double amount)
@@ -33,7 +34,12 @@ namespace BankApplikationForm
             ReceiverAccount = null;
             Type = type;
             Amount = amount;
-            Date = DateTime.Today.ToLongDateString();
+            Date = DateTime.Today.ToShortDateString();
+        }
+
+        public Transaction()
+        {
+            TransactionId = nextId++;
         }
 
         public void GetTransactionInformation()

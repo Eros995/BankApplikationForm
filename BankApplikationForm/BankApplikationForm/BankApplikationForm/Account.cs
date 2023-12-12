@@ -10,10 +10,11 @@ namespace BankApplikationForm
     public class Account
     {
         public static int nextId = 0;
+        public List<Transaction> transactions = new List<Transaction>();
+
         public double Balance { get; set; }
         public int AccountId { get; set; }
         public string AccountName { get; set; }
-        private List<Transaction> transactions = new List<Transaction>();
 
         public Account(string accountName)
         {
@@ -28,13 +29,15 @@ namespace BankApplikationForm
             transactions.Add(new Transaction("Deposit", amount));
         }
 
-        public void Withdrawal(double amount)
+        public bool Withdrawal(double amount)
         {
             if (amount < Balance)
             {
                 Balance -= amount;
                 transactions.Add(new Transaction("Withdrawal", -amount));
+                return true;
             }
+            return false;
         }
 
         public void TransferMoney(Account receiverAccount, double amount)

@@ -16,6 +16,7 @@ namespace BankApplikationForm
     {
         private string selectedAccountInfo = null;
         private User loggedInUser;
+        private int loadedAccountId;
         public UserAccountForm(User loggedInUser)
         {
             InitializeComponent();
@@ -92,6 +93,8 @@ namespace BankApplikationForm
                     accountNameLabel.Text = "Account Name:\n" + accountName;
                     accountIdLabel.Text = "Account ID:\n " + accountId;
                     balanceLabel.Text = $"Balance:\n {balance.ToString()}";
+
+                    loadedAccountId = Convert.ToInt32(accountId);
                 }
                 else
                 {
@@ -140,9 +143,9 @@ namespace BankApplikationForm
                     {
                         accountToRename.RenameAccount(newAccountName);
                         FileManager fileManager = new FileManager();
-                        fileManager.UpdateUser(loggedInUser); 
+                        fileManager.UpdateUser(loggedInUser);
 
-                        RefreshAccountListBox(loggedInUser); 
+                        RefreshAccountListBox(loggedInUser);
                     }
                 }
             }
@@ -164,6 +167,60 @@ namespace BankApplikationForm
             return false;
         }
 
+        private void depositButton_Click(object sender, EventArgs e)
+        {
+            foreach (Account account in loggedInUser.accounts)
+            {
+                if (account.AccountId == loadedAccountId)
+                {
+                    account.Deposit(Convert.ToInt32(depositTextBox.Text));
+                    depositTextBox.Text = "";
+                    FileManager fm = new FileManager();
+                    fm.UpdateUserBalance(loggedInUser);
+                    RefreshAccountListBox(loggedInUser);
 
+                    balanceLabel.Text = $"Balance:\n {account.Balance}";
+                }
+            }
+        }
+
+        private void depositTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void withdrawTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void withdrawButton_Click(object sender, EventArgs e)
+        {
+            foreach (Account account in loggedInUser.accounts)
+            {
+                if (account.AccountId == loadedAccountId)
+                {
+                    if (account.Withdrawal(Convert.ToInt32(withdrawTextbox.Text)))
+                    {
+                        withdrawTextbox.Text = "";
+                        FileManager fm = new FileManager();
+                        fm.UpdateUserBalance(loggedInUser);
+                        RefreshAccountListBox(loggedInUser);
+
+                        balanceLabel.Text = $"Balance:\n {account.Balance}";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough money");
+                    }
+                }
+            }
+        }
     }
 }

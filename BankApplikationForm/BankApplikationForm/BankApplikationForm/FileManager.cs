@@ -56,8 +56,22 @@ namespace BankApplikationForm
 
             return users;
         }
+
+        public void UpdateUserBalance(User user)
+        {
+            List<User> users = ReadUsers();
+
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (users[i].UserId == user.UserId)
+                {
+                    users[i] = user;
+                    var json = JsonConvert.SerializeObject(users, Formatting.Indented);
+                    File.WriteAllText(usersFile, json);
+                    break;
+                }
+            }
+        }
     }
-
-
 }
 

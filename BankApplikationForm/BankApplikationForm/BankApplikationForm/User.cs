@@ -12,15 +12,20 @@ namespace BankApplikationForm
 {
     public class User
     {
-        private bool firstAccount = true;
+
+        public int UserId { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
+
+        private bool firstAccount = true;
+        private static int nextId = 0;
         public List<Account> accounts = new List<Account>();
 
         public User(string name, string password, string email, string address)
         {
+            UserId = nextId++;
             Name = name;
             Password = password;
             Email = email;
@@ -28,24 +33,12 @@ namespace BankApplikationForm
             Address = address;
         }
 
-        public void Login()
-        {
 
-        }
-
-        public void Logout()
-        {
-
-        }
-
-        public void ChangePassword()
-        {
-
-        }
         public List<Account> GetUserAccounts()
         {
             return accounts;
         }
+
 
         public List<string> GetAccountInfo()
         {
@@ -58,7 +51,6 @@ namespace BankApplikationForm
             return accountInfoList;
         }
 
-        
 
         public void CreateNewAccount(string accountName = null)
         {
@@ -79,6 +71,7 @@ namespace BankApplikationForm
             fileManager.UpdateUser(this);
             
         }
+
 
         public void DeleteAccount(int accountId)
         {

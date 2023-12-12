@@ -48,10 +48,10 @@
             label4 = new Label();
             textBox3 = new TextBox();
             numericUpDown1 = new NumericUpDown();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            button2 = new Button();
-            button1 = new Button();
+            withdrawTextbox = new TextBox();
+            depositTextBox = new TextBox();
+            withdrawButton = new Button();
+            depositButton = new Button();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
@@ -80,10 +80,10 @@
             userTabControl.Controls.Add(settingsTab);
             userTabControl.Dock = DockStyle.Fill;
             userTabControl.Location = new Point(0, 0);
-            userTabControl.Margin = new Padding(2, 3, 2, 3);
+            userTabControl.Margin = new Padding(2);
             userTabControl.Name = "userTabControl";
             userTabControl.SelectedIndex = 0;
-            userTabControl.Size = new Size(640, 386);
+            userTabControl.Size = new Size(560, 290);
             userTabControl.TabIndex = 0;
             // 
             // accountTab
@@ -98,20 +98,21 @@
             accountTab.Controls.Add(loadAccountButton);
             accountTab.Controls.Add(accountsLabel);
             accountTab.Controls.Add(accountsListBox);
-            accountTab.Location = new Point(4, 29);
-            accountTab.Margin = new Padding(2, 3, 2, 3);
+            accountTab.Location = new Point(4, 24);
+            accountTab.Margin = new Padding(2);
             accountTab.Name = "accountTab";
-            accountTab.Padding = new Padding(2, 3, 2, 3);
-            accountTab.Size = new Size(632, 353);
+            accountTab.Padding = new Padding(2);
+            accountTab.Size = new Size(552, 262);
             accountTab.TabIndex = 0;
             accountTab.Text = "Account";
             accountTab.UseVisualStyleBackColor = true;
             // 
             // renameAccountButton
             // 
-            renameAccountButton.Location = new Point(129, 276);
+            renameAccountButton.Location = new Point(113, 207);
+            renameAccountButton.Margin = new Padding(3, 2, 3, 2);
             renameAccountButton.Name = "renameAccountButton";
-            renameAccountButton.Size = new Size(129, 29);
+            renameAccountButton.Size = new Size(113, 22);
             renameAccountButton.TabIndex = 9;
             renameAccountButton.Text = "Rename Account";
             renameAccountButton.UseVisualStyleBackColor = true;
@@ -119,9 +120,10 @@
             // 
             // deleteAccountButton
             // 
-            deleteAccountButton.Location = new Point(264, 276);
+            deleteAccountButton.Location = new Point(231, 207);
+            deleteAccountButton.Margin = new Padding(3, 2, 3, 2);
             deleteAccountButton.Name = "deleteAccountButton";
-            deleteAccountButton.Size = new Size(119, 29);
+            deleteAccountButton.Size = new Size(104, 22);
             deleteAccountButton.TabIndex = 8;
             deleteAccountButton.Text = "Delete Account";
             deleteAccountButton.UseVisualStyleBackColor = true;
@@ -130,9 +132,9 @@
             // newAccountNameLabel2
             // 
             newAccountNameLabel2.AutoSize = true;
-            newAccountNameLabel2.Location = new Point(385, 211);
+            newAccountNameLabel2.Location = new Point(337, 158);
             newAccountNameLabel2.Name = "newAccountNameLabel2";
-            newAccountNameLabel2.Size = new Size(222, 20);
+            newAccountNameLabel2.Size = new Size(179, 15);
             newAccountNameLabel2.TabIndex = 7;
             newAccountNameLabel2.Text = "Press enter to confirm the name.";
             newAccountNameLabel2.Visible = false;
@@ -140,36 +142,38 @@
             // loggedInAsLabel
             // 
             loggedInAsLabel.AutoSize = true;
-            loggedInAsLabel.Location = new Point(412, 35);
+            loggedInAsLabel.Location = new Point(360, 26);
             loggedInAsLabel.Name = "loggedInAsLabel";
-            loggedInAsLabel.Size = new Size(147, 20);
+            loggedInAsLabel.Size = new Size(116, 15);
             loggedInAsLabel.TabIndex = 6;
             loggedInAsLabel.Text = "You are logged in as:";
             // 
             // newAccountNameLabel
             // 
             newAccountNameLabel.AutoSize = true;
-            newAccountNameLabel.Location = new Point(359, 180);
+            newAccountNameLabel.Location = new Point(314, 135);
             newAccountNameLabel.Name = "newAccountNameLabel";
-            newAccountNameLabel.Size = new Size(270, 20);
+            newAccountNameLabel.Size = new Size(217, 15);
             newAccountNameLabel.TabIndex = 5;
             newAccountNameLabel.Text = "Please enter the name for your account.";
             newAccountNameLabel.Visible = false;
             // 
             // newAccountNameTextBox
             // 
-            newAccountNameTextBox.Location = new Point(425, 243);
+            newAccountNameTextBox.Location = new Point(372, 182);
+            newAccountNameTextBox.Margin = new Padding(3, 2, 3, 2);
             newAccountNameTextBox.Name = "newAccountNameTextBox";
-            newAccountNameTextBox.Size = new Size(125, 27);
+            newAccountNameTextBox.Size = new Size(110, 23);
             newAccountNameTextBox.TabIndex = 4;
             newAccountNameTextBox.Visible = false;
             newAccountNameTextBox.KeyPress += accountNameTextBox_KeyPress;
             // 
             // createNewAccountButton
             // 
-            createNewAccountButton.Location = new Point(412, 276);
+            createNewAccountButton.Location = new Point(360, 207);
+            createNewAccountButton.Margin = new Padding(3, 2, 3, 2);
             createNewAccountButton.Name = "createNewAccountButton";
-            createNewAccountButton.Size = new Size(151, 29);
+            createNewAccountButton.Size = new Size(132, 22);
             createNewAccountButton.TabIndex = 3;
             createNewAccountButton.Text = "Create new account";
             createNewAccountButton.UseVisualStyleBackColor = true;
@@ -177,9 +181,10 @@
             // 
             // loadAccountButton
             // 
-            loadAccountButton.Location = new Point(8, 276);
+            loadAccountButton.Location = new Point(7, 207);
+            loadAccountButton.Margin = new Padding(3, 2, 3, 2);
             loadAccountButton.Name = "loadAccountButton";
-            loadAccountButton.Size = new Size(115, 29);
+            loadAccountButton.Size = new Size(101, 22);
             loadAccountButton.TabIndex = 2;
             loadAccountButton.Text = "Load Account";
             loadAccountButton.UseVisualStyleBackColor = true;
@@ -188,19 +193,20 @@
             // accountsLabel
             // 
             accountsLabel.AutoSize = true;
-            accountsLabel.Location = new Point(67, 3);
+            accountsLabel.Location = new Point(59, 2);
             accountsLabel.Name = "accountsLabel";
-            accountsLabel.Size = new Size(69, 20);
+            accountsLabel.Size = new Size(57, 15);
             accountsLabel.TabIndex = 1;
             accountsLabel.Text = "Accounts";
             // 
             // accountsListBox
             // 
             accountsListBox.FormattingEnabled = true;
-            accountsListBox.ItemHeight = 20;
-            accountsListBox.Location = new Point(5, 26);
+            accountsListBox.ItemHeight = 15;
+            accountsListBox.Location = new Point(4, 20);
+            accountsListBox.Margin = new Padding(3, 2, 3, 2);
             accountsListBox.Name = "accountsListBox";
-            accountsListBox.Size = new Size(352, 244);
+            accountsListBox.Size = new Size(308, 184);
             accountsListBox.TabIndex = 0;
             accountsListBox.SelectedIndexChanged += accountsListBox_SelectedIndexChanged;
             // 
@@ -213,18 +219,18 @@
             transactionTab.Controls.Add(label4);
             transactionTab.Controls.Add(textBox3);
             transactionTab.Controls.Add(numericUpDown1);
-            transactionTab.Controls.Add(textBox2);
-            transactionTab.Controls.Add(textBox1);
-            transactionTab.Controls.Add(button2);
-            transactionTab.Controls.Add(button1);
+            transactionTab.Controls.Add(withdrawTextbox);
+            transactionTab.Controls.Add(depositTextBox);
+            transactionTab.Controls.Add(withdrawButton);
+            transactionTab.Controls.Add(depositButton);
             transactionTab.Controls.Add(label3);
             transactionTab.Controls.Add(label2);
             transactionTab.Controls.Add(label1);
-            transactionTab.Location = new Point(4, 29);
+            transactionTab.Location = new Point(4, 24);
             transactionTab.Margin = new Padding(2);
             transactionTab.Name = "transactionTab";
             transactionTab.Padding = new Padding(2);
-            transactionTab.Size = new Size(632, 353);
+            transactionTab.Size = new Size(552, 262);
             transactionTab.TabIndex = 1;
             transactionTab.Text = "Transactions";
             transactionTab.UseVisualStyleBackColor = true;
@@ -233,9 +239,9 @@
             // 
             balanceLabel.AutoSize = true;
             balanceLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            balanceLabel.Location = new Point(238, 49);
+            balanceLabel.Location = new Point(208, 37);
             balanceLabel.Name = "balanceLabel";
-            balanceLabel.Size = new Size(69, 23);
+            balanceLabel.Size = new Size(55, 19);
             balanceLabel.TabIndex = 16;
             balanceLabel.Text = "Balance";
             // 
@@ -243,9 +249,9 @@
             // 
             accountIdLabel.AutoSize = true;
             accountIdLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            accountIdLabel.Location = new Point(447, 49);
+            accountIdLabel.Location = new Point(391, 37);
             accountIdLabel.Name = "accountIdLabel";
-            accountIdLabel.Size = new Size(93, 23);
+            accountIdLabel.Size = new Size(75, 19);
             accountIdLabel.TabIndex = 15;
             accountIdLabel.Text = "Account Id";
             // 
@@ -253,18 +259,18 @@
             // 
             accountNameLabel.AutoSize = true;
             accountNameLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            accountNameLabel.Location = new Point(42, 49);
+            accountNameLabel.Location = new Point(37, 37);
             accountNameLabel.Name = "accountNameLabel";
-            accountNameLabel.Size = new Size(119, 23);
+            accountNameLabel.Size = new Size(95, 19);
             accountNameLabel.TabIndex = 14;
             accountNameLabel.Text = "AccountName";
             // 
             // button3
             // 
-            button3.Location = new Point(447, 283);
+            button3.Location = new Point(391, 212);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
-            button3.Size = new Size(90, 27);
+            button3.Size = new Size(79, 20);
             button3.TabIndex = 13;
             button3.Text = "Transfer";
             button3.UseVisualStyleBackColor = true;
@@ -272,76 +278,80 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(447, 240);
+            label4.Location = new Point(391, 180);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(24, 20);
+            label4.Size = new Size(18, 15);
             label4.TabIndex = 12;
             label4.Text = "ID";
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(447, 192);
+            textBox3.Location = new Point(391, 144);
             textBox3.Margin = new Padding(2);
             textBox3.Name = "textBox3";
             textBox3.PlaceholderText = "Amount";
-            textBox3.Size = new Size(121, 27);
+            textBox3.Size = new Size(106, 23);
             textBox3.TabIndex = 11;
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(486, 234);
+            numericUpDown1.Location = new Point(425, 176);
             numericUpDown1.Margin = new Padding(2);
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(63, 27);
+            numericUpDown1.Size = new Size(55, 23);
             numericUpDown1.TabIndex = 10;
             // 
-            // textBox2
+            // withdrawTextbox
             // 
-            textBox2.Location = new Point(238, 233);
-            textBox2.Margin = new Padding(2);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Amount";
-            textBox2.Size = new Size(121, 27);
-            textBox2.TabIndex = 9;
+            withdrawTextbox.Location = new Point(208, 175);
+            withdrawTextbox.Margin = new Padding(2);
+            withdrawTextbox.Name = "withdrawTextbox";
+            withdrawTextbox.PlaceholderText = "Amount";
+            withdrawTextbox.Size = new Size(106, 23);
+            withdrawTextbox.TabIndex = 9;
+            withdrawTextbox.KeyPress += withdrawTextbox_KeyPress;
             // 
-            // textBox1
+            // depositTextBox
             // 
-            textBox1.Location = new Point(42, 233);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Amount";
-            textBox1.Size = new Size(121, 27);
-            textBox1.TabIndex = 8;
+            depositTextBox.Location = new Point(37, 175);
+            depositTextBox.Margin = new Padding(2);
+            depositTextBox.Name = "depositTextBox";
+            depositTextBox.PlaceholderText = "Amount";
+            depositTextBox.Size = new Size(106, 23);
+            depositTextBox.TabIndex = 8;
+            depositTextBox.KeyPress += depositTextBox_KeyPress;
             // 
-            // button2
+            // withdrawButton
             // 
-            button2.Location = new Point(238, 283);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(90, 27);
-            button2.TabIndex = 7;
-            button2.Text = "Withdraw";
-            button2.UseVisualStyleBackColor = true;
+            withdrawButton.Location = new Point(208, 212);
+            withdrawButton.Margin = new Padding(2);
+            withdrawButton.Name = "withdrawButton";
+            withdrawButton.Size = new Size(79, 20);
+            withdrawButton.TabIndex = 7;
+            withdrawButton.Text = "Withdraw";
+            withdrawButton.UseVisualStyleBackColor = true;
+            withdrawButton.Click += withdrawButton_Click;
             // 
-            // button1
+            // depositButton
             // 
-            button1.Location = new Point(42, 283);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(90, 27);
-            button1.TabIndex = 6;
-            button1.Text = "Deposit";
-            button1.UseVisualStyleBackColor = true;
+            depositButton.Location = new Point(37, 212);
+            depositButton.Margin = new Padding(2);
+            depositButton.Name = "depositButton";
+            depositButton.Size = new Size(79, 20);
+            depositButton.TabIndex = 6;
+            depositButton.Text = "Deposit";
+            depositButton.UseVisualStyleBackColor = true;
+            depositButton.Click += depositButton_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(447, 147);
+            label3.Location = new Point(391, 110);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(70, 23);
+            label3.Size = new Size(57, 19);
             label3.TabIndex = 3;
             label3.Text = "Transfer";
             // 
@@ -349,10 +359,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(238, 147);
+            label2.Location = new Point(208, 110);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(83, 23);
+            label2.Size = new Size(68, 19);
             label2.TabIndex = 2;
             label2.Text = "Withdraw";
             // 
@@ -360,10 +370,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(42, 147);
+            label1.Location = new Point(37, 110);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(68, 23);
+            label1.Size = new Size(56, 19);
             label1.TabIndex = 1;
             label1.Text = "Deposit";
             // 
@@ -379,21 +389,21 @@
             settingsTab.Controls.Add(textBox5);
             settingsTab.Controls.Add(textBox4);
             settingsTab.Controls.Add(label5);
-            settingsTab.Location = new Point(4, 29);
+            settingsTab.Location = new Point(4, 24);
             settingsTab.Margin = new Padding(2);
             settingsTab.Name = "settingsTab";
             settingsTab.Padding = new Padding(2);
-            settingsTab.Size = new Size(632, 353);
+            settingsTab.Size = new Size(552, 262);
             settingsTab.TabIndex = 2;
             settingsTab.Text = "Settings";
             settingsTab.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            button6.Location = new Point(480, 285);
+            button6.Location = new Point(420, 214);
             button6.Margin = new Padding(2);
             button6.Name = "button6";
-            button6.Size = new Size(115, 31);
+            button6.Size = new Size(101, 23);
             button6.TabIndex = 9;
             button6.Text = "Logout";
             button6.UseVisualStyleBackColor = true;
@@ -403,10 +413,10 @@
             button5.BackColor = Color.Red;
             button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button5.ForeColor = SystemColors.ButtonHighlight;
-            button5.Location = new Point(377, 190);
+            button5.Location = new Point(330, 142);
             button5.Margin = new Padding(2);
             button5.Name = "button5";
-            button5.Size = new Size(146, 31);
+            button5.Size = new Size(128, 23);
             button5.TabIndex = 8;
             button5.Text = "Delete";
             button5.UseVisualStyleBackColor = false;
@@ -415,87 +425,87 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = SystemColors.ControlDarkDark;
-            label7.Location = new Point(315, 94);
+            label7.Location = new Point(276, 70);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(290, 20);
+            label7.Size = new Size(231, 15);
             label7.TabIndex = 7;
             label7.Text = "Enter your password to delete this account";
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(377, 137);
+            textBox7.Location = new Point(330, 103);
             textBox7.Margin = new Padding(2);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(147, 27);
+            textBox7.Size = new Size(129, 23);
             textBox7.TabIndex = 6;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(377, 35);
+            label6.Location = new Point(330, 26);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(140, 25);
+            label6.Size = new Size(111, 20);
             label6.TabIndex = 5;
             label6.Text = "Delete Account";
             // 
             // button4
             // 
-            button4.Location = new Point(27, 285);
+            button4.Location = new Point(24, 214);
             button4.Margin = new Padding(2);
             button4.Name = "button4";
-            button4.Size = new Size(163, 31);
+            button4.Size = new Size(143, 23);
             button4.TabIndex = 4;
             button4.Text = "Update Password";
             button4.UseVisualStyleBackColor = true;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(27, 199);
+            textBox6.Location = new Point(24, 149);
             textBox6.Margin = new Padding(2);
             textBox6.Name = "textBox6";
             textBox6.PlaceholderText = "Confirm password";
-            textBox6.Size = new Size(176, 27);
+            textBox6.Size = new Size(154, 23);
             textBox6.TabIndex = 3;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(27, 146);
+            textBox5.Location = new Point(24, 110);
             textBox5.Margin = new Padding(2);
             textBox5.Name = "textBox5";
             textBox5.PlaceholderText = "New password";
-            textBox5.Size = new Size(176, 27);
+            textBox5.Size = new Size(154, 23);
             textBox5.TabIndex = 2;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(27, 94);
+            textBox4.Location = new Point(24, 70);
             textBox4.Margin = new Padding(2);
             textBox4.Name = "textBox4";
             textBox4.PlaceholderText = "Current password";
-            textBox4.Size = new Size(176, 27);
+            textBox4.Size = new Size(154, 23);
             textBox4.TabIndex = 1;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(27, 35);
+            label5.Location = new Point(24, 26);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(161, 25);
+            label5.Size = new Size(124, 20);
             label5.TabIndex = 0;
             label5.Text = "Change Password";
             // 
             // UserAccountForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(640, 386);
+            ClientSize = new Size(560, 290);
             Controls.Add(userTabControl);
-            Margin = new Padding(2, 3, 2, 3);
+            Margin = new Padding(2);
             Name = "UserAccountForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User";
@@ -528,13 +538,13 @@
         private Label label2;
         private Label label1;
         private TabPage settingsTab;
-        private Button button2;
-        private Button button1;
+        private Button withdrawButton;
+        private Button depositButton;
         private Label label4;
         private TextBox textBox3;
         private NumericUpDown numericUpDown1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox withdrawTextbox;
+        private TextBox depositTextBox;
         private Button button3;
         private Label label7;
         private TextBox textBox7;
