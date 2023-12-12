@@ -42,7 +42,7 @@ namespace BankApplikationForm
         {
 
         }
-        public List<Account> GetAccounts()
+        public List<Account> GetUserAccounts()
         {
             return accounts;
         }

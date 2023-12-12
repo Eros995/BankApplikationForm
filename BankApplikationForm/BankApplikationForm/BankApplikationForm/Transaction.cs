@@ -12,6 +12,7 @@ namespace BankApplikationForm
         public int TransactionId { get; set; }
         public Account? SenderAccount { get; set; }
         public Account? ReceiverAccount { get; set; }
+        public string Type { get; set; }
         public double Amount { get; set; }
         public string? Date {  get; set; }
 
@@ -20,13 +21,19 @@ namespace BankApplikationForm
             TransactionId = nextId++;
             SenderAccount = senderAccount;
             ReceiverAccount = receiverAccount;
+            Type = "Transfer";
             Amount = amount;
             Date = DateTime.Today.ToLongDateString();
         }
 
-        public void RegisterTransaction()
+        public Transaction(string type, double amount)
         {
-
+            TransactionId = nextId++;
+            SenderAccount = null;
+            ReceiverAccount = null;
+            Type = type;
+            Amount = amount;
+            Date = DateTime.Today.ToLongDateString();
         }
 
         public void GetTransactionInformation()
