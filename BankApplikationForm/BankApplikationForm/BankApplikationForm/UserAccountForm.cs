@@ -91,7 +91,7 @@ namespace BankApplikationForm
                     
                     accountNameLabel.Text = "Account Name:\n" + accountName;
                     accountIdLabel.Text = "Account ID:\n " + accountId;
-                    balanceLabel.Text = $"Balance:\n {balance.ToString()} kr";
+                    balanceLabel.Text = $"Balance:\n {balance.ToString()}";
                 }
                 else
                 {
