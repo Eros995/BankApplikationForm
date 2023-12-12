@@ -210,10 +210,10 @@
             // balanceLabel
             // 
             balanceLabel.AutoSize = true;
-            balanceLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            balanceLabel.Location = new Point(243, 44);
+            balanceLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            balanceLabel.Location = new Point(238, 49);
             balanceLabel.Name = "balanceLabel";
-            balanceLabel.Size = new Size(78, 28);
+            balanceLabel.Size = new Size(69, 23);
             balanceLabel.TabIndex = 16;
             balanceLabel.Text = "Balance";
             // 
@@ -221,7 +221,7 @@
             // 
             accountIdLabel.AutoSize = true;
             accountIdLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            accountIdLabel.Location = new Point(456, 49);
+            accountIdLabel.Location = new Point(447, 49);
             accountIdLabel.Name = "accountIdLabel";
             accountIdLabel.Size = new Size(93, 23);
             accountIdLabel.TabIndex = 15;
@@ -231,7 +231,7 @@
             // 
             accountNameLabel.AutoSize = true;
             accountNameLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            accountNameLabel.Location = new Point(13, 49);
+            accountNameLabel.Location = new Point(42, 49);
             accountNameLabel.Name = "accountNameLabel";
             accountNameLabel.Size = new Size(119, 23);
             accountNameLabel.TabIndex = 14;
@@ -349,7 +349,7 @@
             // 
             accountInfoLabel.AutoSize = true;
             accountInfoLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            accountInfoLabel.Location = new Point(221, 13);
+            accountInfoLabel.Location = new Point(209, 17);
             accountInfoLabel.Margin = new Padding(2, 0, 2, 0);
             accountInfoLabel.Name = "accountInfoLabel";
             accountInfoLabel.Size = new Size(150, 32);
