@@ -32,7 +32,7 @@ namespace BankApplikationForm
             users = bankManager.GetUsers();
             foreach (User user in users)
             {
-                AdminFormListBoxUsers.Items.Add($"User: " + user.Name + " | " + "User Id: " + user.UserId);
+                adminFormListBoxUsers.Items.Add($"User: " + user.Name + " | " + "User Id: " + user.UserId);
 
             }
         }
@@ -55,10 +55,10 @@ namespace BankApplikationForm
         {
             listBox2.Items.Clear();
 
-            if (AdminFormListBoxUsers.SelectedIndex != -1)
+            if (adminFormListBoxUsers.SelectedIndex != -1)
             {
 
-                User selectedUser = users[AdminFormListBoxUsers.SelectedIndex];
+                User selectedUser = users[adminFormListBoxUsers.SelectedIndex];
 
 
                 selectedUser.GetUserAccounts();
@@ -75,40 +75,37 @@ namespace BankApplikationForm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (AdminFormListBoxUsers.SelectedIndex != -1)
+            if (adminFormListBoxUsers.SelectedIndex != -1)
             {
-                User selectedUser = users[AdminFormListBoxUsers.SelectedIndex];
+                string selectedUserName = adminFormListBoxUsers.SelectedItem.ToString().Split('|')[0].Trim().Substring(6); // Extracting the selected user's name from the list box
 
+                // Find the user by name
+                User selectedUser = users.FirstOrDefault(user => user.Name == selectedUserName);
 
-                fileManager.DeleteUser(selectedUser);
-
-                
-                RefreshListBox();
-            }
-        }
-        private void RefreshListBox()
-        {
-            users = bankManager.GetUsers();
-
-            
-            for (int i = AdminFormListBoxUsers.Items.Count - 1; i >= 0; i--)
-            {
-                string listBoxItem = AdminFormListBoxUsers.Items[i].ToString();
-                int userId = ExtractUserId(listBoxItem); 
-
-                
-                if (!users.Any(user => ExtractUserId(user.ToString()) == userId))
+                if (selectedUser != null)
                 {
-                    AdminFormListBoxUsers.Items.RemoveAt(i);
+                    DialogResult result = MessageBox.Show($"Are you sure you want to delete user '{selectedUserName}'?", "Confirmation", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        users.Remove(selectedUser);
+                        adminFormListBoxUsers.Items.RemoveAt(adminFormListBoxUsers.SelectedIndex);
+
+                        FileManager fileManager = new FileManager();
+                        fileManager.CreateNewUser(users); // Save the updated user list to the JSON file
+
+   
+
+                        MessageBox.Show("User deleted successfully.");
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("Please select a user to delete.");
+            }
         }
-        private int ExtractUserId(string listBoxItem)
-        {
-            int userIdIndex = listBoxItem.LastIndexOf("User Id: ") + "User Id: ".Length;
-            int userId = int.Parse(listBoxItem.Substring(userIdIndex));
-            return userId;
-        }
+        
 
 
     }
