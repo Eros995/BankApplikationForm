@@ -5,13 +5,43 @@
         "transactions": [],
         "Balance": 0.0,
         "AccountId": 0,
-        "AccountName": "tom"
+        "AccountName": "test1"
       }
     ],
     "UserId": 0,
-    "Name": "tom",
+    "Name": "test1",
     "Password": "123",
-    "Email": "tom@mail.com",
-    "Address": "tomgatan"
+    "Email": "test@mail.com",
+    "Address": "testgatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 4,
+        "AccountName": "testing"
+      }
+    ],
+    "UserId": 2,
+    "Name": "testing",
+    "Password": "123",
+    "Email": "testing@mail.com",
+    "Address": "testgatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 5,
+        "AccountName": "test"
+      }
+    ],
+    "UserId": 3,
+    "Name": "test",
+    "Password": "123",
+    "Email": "testar@mail.com",
+    "Address": "123"
   }
 ]

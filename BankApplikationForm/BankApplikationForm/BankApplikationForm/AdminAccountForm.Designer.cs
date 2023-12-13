@@ -51,6 +51,7 @@
             loadUserButton = new Button();
             listBox1 = new ListBox();
             tabControl1 = new TabControl();
+            deleteUserButton = new Button();
             userInfoTab.SuspendLayout();
             tabPage1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -245,6 +246,7 @@
             // tabPage1
             // 
             tabPage1.BackColor = SystemColors.InactiveCaption;
+            tabPage1.Controls.Add(deleteUserButton);
             tabPage1.Controls.Add(listBox2);
             tabPage1.Controls.Add(loadUserButton);
             tabPage1.Controls.Add(listBox1);
@@ -300,6 +302,16 @@
             tabControl1.Size = new Size(737, 549);
             tabControl1.TabIndex = 0;
             // 
+            // deleteUserButton
+            // 
+            deleteUserButton.Location = new Point(247, 237);
+            deleteUserButton.Name = "deleteUserButton";
+            deleteUserButton.Size = new Size(94, 29);
+            deleteUserButton.TabIndex = 5;
+            deleteUserButton.Text = "Delete User";
+            deleteUserButton.UseVisualStyleBackColor = true;
+            deleteUserButton.Click += deleteUserButton_Click;
+            // 
             // AdminAccountForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -343,5 +355,6 @@
         private Label usersAdressLabel;
         private Button changeUserPasswordButton;
         private Button updateUsersInfoButton;
+        private Button deleteUserButton;
     }
 }

@@ -94,7 +94,7 @@ namespace BankApplikationForm
                     {
                         selectedUser.Password = newPassword;
                         FileManager fileManager = new FileManager();
-                        fileManager.UpdateUser(selectedUser); 
+                        fileManager.UpdateUser(selectedUser);
                         MessageBox.Show("Password updated successfully!");
                         usersPasswordLabel.Text = $"Password:\n{selectedUser.Password}";
                     }
@@ -168,6 +168,45 @@ namespace BankApplikationForm
             }
         }
 
+        private void deleteUserButton_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex != -1)
+            {
+                string selectedItem = listBox1.SelectedItem.ToString();
+                string selectedUserName = selectedItem.Split('|')[0].Trim().Substring(6); // Extract the user name from the list item
+
+                User selectedUser = users.FirstOrDefault(user => user.Name == selectedUserName);
+
+                if (selectedUser != null)
+                {
+                    DialogResult result = MessageBox.Show($"Are you sure you want to delete user '{selectedUserName}'?", "Confirmation", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        users.Remove(selectedUser);
+                        listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+
+                        FileManager fileManager = new FileManager();
+                        fileManager.CreateNewUser(users); // Save the updated user list to the JSON file
+
+                        ClearUserInfo(selectedUserName); // Function to clear user information
+
+                        MessageBox.Show("User deleted successfully.");
+                    }
+                }
+            }
+        }
+        private void ClearUserInfo(string selectedUserNam)
+        {
+            usersNameLabel.Text = "Name:";
+            usersAdressLabel.Text = "Address:";
+            usersIdLabel.Text = "User ID:";
+            usersEmailLabel.Text = "Email:";
+            usersPasswordLabel.Text = "Password:";
+            usersNameTextBox.Text = "";
+            usersAddressTextBox.Text = "";
+            usersEmailTextBox.Text = "";
+        }
 
     }
 
