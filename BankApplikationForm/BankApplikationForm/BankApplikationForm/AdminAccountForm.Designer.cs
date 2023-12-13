@@ -30,9 +30,10 @@
         {
             tabPage4 = new TabPage();
             tabPage1 = new TabPage();
+            button2 = new Button();
             listBox2 = new ListBox();
             button1 = new Button();
-            listBox1 = new ListBox();
+            AdminFormListBoxUsers = new ListBox();
             tabControl1 = new TabControl();
             tabPage1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -52,9 +53,10 @@
             // tabPage1
             // 
             tabPage1.BackColor = SystemColors.InactiveCaption;
+            tabPage1.Controls.Add(button2);
             tabPage1.Controls.Add(listBox2);
             tabPage1.Controls.Add(button1);
-            tabPage1.Controls.Add(listBox1);
+            tabPage1.Controls.Add(AdminFormListBoxUsers);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Margin = new Padding(2);
             tabPage1.Name = "tabPage1";
@@ -62,6 +64,17 @@
             tabPage1.Size = new Size(637, 384);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "List Users";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(183, 184);
+            button2.Margin = new Padding(2);
+            button2.Name = "button2";
+            button2.Size = new Size(164, 26);
+            button2.TabIndex = 5;
+            button2.Text = "Delete User";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // listBox2
             // 
@@ -84,16 +97,16 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // listBox1
+            // AdminFormListBoxUsers
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(183, 11);
-            listBox1.Margin = new Padding(2);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(164, 154);
-            listBox1.TabIndex = 0;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            AdminFormListBoxUsers.FormattingEnabled = true;
+            AdminFormListBoxUsers.ItemHeight = 15;
+            AdminFormListBoxUsers.Location = new Point(183, 11);
+            AdminFormListBoxUsers.Margin = new Padding(2);
+            AdminFormListBoxUsers.Name = "AdminFormListBoxUsers";
+            AdminFormListBoxUsers.Size = new Size(164, 154);
+            AdminFormListBoxUsers.TabIndex = 0;
+            AdminFormListBoxUsers.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // tabControl1
             // 
@@ -129,7 +142,8 @@
         private TabPage tabPage1;
         private ListBox listBox2;
         private Button button1;
-        private ListBox listBox1;
+        private ListBox AdminFormListBoxUsers;
         private TabControl tabControl1;
+        private Button button2;
     }
 }

@@ -116,6 +116,7 @@
     "Password": "123",
     "Email": "harry@mail.com",
     "Address": "harrygatan"
+<<<<<<< Updated upstream
   },
   {
     "accounts": [
@@ -230,6 +231,8 @@
     "Password": "lol123",
     "Email": "kalle@gmail.com",
     "Address": "kallegatan 1"
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   }
 ]

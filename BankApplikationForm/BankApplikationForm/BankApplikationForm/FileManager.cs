@@ -72,6 +72,26 @@ namespace BankApplikationForm
                 }
             }
         }
+        public void DeleteUser(User userToDelete)
+        {
+            List<User> users = ReadUsers();
+
+            int index = users.FindIndex(u => u.UserId == userToDelete.UserId);
+
+            if (index != -1)
+            {
+                users.RemoveAt(index);
+
+                var json = JsonConvert.SerializeObject(users, Formatting.Indented);
+                File.WriteAllText(usersFile, json);
+            }
+            else
+            {
+                MessageBox.Show("User not found for deletion.");
+            }
+        }
+
+
     }
 }
 

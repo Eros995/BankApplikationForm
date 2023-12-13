@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +11,7 @@ using System.Windows.Forms;
 
 namespace BankApplikationForm
 {
+
     public partial class AdminAccountForm : Form
     {
         LoginForm loginForm;
@@ -17,19 +19,20 @@ namespace BankApplikationForm
         User user;
         List<Account> accounts = new List<Account>();
         List<User> users = new List<User>();
+        FileManager fileManager;
         public AdminAccountForm(LoginForm loginForm)
         {
             InitializeComponent();
             this.loginForm = loginForm;
             this.GetUserList();
-          
+            fileManager = new FileManager();
         }
         public void GetUserList()
         {
             users = bankManager.GetUsers();
             foreach (User user in users)
             {
-                listBox1.Items.Add($"User: " + user.Name + " | " + "User Id: " + user.UserId);
+                AdminFormListBoxUsers.Items.Add($"User: " + user.Name + " | " + "User Id: " + user.UserId);
 
             }
         }
@@ -52,22 +55,61 @@ namespace BankApplikationForm
         {
             listBox2.Items.Clear();
 
-            if (listBox1.SelectedIndex != -1)
+            if (AdminFormListBoxUsers.SelectedIndex != -1)
             {
-                
-                User selectedUser = users[listBox1.SelectedIndex];
 
-                
+                User selectedUser = users[AdminFormListBoxUsers.SelectedIndex];
+
+
                 selectedUser.GetUserAccounts();
                 selectedUser.GetAccountInfo();
 
-                
+
                 foreach (Account account in selectedUser.accounts)
                 {
                     listBox2.Items.Add($"Account ID: {account.AccountId} | Balance: {account.Balance}");
-                   
+
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (AdminFormListBoxUsers.SelectedIndex != -1)
+            {
+                User selectedUser = users[AdminFormListBoxUsers.SelectedIndex];
+
+
+                fileManager.DeleteUser(selectedUser);
+
+                
+                RefreshListBox();
+            }
+        }
+        private void RefreshListBox()
+        {
+            users = bankManager.GetUsers();
+
+            
+            for (int i = AdminFormListBoxUsers.Items.Count - 1; i >= 0; i--)
+            {
+                string listBoxItem = AdminFormListBoxUsers.Items[i].ToString();
+                int userId = ExtractUserId(listBoxItem); 
+
+                
+                if (!users.Any(user => ExtractUserId(user.ToString()) == userId))
+                {
+                    AdminFormListBoxUsers.Items.RemoveAt(i);
+                }
+            }
+        }
+        private int ExtractUserId(string listBoxItem)
+        {
+            int userIdIndex = listBoxItem.LastIndexOf("User Id: ") + "User Id: ".Length;
+            int userId = int.Parse(listBoxItem.Substring(userIdIndex));
+            return userId;
+        }
+
+
     }
 }
