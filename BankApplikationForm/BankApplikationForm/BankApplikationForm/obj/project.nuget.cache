@@ -1,10 +1,18 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "xCzwUN/J6KypqwtY9qcujjk89olfqRk8NjF2jZAKsKJKt9/wS1JFpUceIsSlfdRIzzY6aZzFoOjxQvFe7WAATg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Branislav\\OneDrive\\Documents\\GitHub\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Branislav\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+=======
+  "dgSpecHash": "YPP2kNBXTS0t6IMurk6U+hFguk3E5rQG1jY1bAPcxEghOBvBnCwTaV9UitKQ5l3f0vEjNLFMPpwduWF66rykug==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Emil\\source\\repos\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm\\BankApplikationForm.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Emil\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+>>>>>>> Stashed changes
   ],
   "logs": []
 }

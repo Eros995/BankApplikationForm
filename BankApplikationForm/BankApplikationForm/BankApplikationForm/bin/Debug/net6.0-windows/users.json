@@ -2,10 +2,49 @@
   {
     "accounts": [
       {
-        "transactions": [],
-        "Balance": 0.0,
+        "transactions": [
+          {
+            "TransactionId": 0,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 10000.0,
+            "Date": "2023-12-13"
+          },
+          {
+            "TransactionId": 1,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 2,
+            "Type": "Transfer",
+            "Amount": 500.0,
+            "Date": "2023-12-13"
+          },
+          {
+            "TransactionId": 2,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 1000.0,
+            "Date": "2023-12-13"
+          },
+          {
+            "TransactionId": 4,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": -500.0,
+            "Date": "2023-12-13"
+          }
+        ],
+        "Balance": 8000.0,
         "AccountId": 0,
         "AccountName": "Emil"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 6,
+        "AccountName": "savings"
       }
     ],
     "UserId": 0,
@@ -19,116 +58,59 @@
       {
         "transactions": [
           {
-            "TransactionId": 0,
-            "SenderAccount": null,
-            "ReceiverAccount": null,
-            "Type": "Deposit",
+            "TransactionId": 5,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
             "Amount": 500.0,
-            "Date": "2023-12-13"
-          },
-          {
-            "TransactionId": 1,
-            "SenderAccount": null,
-            "ReceiverAccount": null,
-            "Type": "Withdrawal",
-            "Amount": -200.0,
             "Date": "2023-12-13"
           }
         ],
-        "Balance": 300.0,
-        "AccountId": 4,
-        "AccountName": "Lars"
-      },
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 23,
-        "AccountName": "Savings"
+        "Balance": 500.0,
+        "AccountId": 1,
+        "AccountName": "Messi"
       }
     ],
-    "UserId": 2,
-    "Name": "Lars",
-    "Password": "lars123",
-    "Email": "lars@gmail.com",
-    "Address": "larsgatan 1"
-  },
-  {
-    "accounts": [
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 4,
-        "AccountName": "Lars"
-      }
-    ],
-    "UserId": 2,
-    "Name": "Lars",
-    "Password": "lars123",
-    "Email": "lars@gmail.com",
-    "Address": "larsgatan 1"
-  },
-  {
-    "accounts": [
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 7,
-        "AccountName": "Savings"
-      },
-      {
-        "transactions": [
-          {
-            "TransactionId": 8,
-            "SenderAccount": null,
-            "ReceiverAccount": null,
-            "Type": "Deposit",
-            "Amount": 500.0,
-            "Date": "2023-12-13"
-          },
-          {
-            "TransactionId": 11,
-            "SenderAccount": null,
-            "ReceiverAccount": null,
-            "Type": "Withdrawal",
-            "Amount": -200.0,
-            "Date": "2023-12-13"
-          }
-        ],
-        "Balance": 300.0,
-        "AccountId": 26,
-        "AccountName": "Money"
-      }
-    ],
-    "UserId": 3,
-    "Name": "Måns",
+    "UserId": 1,
+    "Name": "Messi",
     "Password": "lol123",
-    "Email": "måns@gmail.com",
-    "Address": "månsgatan 1"
+    "Email": "messi@gmail.com",
+    "Address": "messigatan 1"
   },
   {
     "accounts": [
       {
         "transactions": [],
         "Balance": 0.0,
-        "AccountId": 10,
-        "AccountName": "savings"
-      },
+        "AccountId": 2,
+        "AccountName": "Ronaldo"
+      }
+    ],
+    "UserId": 2,
+    "Name": "Ronaldo",
+    "Password": "lol123",
+    "Email": "ronaldo@gmail.com",
+    "Address": "ronaldogatan 1"
+  },
+  {
+    "accounts": [
       {
         "transactions": [
           {
-            "TransactionId": 12,
-            "SenderAccount": null,
-            "ReceiverAccount": null,
-            "Type": "Deposit",
+            "TransactionId": 3,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
             "Amount": 1000.0,
             "Date": "2023-12-13"
           }
         ],
         "Balance": 1000.0,
-        "AccountId": 23,
-        "AccountName": "checking"
+        "AccountId": 14,
+        "AccountName": "Kalle"
       }
     ],
+<<<<<<< Updated upstream
     "UserId": 4,
     "Name": "harry",
     "Password": "123",
@@ -242,5 +224,12 @@
     "Password": "branislav",
     "Email": "branislav@gmail.com",
     "Address": "branislavgatan"
+=======
+    "UserId": 6,
+    "Name": "Kalle",
+    "Password": "lol123",
+    "Email": "kalle@gmail.com",
+    "Address": "kallegatan 1"
+>>>>>>> Stashed changes
   }
 ]

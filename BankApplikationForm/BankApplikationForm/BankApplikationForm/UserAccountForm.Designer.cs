@@ -41,13 +41,13 @@
             accountsLabel = new Label();
             accountsListBox = new ListBox();
             transactionTab = new TabPage();
-            listBox2 = new ListBox();
-            listBox1 = new ListBox();
+            userAccountsListBox = new ListBox();
+            userListBox = new ListBox();
             balanceLabel = new Label();
             accountIdLabel = new Label();
             accountNameLabel = new Label();
-            button3 = new Button();
-            textBox3 = new TextBox();
+            transferButton = new Button();
+            transferTextBox = new TextBox();
             withdrawTextbox = new TextBox();
             depositTextBox = new TextBox();
             withdrawButton = new Button();
@@ -215,13 +215,13 @@
             // transactionTab
             // 
             transactionTab.BackColor = SystemColors.InactiveCaption;
-            transactionTab.Controls.Add(listBox2);
-            transactionTab.Controls.Add(listBox1);
+            transactionTab.Controls.Add(userAccountsListBox);
+            transactionTab.Controls.Add(userListBox);
             transactionTab.Controls.Add(balanceLabel);
             transactionTab.Controls.Add(accountIdLabel);
             transactionTab.Controls.Add(accountNameLabel);
-            transactionTab.Controls.Add(button3);
-            transactionTab.Controls.Add(textBox3);
+            transactionTab.Controls.Add(transferButton);
+            transactionTab.Controls.Add(transferTextBox);
             transactionTab.Controls.Add(withdrawTextbox);
             transactionTab.Controls.Add(depositTextBox);
             transactionTab.Controls.Add(withdrawButton);
@@ -237,23 +237,24 @@
             transactionTab.TabIndex = 1;
             transactionTab.Text = "Transactions";
             // 
-            // listBox2
+            // userAccountsListBox
             // 
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(442, 322);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(120, 49);
-            listBox2.TabIndex = 18;
+            userAccountsListBox.FormattingEnabled = true;
+            userAccountsListBox.ItemHeight = 15;
+            userAccountsListBox.Location = new Point(379, 307);
+            userAccountsListBox.Name = "userAccountsListBox";
+            userAccountsListBox.Size = new Size(249, 64);
+            userAccountsListBox.TabIndex = 18;
             // 
-            // listBox1
+            // userListBox
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(442, 222);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(120, 94);
-            listBox1.TabIndex = 17;
+            userListBox.FormattingEnabled = true;
+            userListBox.ItemHeight = 15;
+            userListBox.Location = new Point(442, 222);
+            userListBox.Name = "userListBox";
+            userListBox.Size = new Size(120, 79);
+            userListBox.TabIndex = 17;
+            userListBox.SelectedIndexChanged += userListBox_SelectedIndexChanged;
             // 
             // balanceLabel
             // 
@@ -285,24 +286,26 @@
             accountNameLabel.TabIndex = 14;
             accountNameLabel.Text = "AccountName";
             // 
-            // button3
+            // transferButton
             // 
-            button3.Location = new Point(442, 188);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(79, 20);
-            button3.TabIndex = 13;
-            button3.Text = "Transfer";
-            button3.UseVisualStyleBackColor = true;
+            transferButton.Location = new Point(442, 188);
+            transferButton.Margin = new Padding(2);
+            transferButton.Name = "transferButton";
+            transferButton.Size = new Size(79, 20);
+            transferButton.TabIndex = 13;
+            transferButton.Text = "Transfer";
+            transferButton.UseVisualStyleBackColor = true;
+            transferButton.Click += transferButton_Click;
             // 
-            // textBox3
+            // transferTextBox
             // 
-            textBox3.Location = new Point(442, 151);
-            textBox3.Margin = new Padding(2);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Amount";
-            textBox3.Size = new Size(106, 23);
-            textBox3.TabIndex = 11;
+            transferTextBox.Location = new Point(442, 151);
+            transferTextBox.Margin = new Padding(2);
+            transferTextBox.Name = "transferTextBox";
+            transferTextBox.PlaceholderText = "Amount";
+            transferTextBox.Size = new Size(106, 23);
+            transferTextBox.TabIndex = 11;
+            transferTextBox.KeyPress += transferTextBox_KeyPress;
             // 
             // withdrawTextbox
             // 
@@ -557,10 +560,10 @@
         private TabPage settingsTab;
         private Button withdrawButton;
         private Button depositButton;
-        private TextBox textBox3;
+        private TextBox transferTextBox;
         private TextBox withdrawTextbox;
         private TextBox depositTextBox;
-        private Button button3;
+        private Button transferButton;
         private Button button4;
         private TextBox textBox6;
         private TextBox textBox5;
@@ -572,8 +575,8 @@
         private Label accountNameLabel;
         private Button renameAccountButton;
         private Button deleteAccountButton;
-        private ListBox listBox1;
-        private ListBox listBox2;
+        private ListBox userListBox;
+        private ListBox userAccountsListBox;
         private Button button1;
         private TextBox textBox1;
         private TextBox textBox2;

@@ -40,14 +40,19 @@ namespace BankApplikationForm
             return false;
         }
 
-        public void TransferMoney(Account receiverAccount, double amount)
+        public void TransferMoney(int receiverAccountId, double amount)
         {
             if (amount < Balance)
             {
                 Balance -= amount;
-                receiverAccount.Balance += amount;
-                transactions.Add(new Transaction(this, receiverAccount, amount));
+                transactions.Add(new Transaction(AccountId, receiverAccountId, -amount));
             }
+        }
+
+        public void ReceiveMoney(int senderAccountId, double amount)
+        {
+            Balance += amount;
+            transactions.Add(new Transaction(senderAccountId, AccountId, amount));
         }
 
         public List<Transaction> GetTransactionHistory()

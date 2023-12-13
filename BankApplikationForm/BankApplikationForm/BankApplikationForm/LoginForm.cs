@@ -34,7 +34,7 @@ namespace BankApplikationForm
             }
             else if (bankManager.LoginAsUser(username, password, out loggedInUser) && loggedInUser != null)
             {
-                UserAccountForm userForm = new UserAccountForm(loggedInUser);
+                UserAccountForm userForm = new UserAccountForm(loggedInUser, bankManager);
                 MessageBox.Show("Welcome " + loggedInUser.Name + "!");
                 userForm.Show();
                 this.Hide();

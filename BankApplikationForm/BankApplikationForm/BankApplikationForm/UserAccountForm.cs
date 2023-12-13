@@ -15,14 +15,19 @@ namespace BankApplikationForm
     public partial class UserAccountForm : Form
     {
         private string selectedAccountInfo = null;
+        private User userToTransferTo;
         private User loggedInUser;
         private int loadedAccountId;
-        public UserAccountForm(User loggedInUser)
+        private BankManager bankManager;
+        private FileManager fileManager = new FileManager();
+        public UserAccountForm(User loggedInUser, BankManager bankManager)
         {
             InitializeComponent();
             this.loggedInUser = loggedInUser;
             loggedInAsLabel.Text = "You are logged in as:\n" + loggedInUser.Name;
             this.DisplayAccountInfo();
+            this.bankManager = bankManager;
+            ListUsers();
         }
 
         private void UserAccountForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -75,6 +80,63 @@ namespace BankApplikationForm
         private void accountsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedAccountInfo = accountsListBox.SelectedItem?.ToString();
+        }
+
+        private void userListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string? selectedUserInfo = userListBox.SelectedItem.ToString();
+            userAccountsListBox.Items.Clear();
+
+            if (selectedUserInfo != null)
+            {
+                string[] userDetails = selectedUserInfo.Split('|');
+
+                string userId = userDetails[0].Split(':')[1].Trim();
+
+                foreach (User user in bankManager.GetUsers())
+                {
+                    if (user.UserId == Convert.ToInt32(userId))
+                    {
+                        userToTransferTo = user;
+                        foreach (Account account in user.accounts)
+                        {
+                            userAccountsListBox.Items.Add($"Name: {account.AccountName} | Id: {account.AccountId}");
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void transferButton_Click(object sender, EventArgs e)
+        {
+            if (userAccountsListBox.SelectedItem != null && transferTextBox.Text != "")
+            {
+                string? selectedAccount = userAccountsListBox.SelectedItem.ToString();
+                string[] accountDetails = selectedAccount.Split('|');
+                string accountId = accountDetails[1].Split(':')[1].Trim();
+
+                foreach (Account account in userToTransferTo.accounts)
+                {
+                    if (account.AccountId == Convert.ToInt32(accountId))
+                    {
+                        foreach (Account loggedInUserAccount in loggedInUser.accounts)
+                        {
+                            if (loggedInUserAccount.AccountId == loadedAccountId)
+                            {
+                                loggedInUserAccount.TransferMoney(account.AccountId, Convert.ToInt32(transferTextBox.Text));
+                                account.ReceiveMoney(loggedInUserAccount.AccountId, Convert.ToInt32(transferTextBox.Text));
+                                transferTextBox.Text = "";
+                                fileManager.UpdateUserBalance(loggedInUser);
+                                fileManager.UpdateUserBalance(userToTransferTo);
+                                RefreshAccountListBox(loggedInUser);
+
+                                balanceLabel.Text = $"Balance:\n {loggedInUserAccount.Balance}";
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void loadAccountButton_Click(object sender, EventArgs e)
@@ -142,7 +204,6 @@ namespace BankApplikationForm
                     if (accountToRename != null)
                     {
                         accountToRename.RenameAccount(newAccountName);
-                        FileManager fileManager = new FileManager();
                         fileManager.UpdateUser(loggedInUser);
 
                         RefreshAccountListBox(loggedInUser);
@@ -171,12 +232,11 @@ namespace BankApplikationForm
         {
             foreach (Account account in loggedInUser.accounts)
             {
-                if (account.AccountId == loadedAccountId)
+                if (account.AccountId == loadedAccountId && depositTextBox.Text != "")
                 {
                     account.Deposit(Convert.ToInt32(depositTextBox.Text));
                     depositTextBox.Text = "";
-                    FileManager fm = new FileManager();
-                    fm.UpdateUserBalance(loggedInUser);
+                    fileManager.UpdateUserBalance(loggedInUser);
                     RefreshAccountListBox(loggedInUser);
 
                     balanceLabel.Text = $"Balance:\n {account.Balance}";
@@ -200,17 +260,24 @@ namespace BankApplikationForm
             }
         }
 
+        private void transferTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void withdrawButton_Click(object sender, EventArgs e)
         {
             foreach (Account account in loggedInUser.accounts)
             {
-                if (account.AccountId == loadedAccountId)
+                if (account.AccountId == loadedAccountId && withdrawTextbox.Text != "")
                 {
                     if (account.Withdrawal(Convert.ToInt32(withdrawTextbox.Text)))
                     {
                         withdrawTextbox.Text = "";
-                        FileManager fm = new FileManager();
-                        fm.UpdateUserBalance(loggedInUser);
+                        fileManager.UpdateUserBalance(loggedInUser);
                         RefreshAccountListBox(loggedInUser);
 
                         balanceLabel.Text = $"Balance:\n {account.Balance}";
@@ -222,5 +289,15 @@ namespace BankApplikationForm
                 }
             }
         }
+
+        private void ListUsers()
+        {
+            foreach (User user in bankManager.GetUsers())
+            {
+                userListBox.Items.Add($"Id: {user.UserId} | {user.Name}");
+            }
+        }
+
+
     }
 }
