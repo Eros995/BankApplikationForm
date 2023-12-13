@@ -8,228 +8,121 @@
             "SenderAccountId": null,
             "ReceiverAccountId": null,
             "Type": "Deposit",
-            "Amount": 10000.0,
+            "Amount": 100.0,
             "Date": "2023-12-13"
           },
           {
             "TransactionId": 1,
-            "SenderAccountId": 0,
-            "ReceiverAccountId": 2,
-            "Type": "Transfer",
-            "Amount": 500.0,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 20000.0,
             "Date": "2023-12-13"
           },
           {
-            "TransactionId": 2,
+            "TransactionId": 5,
             "SenderAccountId": 0,
-            "ReceiverAccountId": 14,
+            "ReceiverAccountId": 0,
+            "Type": "Transfer",
+            "Amount": -10000.0,
+            "Date": "2023-12-13"
+          },
+          {
+            "TransactionId": 6,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 0,
+            "Type": "Transfer",
+            "Amount": 10000.0,
+            "Date": "2023-12-13"
+          },
+          {
+            "TransactionId": 13,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 0,
+            "Type": "Transfer",
+            "Amount": -1000.0,
+            "Date": "2023-12-13"
+          },
+          {
+            "TransactionId": 14,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 0,
             "Type": "Transfer",
             "Amount": 1000.0,
             "Date": "2023-12-13"
           },
           {
-            "TransactionId": 4,
+            "TransactionId": 25,
             "SenderAccountId": 0,
-            "ReceiverAccountId": 1,
+            "ReceiverAccountId": 5,
             "Type": "Transfer",
-            "Amount": -500.0,
+            "Amount": -10000.0,
             "Date": "2023-12-13"
           }
         ],
-        "Balance": 8000.0,
+        "Balance": 10100.0,
         "AccountId": 0,
-        "AccountName": "Emil"
+        "AccountName": "tom"
       },
       {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 6,
+        "transactions": [
+          {
+            "TransactionId": 26,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 5,
+            "Type": "Transfer",
+            "Amount": 10000.0,
+            "Date": "2023-12-13"
+          }
+        ],
+        "Balance": 10000.0,
+        "AccountId": 5,
         "AccountName": "savings"
       }
     ],
     "UserId": 0,
-    "Name": "Emil",
-    "Password": "lol123",
-    "Email": "emil@gmail.com",
-    "Address": "emilgatan 1"
+    "Name": "tom",
+    "Password": "123",
+    "Email": "tom@mail.com",
+    "Address": "tomgatan"
   },
   {
     "accounts": [
       {
         "transactions": [
           {
-            "TransactionId": 5,
-            "SenderAccountId": 0,
-            "ReceiverAccountId": 1,
-            "Type": "Transfer",
-            "Amount": 500.0,
+            "TransactionId": 25,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 444.0,
             "Date": "2023-12-13"
           }
         ],
-        "Balance": 500.0,
-        "AccountId": 1,
-        "AccountName": "Messi"
+        "Balance": 444.0,
+        "AccountId": 3,
+        "AccountName": "magnus"
+      },
+      {
+        "transactions": [
+          {
+            "TransactionId": 16,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 2222.0,
+            "Date": "2023-12-13"
+          }
+        ],
+        "Balance": 2222.0,
+        "AccountId": 4,
+        "AccountName": "Magnussavingtest"
       }
     ],
     "UserId": 1,
-    "Name": "Messi",
-    "Password": "lol123",
-    "Email": "messi@gmail.com",
-    "Address": "messigatan 1"
-  },
-  {
-    "accounts": [
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 2,
-        "AccountName": "Ronaldo"
-      }
-    ],
-    "UserId": 2,
-    "Name": "Ronaldo",
-    "Password": "lol123",
-    "Email": "ronaldo@gmail.com",
-    "Address": "ronaldogatan 1"
-  },
-  {
-    "accounts": [
-      {
-        "transactions": [
-          {
-            "TransactionId": 3,
-            "SenderAccountId": 0,
-            "ReceiverAccountId": 14,
-            "Type": "Transfer",
-            "Amount": 1000.0,
-            "Date": "2023-12-13"
-          }
-        ],
-        "Balance": 1000.0,
-        "AccountId": 14,
-        "AccountName": "Kalle"
-      }
-    ],
-<<<<<<< Updated upstream
-    "UserId": 4,
-    "Name": "harry",
-    "Password": "123",
-    "Email": "harry@mail.com",
-    "Address": "harrygatan"
-  },
-  {
-    "accounts": [
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 13,
-        "AccountName": "messi"
-      }
-    ],
-    "UserId": 5,
-    "Name": "messi",
-    "Password": "123",
-    "Email": "messi@mail.com",
-    "Address": "messigatan"
-  },
-  {
-    "accounts": [
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 30,
-        "AccountName": "ronaldo"
-      }
-    ],
-    "UserId": 12,
-    "Name": "ronaldo",
-    "Password": "123",
-    "Email": "ronaldo@mail.com",
-    "Address": "ronaldogatan"
-  },
-  {
-    "accounts": [
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 18,
-        "AccountName": "test"
-      },
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 37,
-        "AccountName": "testing"
-      },
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 57,
-        "AccountName": "tes"
-      },
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 78,
-        "AccountName": "tesing1"
-      },
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 100,
-        "AccountName": "tesing13"
-      },
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 123,
-        "AccountName": "tesing135"
-      },
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 147,
-        "AccountName": "tesing1356"
-      },
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 172,
-        "AccountName": "tesing13567"
-      },
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 26,
-        "AccountName": "test1111"
-      }
-    ],
-    "UserId": 20,
-    "Name": "neymar",
-    "Password": "123",
-    "Email": "neymar@mail.com",
-    "Address": "123"
-  },
-  {
-    "accounts": [
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 27,
-        "AccountName": "Branislav"
-      }
-    ],
-    "UserId": 8,
-    "Name": "Branislav",
-    "Password": "branislav",
-    "Email": "branislav@gmail.com",
-    "Address": "branislavgatan"
-=======
-    "UserId": 6,
-    "Name": "Kalle",
-    "Password": "lol123",
-    "Email": "kalle@gmail.com",
-    "Address": "kallegatan 1"
->>>>>>> Stashed changes
+    "Name": "Magnus",
+    "Password": "1234",
+    "Email": "magnus@mail.com",
+    "Address": "magnusgatan"
   }
 ]
