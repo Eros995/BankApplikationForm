@@ -29,7 +29,7 @@ namespace BankApplikationForm
 
         private void createUserButton_Click(object sender, EventArgs e)
         {
-            if (bankManager.CreateNewUser(nameTextbox.Text, passwordTexbox.Text, addressTextbox.Text, emailTextbox.Text))
+            if (bankManager.CreateNewUser(nameTextbox.Text, passwordTexbox.Text, emailTextbox.Text, addressTextbox.Text))
             {
                 MessageBox.Show("New user created!");
                 this.Close();

@@ -2,6 +2,21 @@
   {
     "accounts": [
       {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 0,
+        "AccountName": "Emil"
+      }
+    ],
+    "UserId": 0,
+    "Name": "Emil",
+    "Password": "lol123",
+    "Email": "emil@gmail.com",
+    "Address": "emilgatan 1"
+  },
+  {
+    "accounts": [
+      {
         "transactions": [
           {
             "TransactionId": 0,
@@ -9,103 +24,85 @@
             "ReceiverAccount": null,
             "Type": "Deposit",
             "Amount": 500.0,
-            "Date": "2023-12-12"
+            "Date": "2023-12-13"
           },
           {
             "TransactionId": 1,
             "SenderAccount": null,
             "ReceiverAccount": null,
-            "Type": "Deposit",
-            "Amount": 200.0,
-            "Date": "2023-12-12"
-          },
-          {
-            "TransactionId": 3,
-            "SenderAccount": null,
-            "ReceiverAccount": null,
             "Type": "Withdrawal",
-            "Amount": -300.0,
-            "Date": "2023-12-12"
-          },
-          {
-            "TransactionId": 3,
-            "SenderAccount": null,
-            "ReceiverAccount": null,
-            "Type": "Deposit",
-            "Amount": 500.0,
-            "Date": "2023-12-12"
-          },
-          {
-            "TransactionId": 7,
-            "SenderAccount": null,
-            "ReceiverAccount": null,
-            "Type": "Withdrawal",
-            "Amount": -500.0,
-            "Date": "2023-12-12"
-          },
-          {
-            "TransactionId": 10,
-            "SenderAccount": null,
-            "ReceiverAccount": null,
-            "Type": "Deposit",
-            "Amount": 200.0,
-            "Date": "2023-12-12"
-          },
-          {
-            "TransactionId": 16,
-            "SenderAccount": null,
-            "ReceiverAccount": null,
-            "Type": "Deposit",
-            "Amount": 200.0,
-            "Date": "2023-12-12"
-          },
-          {
-            "TransactionId": 23,
-            "SenderAccount": null,
-            "ReceiverAccount": null,
-            "Type": "Deposit",
-            "Amount": 1000.0,
-            "Date": "2023-12-12"
-          },
-          {
-            "TransactionId": 31,
-            "SenderAccount": null,
-            "ReceiverAccount": null,
-            "Type": "Withdrawal",
-            "Amount": -500.0,
-            "Date": "2023-12-12"
+            "Amount": -200.0,
+            "Date": "2023-12-13"
           }
         ],
-        "Balance": 1300.0,
-        "AccountId": 0,
-        "AccountName": "emil"
+        "Balance": 300.0,
+        "AccountId": 4,
+        "AccountName": "Lars"
       },
       {
         "transactions": [],
         "Balance": 0.0,
-        "AccountId": 2,
+        "AccountId": 23,
         "AccountName": "Savings"
       }
     ],
-    "UserId": 0,
-    "Name": "emil",
-    "Password": "lol123",
-    "Email": "emil@gmail.com",
-    "Address": "emilgatan"
+    "UserId": 2,
+    "Name": "Lars",
+    "Password": "lars123",
+    "Email": "lars@gmail.com",
+    "Address": "larsgatan 1"
   },
   {
     "accounts": [
       {
         "transactions": [],
         "Balance": 0.0,
-        "AccountId": 3,
-        "AccountName": "neymar"
+        "AccountId": 4,
+        "AccountName": "Lars"
       }
     ],
-    "UserId": 1,
-    "Name": "neymar",
+    "UserId": 2,
+    "Name": "Lars",
+    "Password": "lars123",
+    "Email": "lars@gmail.com",
+    "Address": "larsgatan 1"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 7,
+        "AccountName": "Savings"
+      },
+      {
+        "transactions": [
+          {
+            "TransactionId": 8,
+            "SenderAccount": null,
+            "ReceiverAccount": null,
+            "Type": "Deposit",
+            "Amount": 500.0,
+            "Date": "2023-12-13"
+          },
+          {
+            "TransactionId": 11,
+            "SenderAccount": null,
+            "ReceiverAccount": null,
+            "Type": "Withdrawal",
+            "Amount": -200.0,
+            "Date": "2023-12-13"
+          }
+        ],
+        "Balance": 300.0,
+        "AccountId": 26,
+        "AccountName": "Money"
+      }
+    ],
+    "UserId": 3,
+    "Name": "Måns",
     "Password": "lol123",
-    "Email": "neymar@gmail.com",
-    "Address": "neymargatan"
+    "Email": "måns@gmail.com",
+    "Address": "månsgatan 1"
   }
 ]
