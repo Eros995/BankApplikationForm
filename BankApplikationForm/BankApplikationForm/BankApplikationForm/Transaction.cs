@@ -36,11 +36,17 @@ namespace BankApplikationForm
             Amount = amount;
             Date = DateTime.Today.ToShortDateString();
         }
-
         public Transaction()
         {
             TransactionId = nextId++;
+            SenderAccountId = null;
+            ReceiverAccountId = null;
+            Type = "Transfer";
+            Amount = Amount;
+            Date = DateTime.Today.ToShortDateString();
         }
+
+
 
         public void GetTransactionInformation()
         {

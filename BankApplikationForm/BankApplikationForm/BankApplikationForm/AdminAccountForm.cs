@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace BankApplikationForm
 {
-
     public partial class AdminAccountForm : Form
     {
         LoginForm loginForm;
@@ -19,31 +18,21 @@ namespace BankApplikationForm
         User user;
         List<Account> accounts = new List<Account>();
         List<User> users = new List<User>();
-        FileManager fileManager;
         public AdminAccountForm(LoginForm loginForm)
         {
             InitializeComponent();
             this.loginForm = loginForm;
             this.GetUserList();
-            fileManager = new FileManager();
+
         }
         public void GetUserList()
         {
             users = bankManager.GetUsers();
             foreach (User user in users)
             {
-                adminFormListBoxUsers.Items.Add($"User: " + user.Name + " | " + "User Id: " + user.UserId);
+                listBox1.Items.Add($"User: " + user.Name + " | " + "User Id: " + user.UserId);
 
             }
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void AdminAccountForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -55,10 +44,10 @@ namespace BankApplikationForm
         {
             listBox2.Items.Clear();
 
-            if (adminFormListBoxUsers.SelectedIndex != -1)
+            if (listBox1.SelectedIndex != -1)
             {
 
-                User selectedUser = users[adminFormListBoxUsers.SelectedIndex];
+                User selectedUser = users[listBox1.SelectedIndex];
 
 
                 selectedUser.GetUserAccounts();
@@ -73,40 +62,113 @@ namespace BankApplikationForm
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void loadUserButton_Click(object sender, EventArgs e)
         {
-            if (adminFormListBoxUsers.SelectedIndex != -1)
+            if (listBox1.SelectedIndex != -1)
             {
-                string selectedUserName = adminFormListBoxUsers.SelectedItem.ToString().Split('|')[0].Trim().Substring(6); // Extracting the selected user's name from the list box
+                User selectedUser = users[listBox1.SelectedIndex];
 
-                // Find the user by name
+                tabControl1.SelectedIndex = 1; // Navigate to userInfoTab
+
+                usersNameLabel.Text = $"Name:\n{selectedUser.Name}";
+                usersAdressLabel.Text = $"Address:\n{selectedUser.Address}";
+                usersIdLabel.Text = $"ID:\n{selectedUser.UserId}";
+                usersEmailLabel.Text = $"Email:\n{selectedUser.Email}";
+                usersPasswordLabel.Text = $"Password:\n{selectedUser.Password}";
+
+            }
+        }
+
+        private void changeUserPasswordButton_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex != -1)
+            {
+                User selectedUser = users[listBox1.SelectedIndex];
+                string currentPassword = currentPasswordTextBox.Text;
+                string newPassword = newPasswordTextBox.Text;
+                string confirmPassword = confirmPasswordTextBox.Text;
+
+                if (currentPassword == selectedUser.Password)
+                {
+                    if (newPassword == confirmPassword)
+                    {
+                        selectedUser.Password = newPassword;
+                        FileManager fileManager = new FileManager();
+                        fileManager.UpdateUser(selectedUser); 
+                        MessageBox.Show("Password updated successfully!");
+                        usersPasswordLabel.Text = $"Password:\n{selectedUser.Password}";
+                    }
+                    else
+                    {
+                        MessageBox.Show("New password and confirm password don't match!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Current password is incorrect!");
+                }
+            }
+        }
+
+        private void updateUsersInfoButton_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex != -1)
+            {
+                string selectedUserName = listBox1.SelectedItem.ToString().Split('|')[0].Trim().Substring(6);
                 User selectedUser = users.FirstOrDefault(user => user.Name == selectedUserName);
 
                 if (selectedUser != null)
                 {
-                    DialogResult result = MessageBox.Show($"Are you sure you want to delete user '{selectedUserName}'?", "Confirmation", MessageBoxButtons.YesNo);
+                    string newName = usersNameTextBox.Text;
+                    string newAddress = usersAddressTextBox.Text;
+                    string newEmail = usersEmailTextBox.Text;
 
-                    if (result == DialogResult.Yes)
+                    if (!string.IsNullOrEmpty(newEmail) && // kollar att emailen inte används av någonannan user.
+                users.Any(u => u.Email == newEmail && u.UserId != selectedUser.UserId))
                     {
-                        users.Remove(selectedUser);
-                        adminFormListBoxUsers.Items.RemoveAt(adminFormListBoxUsers.SelectedIndex);
-
-                        FileManager fileManager = new FileManager();
-                        fileManager.CreateNewUser(users); // Save the updated user list to the JSON file
-
-   
-
-                        MessageBox.Show("User deleted successfully.");
+                        MessageBox.Show("This email is already in use by another user. Please choose a different email.");
+                        return;
                     }
+
+                    int originalId = selectedUser.UserId; //ser till att userId inte blandas ihop.
+                    if (!string.IsNullOrEmpty(newName))
+                    {
+                        selectedUser.Name = newName;
+                        usersNameLabel.Text = $"Name:\n{selectedUser.Name}";
+                        usersNameTextBox.Text = "";
+                        listBox1.Items[listBox1.SelectedIndex] = $"User: {selectedUser.Name} | User Id: {selectedUser.UserId}";
+                    }
+
+                    if (!string.IsNullOrEmpty(newAddress))
+                    {
+                        selectedUser.Address = newAddress;
+                        usersAdressLabel.Text = $"Address:\n{selectedUser.Address}";
+                        usersAddressTextBox.Text = "";
+                        listBox1.Items[listBox1.SelectedIndex] = $"User: {selectedUser.Name} | User Id: {selectedUser.UserId}";
+                    }
+
+                    if (!string.IsNullOrEmpty(newEmail))
+                    {
+                        selectedUser.Email = newEmail;
+                        usersEmailLabel.Text = $"Email:\n{selectedUser.Email}";
+                        usersEmailTextBox.Text = "";
+                        listBox1.Items[listBox1.SelectedIndex] = $"User: {selectedUser.Name} | User Id: {selectedUser.UserId}";
+                    }
+                    selectedUser.UserId = originalId;
+
+                    FileManager fileManager = new FileManager();
+                    fileManager.CreateNewUser(users);
+
+                    MessageBox.Show("User information updated!");
                 }
             }
             else
             {
-                MessageBox.Show("Please select a user to delete.");
+                MessageBox.Show("Please select a user to update.");
             }
         }
-        
 
 
     }
+
 }
