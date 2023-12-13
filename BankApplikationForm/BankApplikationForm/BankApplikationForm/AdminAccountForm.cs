@@ -92,10 +92,9 @@ namespace BankApplikationForm
                 {
                     if (newPassword == confirmPassword)
                     {
-                        // Update the user's password
                         selectedUser.Password = newPassword;
                         FileManager fileManager = new FileManager();
-                        fileManager.UpdateUser(selectedUser); // Save changes after updating the password
+                        fileManager.UpdateUser(selectedUser); 
                         MessageBox.Show("Password updated successfully!");
                         usersPasswordLabel.Text = $"Password:\n{selectedUser.Password}";
                     }
@@ -113,45 +112,63 @@ namespace BankApplikationForm
 
         private void updateUsersInfoButton_Click(object sender, EventArgs e)
         {
-            string newName = usersNameTextBox.Text;
-            string newAddress = usersAddressTextBox.Text;
-            string newEmail = usersEmailTextBox.Text;
-
-            // Get the selected user from the list box
             if (listBox1.SelectedIndex != -1)
             {
-                User selectedUser = users[listBox1.SelectedIndex];
+                string selectedUserName = listBox1.SelectedItem.ToString().Split('|')[0].Trim().Substring(6);
+                User selectedUser = users.FirstOrDefault(user => user.Name == selectedUserName);
 
-                if (!string.IsNullOrEmpty(newName))
+                if (selectedUser != null)
                 {
-                    selectedUser.Name = newName;
-                }
-                else if (!string.IsNullOrEmpty(newAddress))
-                {
-                    selectedUser.Address = newAddress;
-                }
-                else if (!string.IsNullOrEmpty(newEmail))
-                {
-                    selectedUser.Email = newEmail;
-                }
-                else
-                {
-                    MessageBox.Show("Please provide at least one field to update!");
-                    return;
-                }
+                    string newName = usersNameTextBox.Text;
+                    string newAddress = usersAddressTextBox.Text;
+                    string newEmail = usersEmailTextBox.Text;
 
-                
-                usersNameLabel.Text = $"Name:\n{selectedUser.Name}";
-                usersAdressLabel.Text = $"Address:\n{selectedUser.Address}";
-                usersEmailLabel.Text = $"Email:\n{selectedUser.Email}";
+                    if (!string.IsNullOrEmpty(newEmail) && // kollar att emailen inte används av någonannan user.
+                users.Any(u => u.Email == newEmail && u.UserId != selectedUser.UserId))
+                    {
+                        MessageBox.Show("This email is already in use by another user. Please choose a different email.");
+                        return;
+                    }
 
-                listBox1.Items[listBox1.SelectedIndex] = $"User: {selectedUser.Name} | User Id: {selectedUser.UserId}";
+                    int originalId = selectedUser.UserId; //ser till att userId inte blandas ihop.
+                    if (!string.IsNullOrEmpty(newName))
+                    {
+                        selectedUser.Name = newName;
+                        usersNameLabel.Text = $"Name:\n{selectedUser.Name}";
+                        usersNameTextBox.Text = "";
+                        listBox1.Items[listBox1.SelectedIndex] = $"User: {selectedUser.Name} | User Id: {selectedUser.UserId}";
+                    }
 
-                FileManager fileManager = new FileManager();
-                fileManager.UpdateUser(selectedUser);
-                MessageBox.Show("User information updated!");
+                    if (!string.IsNullOrEmpty(newAddress))
+                    {
+                        selectedUser.Address = newAddress;
+                        usersAdressLabel.Text = $"Address:\n{selectedUser.Address}";
+                        usersAddressTextBox.Text = "";
+                        listBox1.Items[listBox1.SelectedIndex] = $"User: {selectedUser.Name} | User Id: {selectedUser.UserId}";
+                    }
+
+                    if (!string.IsNullOrEmpty(newEmail))
+                    {
+                        selectedUser.Email = newEmail;
+                        usersEmailLabel.Text = $"Email:\n{selectedUser.Email}";
+                        usersEmailTextBox.Text = "";
+                        listBox1.Items[listBox1.SelectedIndex] = $"User: {selectedUser.Name} | User Id: {selectedUser.UserId}";
+                    }
+                    selectedUser.UserId = originalId;
+
+                    FileManager fileManager = new FileManager();
+                    fileManager.CreateNewUser(users);
+
+                    MessageBox.Show("User information updated!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a user to update.");
             }
         }
+
+
     }
-    
+
 }

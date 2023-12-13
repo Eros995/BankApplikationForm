@@ -108,7 +108,7 @@
             // 
             usersAdressLabel.AutoSize = true;
             usersAdressLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            usersAdressLabel.Location = new Point(8, 194);
+            usersAdressLabel.Location = new Point(8, 264);
             usersAdressLabel.Name = "usersAdressLabel";
             usersAdressLabel.Size = new Size(86, 20);
             usersAdressLabel.TabIndex = 14;
@@ -186,7 +186,7 @@
             // 
             usersEmailLabel.AutoSize = true;
             usersEmailLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            usersEmailLabel.Location = new Point(8, 249);
+            usersEmailLabel.Location = new Point(8, 206);
             usersEmailLabel.Name = "usersEmailLabel";
             usersEmailLabel.Size = new Size(79, 20);
             usersEmailLabel.TabIndex = 5;

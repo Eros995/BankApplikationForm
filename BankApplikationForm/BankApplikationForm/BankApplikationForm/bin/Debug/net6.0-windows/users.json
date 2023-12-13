@@ -2,127 +2,61 @@
   {
     "accounts": [
       {
-        "transactions": [
-          {
-            "TransactionId": 0,
-            "SenderAccountId": null,
-            "ReceiverAccountId": null,
-            "Type": "Deposit",
-            "Amount": 100.0,
-            "Date": "2023-12-13"
-          },
-          {
-            "TransactionId": 1,
-            "SenderAccountId": null,
-            "ReceiverAccountId": null,
-            "Type": "Deposit",
-            "Amount": 20000.0,
-            "Date": "2023-12-13"
-          },
-          {
-            "TransactionId": 5,
-            "SenderAccountId": 0,
-            "ReceiverAccountId": 0,
-            "Type": "Transfer",
-            "Amount": -10000.0,
-            "Date": "2023-12-13"
-          },
-          {
-            "TransactionId": 6,
-            "SenderAccountId": 0,
-            "ReceiverAccountId": 0,
-            "Type": "Transfer",
-            "Amount": 10000.0,
-            "Date": "2023-12-13"
-          },
-          {
-            "TransactionId": 13,
-            "SenderAccountId": 0,
-            "ReceiverAccountId": 0,
-            "Type": "Transfer",
-            "Amount": -1000.0,
-            "Date": "2023-12-13"
-          },
-          {
-            "TransactionId": 14,
-            "SenderAccountId": 0,
-            "ReceiverAccountId": 0,
-            "Type": "Transfer",
-            "Amount": 1000.0,
-            "Date": "2023-12-13"
-          },
-          {
-            "TransactionId": 25,
-            "SenderAccountId": 0,
-            "ReceiverAccountId": 5,
-            "Type": "Transfer",
-            "Amount": -10000.0,
-            "Date": "2023-12-13"
-          }
-        ],
-        "Balance": 10100.0,
+        "transactions": [],
+        "Balance": 0.0,
         "AccountId": 0,
-        "AccountName": "tom"
-      },
-      {
-        "transactions": [
-          {
-            "TransactionId": 26,
-            "SenderAccountId": 0,
-            "ReceiverAccountId": 5,
-            "Type": "Transfer",
-            "Amount": 10000.0,
-            "Date": "2023-12-13"
-          }
-        ],
-        "Balance": 10000.0,
-        "AccountId": 5,
-        "AccountName": "savings"
+        "AccountName": "test"
       }
     ],
     "UserId": 0,
-    "Name": "tom",
+    "Name": "testing",
     "Password": "123",
-    "Email": "tom@mail.com",
-    "Address": "tomgatan"
+    "Email": "testar@mail.com",
+    "Address": "testgatan"
   },
   {
     "accounts": [
       {
-        "transactions": [
-          {
-            "TransactionId": 25,
-            "SenderAccountId": null,
-            "ReceiverAccountId": null,
-            "Type": "Deposit",
-            "Amount": 444.0,
-            "Date": "2023-12-13"
-          }
-        ],
-        "Balance": 444.0,
-        "AccountId": 3,
-        "AccountName": "magnus"
-      },
-      {
-        "transactions": [
-          {
-            "TransactionId": 16,
-            "SenderAccountId": null,
-            "ReceiverAccountId": null,
-            "Type": "Deposit",
-            "Amount": 2222.0,
-            "Date": "2023-12-13"
-          }
-        ],
-        "Balance": 2222.0,
-        "AccountId": 4,
-        "AccountName": "Magnussavingtest"
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 1,
+        "AccountName": "testing"
       }
     ],
     "UserId": 1,
-    "Name": "Magnus",
-    "Password": "1234",
-    "Email": "magnus@mail.com",
-    "Address": "magnusgatan"
+    "Name": "testing",
+    "Password": "123",
+    "Email": "testing@mail.com",
+    "Address": "123"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 2,
+        "AccountName": "bob"
+      }
+    ],
+    "UserId": 2,
+    "Name": "bobby",
+    "Password": "123",
+    "Email": "booby@mail.com",
+    "Address": "bobgatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 3,
+        "AccountName": "bobby"
+      }
+    ],
+    "UserId": 3,
+    "Name": "bobby",
+    "Password": "123",
+    "Email": "bobby@mail.com",
+    "Address": "bobgatan"
   }
 ]
