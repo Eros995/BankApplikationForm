@@ -26,7 +26,8 @@ namespace BankApplikationForm
             users = bankManager.GetUsers();
             foreach (User user in users)
             {
-                listBox1.Items.Add(user.Name);
+                listBox1.Items.Add($"User: " + user.Name + " | " + "User Id: " + user.UserId);
+                
             }
         }
         private void button1_Click(object sender, EventArgs e)

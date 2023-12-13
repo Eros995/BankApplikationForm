@@ -104,5 +104,128 @@
     "Password": "lol123",
     "Email": "måns@gmail.com",
     "Address": "månsgatan 1"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 10,
+        "AccountName": "savings"
+      },
+      {
+        "transactions": [
+          {
+            "TransactionId": 12,
+            "SenderAccount": null,
+            "ReceiverAccount": null,
+            "Type": "Deposit",
+            "Amount": 1000.0,
+            "Date": "2023-12-13"
+          }
+        ],
+        "Balance": 1000.0,
+        "AccountId": 23,
+        "AccountName": "checking"
+      }
+    ],
+    "UserId": 4,
+    "Name": "harry",
+    "Password": "123",
+    "Email": "harry@mail.com",
+    "Address": "harrygatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 13,
+        "AccountName": "messi"
+      }
+    ],
+    "UserId": 5,
+    "Name": "messi",
+    "Password": "123",
+    "Email": "messi@mail.com",
+    "Address": "messigatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 30,
+        "AccountName": "ronaldo"
+      }
+    ],
+    "UserId": 12,
+    "Name": "ronaldo",
+    "Password": "123",
+    "Email": "ronaldo@mail.com",
+    "Address": "ronaldogatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 18,
+        "AccountName": "test"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 37,
+        "AccountName": "testing"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 57,
+        "AccountName": "tes"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 78,
+        "AccountName": "tesing1"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 100,
+        "AccountName": "tesing13"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 123,
+        "AccountName": "tesing135"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 147,
+        "AccountName": "tesing1356"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 172,
+        "AccountName": "tesing13567"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 26,
+        "AccountName": "test1111"
+      }
+    ],
+    "UserId": 20,
+    "Name": "neymar",
+    "Password": "123",
+    "Email": "neymar@mail.com",
+    "Address": "123"
   }
 ]
