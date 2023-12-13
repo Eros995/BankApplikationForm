@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\erosa\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\erosa\\.nuget\\packages"
+      "C:\\Users\\Branislav\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Branislav\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

@@ -30,11 +30,9 @@
         {
             tabPage4 = new TabPage();
             tabPage1 = new TabPage();
-            listBox1 = new ListBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
             listBox2 = new ListBox();
+            button1 = new Button();
+            listBox1 = new ListBox();
             tabControl1 = new TabControl();
             tabPage1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -55,8 +53,6 @@
             // 
             tabPage1.BackColor = SystemColors.InactiveCaption;
             tabPage1.Controls.Add(listBox2);
-            tabPage1.Controls.Add(button3);
-            tabPage1.Controls.Add(button2);
             tabPage1.Controls.Add(button1);
             tabPage1.Controls.Add(listBox1);
             tabPage1.Location = new Point(4, 24);
@@ -67,6 +63,27 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "List Users";
             // 
+            // listBox2
+            // 
+            listBox2.FormattingEnabled = true;
+            listBox2.ItemHeight = 15;
+            listBox2.Location = new Point(424, 11);
+            listBox2.Margin = new Padding(2);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(163, 154);
+            listBox2.TabIndex = 4;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(38, 79);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(92, 26);
+            button1.TabIndex = 1;
+            button1.Text = "Load";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
@@ -76,47 +93,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(164, 154);
             listBox1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(29, 11);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 26);
-            button1.TabIndex = 1;
-            button1.Text = "Load";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(36, 105);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(92, 26);
-            button2.TabIndex = 2;
-            button2.Text = "Change";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(36, 67);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(92, 25);
-            button3.TabIndex = 3;
-            button3.Text = "Create";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // listBox2
-            // 
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(377, 11);
-            listBox2.Margin = new Padding(2);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(163, 154);
-            listBox2.TabIndex = 4;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // tabControl1
             // 
@@ -151,8 +128,6 @@
         private TabPage tabPage4;
         private TabPage tabPage1;
         private ListBox listBox2;
-        private Button button3;
-        private Button button2;
         private Button button1;
         private ListBox listBox1;
         private TabControl tabControl1;

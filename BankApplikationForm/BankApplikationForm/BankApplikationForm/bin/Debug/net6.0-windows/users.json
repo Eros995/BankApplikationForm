@@ -227,5 +227,20 @@
     "Password": "123",
     "Email": "neymar@mail.com",
     "Address": "123"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 27,
+        "AccountName": "Branislav"
+      }
+    ],
+    "UserId": 8,
+    "Name": "Branislav",
+    "Password": "branislav",
+    "Email": "branislav@gmail.com",
+    "Address": "branislavgatan"
   }
 ]

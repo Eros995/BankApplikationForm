@@ -14,12 +14,15 @@ namespace BankApplikationForm
     {
         LoginForm loginForm;
         BankManager bankManager = new BankManager();
+        User user;
+        List<Account> accounts = new List<Account>();
         List<User> users = new List<User>();
         public AdminAccountForm(LoginForm loginForm)
         {
             InitializeComponent();
             this.loginForm = loginForm;
-           this.GetUserList();
+            this.GetUserList();
+          
         }
         public void GetUserList()
         {
@@ -27,7 +30,7 @@ namespace BankApplikationForm
             foreach (User user in users)
             {
                 listBox1.Items.Add($"User: " + user.Name + " | " + "User Id: " + user.UserId);
-                
+
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -43,6 +46,28 @@ namespace BankApplikationForm
         private void AdminAccountForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             loginForm.Show();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+
+            if (listBox1.SelectedIndex != -1)
+            {
+                
+                User selectedUser = users[listBox1.SelectedIndex];
+
+                
+                selectedUser.GetUserAccounts();
+                selectedUser.GetAccountInfo();
+
+                
+                foreach (Account account in selectedUser.accounts)
+                {
+                    listBox2.Items.Add($"Account ID: {account.AccountId} | Balance: {account.Balance}");
+                   
+                }
+            }
         }
     }
 }
