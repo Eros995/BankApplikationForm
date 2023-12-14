@@ -14,10 +14,10 @@ namespace BankApplikationForm
 {
     public partial class UserAccountForm : Form
     {
-        private string selectedAccountInfo = null;
-        private User userToTransferTo;
+        private string? selectedAccountInfo = null;
+        private User? userToTransferTo;
         private User loggedInUser;
-        private int loadedAccountId;
+        private int? loadedAccountId = null;
         private BankManager bankManager;
         private FileManager fileManager = new FileManager();
         public UserAccountForm(User loggedInUser, BankManager bankManager)
@@ -28,6 +28,8 @@ namespace BankApplikationForm
             this.DisplayAccountInfo();
             this.bankManager = bankManager;
             ListUsers();
+            LoadAccount();
+            ListTransactionsAtStart();
         }
 
         private void UserAccountForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -60,6 +62,7 @@ namespace BankApplikationForm
                 accountsListBox.Items.Add(accountInfo);
             }
         }
+
         private void accountNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -130,13 +133,33 @@ namespace BankApplikationForm
                                 fileManager.UpdateUserBalance(loggedInUser);
                                 fileManager.UpdateUserBalance(userToTransferTo);
                                 RefreshAccountListBox(loggedInUser);
+                                if (loadedAccountId != null)
+                                {
+                                    UpdateLoadedAccountTransactions();
+                                }
+                                else
+                                {
+                                    UpdateTransactionHistory();
+                                }
 
-                                balanceLabel.Text = $"Balance:\n {loggedInUserAccount.Balance}";
+                                balanceLabel2.Text = $"Balance: {loggedInUserAccount.Balance}kr";
+                                balanceLabel.Text = $"Balance:\n {loggedInUserAccount.Balance}kr";
                             }
                         }
                     }
                 }
             }
+        }
+
+        private void LoadAccount()
+        {
+            accountNameLabel.Text = "Account Name:\n" + loggedInUser.accounts[0].AccountName;
+            accountIdLabel.Text = "Account ID:\n" + loggedInUser.accounts[0].AccountId;
+            balanceLabel.Text = "Balance:\n" + loggedInUser.accounts[0].Balance + "kr";
+
+            accountNameLabel2.Text = "Name: " + loggedInUser.accounts[0].AccountName;
+            accountIdLabel2.Text = "Account ID: " + loggedInUser.accounts[0].AccountId;
+            balanceLabel2.Text = "Balance: " + loggedInUser.accounts[0].Balance;
         }
 
         private void loadAccountButton_Click(object sender, EventArgs e)
@@ -156,7 +179,12 @@ namespace BankApplikationForm
                     accountIdLabel.Text = "Account ID:\n " + accountId;
                     balanceLabel.Text = $"Balance:\n {balance.ToString()}";
 
+                    accountNameLabel2.Text = "Name: " + accountName;
+                    balanceLabel2.Text = "Balance: " + balance;
+                    accountIdLabel2.Text = "Account ID: " + accountId;
+
                     loadedAccountId = Convert.ToInt32(accountId);
+                    ListLoadedAccountTransactions();
                 }
                 else
                 {
@@ -238,8 +266,17 @@ namespace BankApplikationForm
                     depositTextBox.Text = "";
                     fileManager.UpdateUserBalance(loggedInUser);
                     RefreshAccountListBox(loggedInUser);
+                    if (loadedAccountId != null)
+                    {
+                        UpdateLoadedAccountTransactions();
+                    }
+                    else
+                    {
+                        UpdateTransactionHistory();
+                    }
 
-                    balanceLabel.Text = $"Balance:\n {account.Balance}";
+                    balanceLabel2.Text = $"Balance: {account.Balance}kr";
+                    balanceLabel.Text = $"Balance:\n {account.Balance}kr";
                 }
             }
         }
@@ -279,8 +316,17 @@ namespace BankApplikationForm
                         withdrawTextbox.Text = "";
                         fileManager.UpdateUserBalance(loggedInUser);
                         RefreshAccountListBox(loggedInUser);
+                        if (loadedAccountId != null)
+                        {
+                            UpdateLoadedAccountTransactions();
+                        }
+                        else
+                        {
+                            UpdateTransactionHistory();
+                        }
 
-                        balanceLabel.Text = $"Balance:\n {account.Balance}";
+                        balanceLabel2.Text = $"Balance: {account.Balance}kr";
+                        balanceLabel.Text = $"Balance:\n {account.Balance}kr";
                     }
                     else
                     {
@@ -299,5 +345,79 @@ namespace BankApplikationForm
         }
 
 
+        private void ListTransactionsAtStart()
+        {
+            foreach (Transaction transaction in loggedInUser.accounts[0].transactions)
+            {
+                if (transaction.Type == "Transfer")
+                {
+                    transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount: {transaction.Amount} | SenderId: {transaction.SenderAccountId} | ReceiverId: {transaction.ReceiverAccountId} | Date: {transaction.Date}");
+                }
+                else
+                {
+                    transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount {transaction.Amount} | Date: {transaction.Date}");
+                }
+            }
+        }
+
+        private void UpdateTransactionHistory()
+        {
+            transactionHistoryListBox.Items.Clear();
+            foreach (Transaction transaction in loggedInUser.accounts[0].transactions)
+            {
+                if (transaction.Type == "Transfer")
+                {
+                    transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount: {transaction.Amount} | SenderId: {transaction.SenderAccountId} | ReceiverId: {transaction.ReceiverAccountId} | Date: {transaction.Date}");
+                }
+                else
+                {
+                    transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount {transaction.Amount} | Date: {transaction.Date}");
+                }
+            }
+        }
+
+        private void ListLoadedAccountTransactions()
+        {
+            transactionHistoryListBox.Items.Clear();
+            foreach (Account account in loggedInUser.accounts)
+            {
+                if (account.AccountId == loadedAccountId)
+                {
+                    foreach (Transaction transaction in account.transactions)
+                    {
+                        if (transaction.Type == "Transfer")
+                        {
+                            transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount: {transaction.Amount} | SenderId: {transaction.SenderAccountId} | ReceiverId: {transaction.ReceiverAccountId} | Date: {transaction.Date}");
+                        }
+                        else
+                        {
+                            transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount {transaction.Amount} | Date: {transaction.Date}");
+                        }
+                    }
+                }
+            }
+        }
+
+        private void UpdateLoadedAccountTransactions()
+        {
+            transactionHistoryListBox.Items.Clear();
+            foreach (Account account in loggedInUser.accounts)
+            {
+                if (account.AccountId == loadedAccountId)
+                {
+                    foreach (Transaction transaction in account.transactions)
+                    {
+                        if (transaction.Type == "Transfer")
+                        {
+                            transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount: {transaction.Amount} | SenderId: {transaction.SenderAccountId} | ReceiverId: {transaction.ReceiverAccountId} | Date: {transaction.Date}");
+                        }
+                        else
+                        {
+                            transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount {transaction.Amount} | Date: {transaction.Date}");
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -68,10 +68,16 @@
             textBox4 = new TextBox();
             label5 = new Label();
             tabPage1 = new TabPage();
+            accountIdLabel2 = new Label();
+            balanceLabel2 = new Label();
+            accountNameLabel2 = new Label();
+            label6 = new Label();
+            transactionHistoryListBox = new ListBox();
             userTabControl.SuspendLayout();
             accountTab.SuspendLayout();
             transactionTab.SuspendLayout();
             settingsTab.SuspendLayout();
+            tabPage1.SuspendLayout();
             SuspendLayout();
             // 
             // userTabControl
@@ -85,7 +91,7 @@
             userTabControl.Margin = new Padding(2);
             userTabControl.Name = "userTabControl";
             userTabControl.SelectedIndex = 0;
-            userTabControl.Size = new Size(644, 415);
+            userTabControl.Size = new Size(691, 415);
             userTabControl.TabIndex = 0;
             // 
             // accountTab
@@ -105,7 +111,7 @@
             accountTab.Margin = new Padding(2);
             accountTab.Name = "accountTab";
             accountTab.Padding = new Padding(2);
-            accountTab.Size = new Size(636, 387);
+            accountTab.Size = new Size(683, 387);
             accountTab.TabIndex = 0;
             accountTab.Text = "Account";
             // 
@@ -134,7 +140,7 @@
             // newAccountNameLabel2
             // 
             newAccountNameLabel2.AutoSize = true;
-            newAccountNameLabel2.Location = new Point(425, 222);
+            newAccountNameLabel2.Location = new Point(432, 246);
             newAccountNameLabel2.Name = "newAccountNameLabel2";
             newAccountNameLabel2.Size = new Size(179, 15);
             newAccountNameLabel2.TabIndex = 7;
@@ -144,7 +150,7 @@
             // loggedInAsLabel
             // 
             loggedInAsLabel.AutoSize = true;
-            loggedInAsLabel.Location = new Point(448, 90);
+            loggedInAsLabel.Location = new Point(455, 114);
             loggedInAsLabel.Name = "loggedInAsLabel";
             loggedInAsLabel.Size = new Size(116, 15);
             loggedInAsLabel.TabIndex = 6;
@@ -153,7 +159,7 @@
             // newAccountNameLabel
             // 
             newAccountNameLabel.AutoSize = true;
-            newAccountNameLabel.Location = new Point(402, 199);
+            newAccountNameLabel.Location = new Point(409, 223);
             newAccountNameLabel.Name = "newAccountNameLabel";
             newAccountNameLabel.Size = new Size(217, 15);
             newAccountNameLabel.TabIndex = 5;
@@ -162,7 +168,7 @@
             // 
             // newAccountNameTextBox
             // 
-            newAccountNameTextBox.Location = new Point(460, 246);
+            newAccountNameTextBox.Location = new Point(467, 270);
             newAccountNameTextBox.Margin = new Padding(3, 2, 3, 2);
             newAccountNameTextBox.Name = "newAccountNameTextBox";
             newAccountNameTextBox.Size = new Size(110, 23);
@@ -172,7 +178,7 @@
             // 
             // createNewAccountButton
             // 
-            createNewAccountButton.Location = new Point(448, 271);
+            createNewAccountButton.Location = new Point(455, 295);
             createNewAccountButton.Margin = new Padding(3, 2, 3, 2);
             createNewAccountButton.Name = "createNewAccountButton";
             createNewAccountButton.Size = new Size(132, 22);
@@ -233,7 +239,7 @@
             transactionTab.Margin = new Padding(2);
             transactionTab.Name = "transactionTab";
             transactionTab.Padding = new Padding(2);
-            transactionTab.Size = new Size(636, 387);
+            transactionTab.Size = new Size(683, 387);
             transactionTab.TabIndex = 1;
             transactionTab.Text = "Transactions";
             // 
@@ -241,7 +247,7 @@
             // 
             userAccountsListBox.FormattingEnabled = true;
             userAccountsListBox.ItemHeight = 15;
-            userAccountsListBox.Location = new Point(379, 307);
+            userAccountsListBox.Location = new Point(379, 308);
             userAccountsListBox.Name = "userAccountsListBox";
             userAccountsListBox.Size = new Size(249, 64);
             userAccountsListBox.TabIndex = 18;
@@ -250,7 +256,7 @@
             // 
             userListBox.FormattingEnabled = true;
             userListBox.ItemHeight = 15;
-            userListBox.Location = new Point(442, 222);
+            userListBox.Location = new Point(442, 223);
             userListBox.Name = "userListBox";
             userListBox.Size = new Size(120, 79);
             userListBox.TabIndex = 17;
@@ -288,7 +294,7 @@
             // 
             // transferButton
             // 
-            transferButton.Location = new Point(442, 188);
+            transferButton.Location = new Point(442, 189);
             transferButton.Margin = new Padding(2);
             transferButton.Name = "transferButton";
             transferButton.Size = new Size(79, 20);
@@ -299,7 +305,7 @@
             // 
             // transferTextBox
             // 
-            transferTextBox.Location = new Point(442, 151);
+            transferTextBox.Location = new Point(442, 152);
             transferTextBox.Margin = new Padding(2);
             transferTextBox.Name = "transferTextBox";
             transferTextBox.PlaceholderText = "Amount";
@@ -353,7 +359,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(442, 118);
+            label3.Location = new Point(442, 119);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(57, 19);
@@ -400,13 +406,13 @@
             settingsTab.Margin = new Padding(2);
             settingsTab.Name = "settingsTab";
             settingsTab.Padding = new Padding(2);
-            settingsTab.Size = new Size(636, 387);
+            settingsTab.Size = new Size(683, 387);
             settingsTab.TabIndex = 2;
             settingsTab.Text = "Settings";
             // 
             // button1
             // 
-            button1.Location = new Point(417, 241);
+            button1.Location = new Point(458, 241);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(143, 23);
@@ -416,7 +422,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(417, 176);
+            textBox1.Location = new Point(458, 176);
             textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Address";
@@ -425,7 +431,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(417, 137);
+            textBox2.Location = new Point(458, 137);
             textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "Email";
@@ -434,7 +440,7 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(417, 97);
+            textBox7.Location = new Point(458, 97);
             textBox7.Margin = new Padding(2);
             textBox7.Name = "textBox7";
             textBox7.PlaceholderText = "Name";
@@ -445,7 +451,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(417, 53);
+            label4.Location = new Point(458, 53);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(140, 20);
@@ -513,18 +519,72 @@
             // tabPage1
             // 
             tabPage1.BackColor = SystemColors.InactiveCaption;
+            tabPage1.Controls.Add(accountIdLabel2);
+            tabPage1.Controls.Add(balanceLabel2);
+            tabPage1.Controls.Add(accountNameLabel2);
+            tabPage1.Controls.Add(label6);
+            tabPage1.Controls.Add(transactionHistoryListBox);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(636, 387);
+            tabPage1.Size = new Size(683, 387);
             tabPage1.TabIndex = 3;
             tabPage1.Text = "Transaction History";
+            // 
+            // accountIdLabel2
+            // 
+            accountIdLabel2.AutoSize = true;
+            accountIdLabel2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            accountIdLabel2.Location = new Point(30, 246);
+            accountIdLabel2.Name = "accountIdLabel2";
+            accountIdLabel2.Size = new Size(84, 19);
+            accountIdLabel2.TabIndex = 4;
+            accountIdLabel2.Text = "Account ID: ";
+            // 
+            // balanceLabel2
+            // 
+            balanceLabel2.AutoSize = true;
+            balanceLabel2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            balanceLabel2.Location = new Point(30, 189);
+            balanceLabel2.Name = "balanceLabel2";
+            balanceLabel2.Size = new Size(58, 19);
+            balanceLabel2.TabIndex = 3;
+            balanceLabel2.Text = "Balance:";
+            // 
+            // accountNameLabel2
+            // 
+            accountNameLabel2.AutoSize = true;
+            accountNameLabel2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            accountNameLabel2.Location = new Point(30, 133);
+            accountNameLabel2.Name = "accountNameLabel2";
+            accountNameLabel2.Size = new Size(102, 19);
+            accountNameLabel2.TabIndex = 2;
+            accountNameLabel2.Text = "Account Name:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(329, 61);
+            label6.Name = "label6";
+            label6.Size = new Size(172, 25);
+            label6.TabIndex = 1;
+            label6.Text = "Transaction History";
+            // 
+            // transactionHistoryListBox
+            // 
+            transactionHistoryListBox.FormattingEnabled = true;
+            transactionHistoryListBox.ItemHeight = 15;
+            transactionHistoryListBox.Location = new Point(204, 133);
+            transactionHistoryListBox.Name = "transactionHistoryListBox";
+            transactionHistoryListBox.Size = new Size(438, 199);
+            transactionHistoryListBox.TabIndex = 0;
             // 
             // UserAccountForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(644, 415);
+            ClientSize = new Size(691, 415);
             Controls.Add(userTabControl);
             Margin = new Padding(2);
             Name = "UserAccountForm";
@@ -538,6 +598,8 @@
             transactionTab.PerformLayout();
             settingsTab.ResumeLayout(false);
             settingsTab.PerformLayout();
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -583,5 +645,11 @@
         private TextBox textBox7;
         private Label label4;
         private TabPage tabPage1;
+        private Label label6;
+        private ListBox transactionHistoryListBox;
+        private Label accountInfoLabel;
+        private Label accountNameLabel2;
+        private Label accountIdLabel2;
+        private Label balanceLabel2;
     }
 }

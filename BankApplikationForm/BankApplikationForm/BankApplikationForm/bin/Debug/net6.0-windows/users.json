@@ -2,46 +2,287 @@
   {
     "accounts": [
       {
-        "transactions": [],
-        "Balance": 0.0,
+        "transactions": [
+          {
+            "TransactionId": 0,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 500.0,
+            "Date": "2023-12-13"
+          },
+          {
+            "TransactionId": 1,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 10000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 2,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": -500.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 17,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Withdrawal",
+            "Amount": -2000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 63,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": -1000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 24,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": -500.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 28,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": -500.0,
+            "Date": "2023-12-14"
+          }
+        ],
+        "Balance": 6000.0,
         "AccountId": 0,
-        "AccountName": "test1"
+        "AccountName": "Emil"
+      },
+      {
+        "transactions": [
+          {
+            "TransactionId": 8,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 5000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 13,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 10000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 19,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Withdrawal",
+            "Amount": -1000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 26,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 2000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 8,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Withdrawal",
+            "Amount": -2000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 21,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 2000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 12,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 2000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 25,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Withdrawal",
+            "Amount": -600.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 39,
+            "SenderAccountId": 4,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": -400.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 70,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 200.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 87,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Withdrawal",
+            "Amount": -2000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 105,
+            "SenderAccountId": 4,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": -500.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 26,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 6666.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 53,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Withdrawal",
+            "Amount": -1000.0,
+            "Date": "2023-12-14"
+          }
+        ],
+        "Balance": 20366.0,
+        "AccountId": 4,
+        "AccountName": "Money"
+      },
+      {
+        "transactions": [
+          {
+            "TransactionId": 10,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 10000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 20,
+            "SenderAccountId": 5,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": -1000.0,
+            "Date": "2023-12-14"
+          }
+        ],
+        "Balance": 9000.0,
+        "AccountId": 5,
+        "AccountName": "Savings"
       }
     ],
     "UserId": 0,
-    "Name": "test1",
-    "Password": "123",
-    "Email": "test@mail.com",
-    "Address": "testgatan"
+    "Name": "Emil",
+    "Password": "lol123",
+    "Email": "emil@gmail.com",
+    "Address": "emilgatan 1"
   },
   {
     "accounts": [
       {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 4,
-        "AccountName": "testing"
+        "transactions": [
+          {
+            "TransactionId": 3,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": 500.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 40,
+            "SenderAccountId": 4,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": 400.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 106,
+            "SenderAccountId": 4,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": 500.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 21,
+            "SenderAccountId": 5,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": 1000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 64,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": 1000.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 25,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": 500.0,
+            "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 29,
+            "SenderAccountId": 0,
+            "ReceiverAccountId": 1,
+            "Type": "Transfer",
+            "Amount": 500.0,
+            "Date": "2023-12-14"
+          }
+        ],
+        "Balance": 4400.0,
+        "AccountId": 1,
+        "AccountName": "Messi"
       }
     ],
-    "UserId": 2,
-    "Name": "testing",
-    "Password": "123",
-    "Email": "testing@mail.com",
-    "Address": "testgatan"
-  },
-  {
-    "accounts": [
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 5,
-        "AccountName": "test"
-      }
-    ],
-    "UserId": 3,
-    "Name": "test",
-    "Password": "123",
-    "Email": "testar@mail.com",
-    "Address": "123"
+    "UserId": 1,
+    "Name": "Messi",
+    "Password": "messi123",
+    "Email": "messi@gmail.com",
+    "Address": "messigatan 1"
   }
 ]

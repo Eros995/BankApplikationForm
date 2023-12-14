@@ -14,6 +14,8 @@ namespace BankApplikationForm
 
         private void newUserButton_Click(object sender, EventArgs e)
         {
+            userNameTextbox.Text = "";
+            passwordTextBox.Text = "";
             NewUserForm newUserForm = new NewUserForm(bankManager);
             newUserForm.ShowDialog();
 
@@ -43,6 +45,9 @@ namespace BankApplikationForm
             {
                 MessageBox.Show("Wrong Email or Password");
             }
+
+            userNameTextbox.Text = "";
+            passwordTextBox.Text = "";
         }
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
