@@ -117,7 +117,7 @@ namespace BankApplikationForm
             }
         }
 
-        private void transferButton_Click(object sender, EventArgs e)
+        private void transferButton_Click(object sender, EventArgs e) //funktionen för att göra en transfer
         {
             if (userAccountsListBox.SelectedItem != null && transferTextBox.Text != "")
             {
@@ -201,7 +201,7 @@ namespace BankApplikationForm
             }
         }
 
-        private void deleteAccountButton_Click(object sender, EventArgs e)
+        private void deleteAccountButton_Click(object sender, EventArgs e) //Tar bort en account.
         {
             {
                 if (selectedAccountInfo != null)
@@ -218,13 +218,13 @@ namespace BankApplikationForm
             }
         }
 
-        private void DeleteAccount(int accountId)
+        private void DeleteAccount(int accountId) 
         {
             loggedInUser.DeleteAccount(accountId);
             RefreshAccountListBox(loggedInUser);
         }
 
-        private void renameAccountButton_Click(object sender, EventArgs e)
+        private void renameAccountButton_Click(object sender, EventArgs e) // Funktionen för att döpa om ens accounts namn.
         {
             if (selectedAccountInfo != null &&
                 TryParseAccountId(selectedAccountInfo, out int accountId) &&
@@ -247,7 +247,7 @@ namespace BankApplikationForm
         }
 
 
-        private bool TryParseAccountId(string selectedAccountInfo, out int accountId)
+        private bool TryParseAccountId(string selectedAccountInfo, out int accountId)// letar efter account id.
         {
             accountId = 0;
             string[] accountDetails = selectedAccountInfo.Split('|');
@@ -262,7 +262,7 @@ namespace BankApplikationForm
             return false;
         }
 
-        private void depositButton_Click(object sender, EventArgs e)
+        private void depositButton_Click(object sender, EventArgs e) //funktionen för att sätta in pengar.
         {
             foreach (Account account in loggedInUser.accounts)
             {
@@ -311,7 +311,7 @@ namespace BankApplikationForm
             }
         }
 
-        private void withdrawButton_Click(object sender, EventArgs e)
+        private void withdrawButton_Click(object sender, EventArgs e) // Funktionen för att ta ut pengar.
         {
             foreach (Account account in loggedInUser.accounts)
             {
@@ -351,7 +351,7 @@ namespace BankApplikationForm
         }
 
 
-        private void ListTransactionsAtStart()
+        private void ListTransactionsAtStart() //Listar alla transaction för accounten som är loadat.
         {
             foreach (Transaction transaction in loggedInUser.accounts[0].transactions)
             {
@@ -366,7 +366,7 @@ namespace BankApplikationForm
             }
         }
 
-        private void UpdateTransactionHistory()
+        private void UpdateTransactionHistory() // Uppdaterar transaktionshistorikens listruta med transaktioner från det första kontot hos den inloggade användaren, vanligtvis efter en överföring, insättning eller uttag.
         {
             transactionHistoryListBox.Items.Clear();
             foreach (Transaction transaction in loggedInUser.accounts[0].transactions)
@@ -382,7 +382,7 @@ namespace BankApplikationForm
             }
         }
 
-        private void ListLoadedAccountTransactions()
+        private void ListLoadedAccountTransactions() //laddar historiken med det laddade accounts historik.
         {
             transactionHistoryListBox.Items.Clear();
             foreach (Account account in loggedInUser.accounts)
@@ -404,7 +404,7 @@ namespace BankApplikationForm
             }
         }
 
-        private void UpdateLoadedAccountTransactions()
+        private void UpdateLoadedAccountTransactions() // Uppdaterar transaktionshistorikens listruta med transaktioner specifikt från det konto som för närvarande är laddat.
         {
             transactionHistoryListBox.Items.Clear();
             foreach (Account account in loggedInUser.accounts)
@@ -454,7 +454,7 @@ namespace BankApplikationForm
             }
         }
 
-        private void changeUserInformation_click(object sender, EventArgs e)
+        private void changeUserInformation_click(object sender, EventArgs e) // Låter en user byta deras Info.
         {
             string newName = newNameTextBox.Text;
             string newAddress = newAddressTextBox.Text;
@@ -465,9 +465,9 @@ namespace BankApplikationForm
             {
                 MessageBox.Show("This email is already in use by another user. Please choose a different email.");
                 return;
-            }
+            }// email är unikt bland varje user.
 
-            int originalId = loggedInUser.UserId;
+            int originalId = loggedInUser.UserId; // detta behövdes för att id kunde blandas ihop ifall man gav users samma namn och email på någotsätt.
 
             if (!string.IsNullOrEmpty(newName))
             {
