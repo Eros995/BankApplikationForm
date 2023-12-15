@@ -163,9 +163,9 @@ namespace BankApplikationForm
             accountIdLabel.Text = "Account ID:\n" + loggedInUser.accounts[0].AccountId;
             balanceLabel.Text = "Balance:\n" + loggedInUser.accounts[0].Balance + " kr";
 
-            accountNameLabel2.Text = "Name: " + loggedInUser.accounts[0].AccountName;
-            accountIdLabel2.Text = "Account ID: " + loggedInUser.accounts[0].AccountId;
-            balanceLabel2.Text = "Balance: " + loggedInUser.accounts[0].Balance;
+            accountNameLabel2.Text = "Account Name:\n" + loggedInUser.accounts[0].AccountName;
+            accountIdLabel2.Text = "Account ID:\n" + loggedInUser.accounts[0].AccountId;
+            balanceLabel2.Text = "Balance:\n" + loggedInUser.accounts[0].Balance + " kr";
         }
 
         private void loadAccountButton_Click(object sender, EventArgs e)
@@ -357,11 +357,11 @@ namespace BankApplikationForm
             {
                 if (transaction.Type == "Transfer")
                 {
-                    transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount: {transaction.Amount} | SenderId: {transaction.SenderAccountId} | ReceiverId: {transaction.ReceiverAccountId} | Date: {transaction.Date}");
+                    transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount: {transaction.Amount} kr | SenderId: {transaction.SenderAccountId} | ReceiverId: {transaction.ReceiverAccountId} | Date: {transaction.Date}");
                 }
                 else
                 {
-                    transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount {transaction.Amount} | Date: {transaction.Date}");
+                    transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount {transaction.Amount} kr | SenderId : {transaction.Date}");
                 }
             }
         }
@@ -373,11 +373,11 @@ namespace BankApplikationForm
             {
                 if (transaction.Type == "Transfer")
                 {
-                    transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount: {transaction.Amount} | SenderId: {transaction.SenderAccountId} | ReceiverId: {transaction.ReceiverAccountId} | Date: {transaction.Date}");
+                    transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount: {transaction.Amount} kr | SenderId: {transaction.SenderAccountId} | ReceiverId: {transaction.ReceiverAccountId} | Date: {transaction.Date}");
                 }
                 else
                 {
-                    transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount {transaction.Amount} | Date: {transaction.Date}");
+                    transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount {transaction.Amount} kr | SenderId : {transaction.Date}");
                 }
             }
         }
@@ -393,11 +393,11 @@ namespace BankApplikationForm
                     {
                         if (transaction.Type == "Transfer")
                         {
-                            transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount: {transaction.Amount} | SenderId: {transaction.SenderAccountId} | ReceiverId: {transaction.ReceiverAccountId} | Date: {transaction.Date}");
+                            transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount: {transaction.Amount} kr | SenderId: {transaction.SenderAccountId} | ReceiverId: {transaction.ReceiverAccountId} | Date: {transaction.Date}");
                         }
                         else
                         {
-                            transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount {transaction.Amount} | Date: {transaction.Date}");
+                            transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount {transaction.Amount} kr | Date: {transaction.Date}");
                         }
                     }
                 }
@@ -415,11 +415,11 @@ namespace BankApplikationForm
                     {
                         if (transaction.Type == "Transfer")
                         {
-                            transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount: {transaction.Amount} | SenderId: {transaction.SenderAccountId} | ReceiverId: {transaction.ReceiverAccountId} | Date: {transaction.Date}");
+                            transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount: {transaction.Amount} kr | SenderId: {transaction.SenderAccountId} | ReceiverId: {transaction.ReceiverAccountId} | Date: {transaction.Date}");
                         }
                         else
                         {
-                            transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount {transaction.Amount} | Date: {transaction.Date}");
+                            transactionHistoryListBox.Items.Add($"Id: {transaction.TransactionId} | Type: {transaction.Type} | Amount {transaction.Amount} kr | Date: {transaction.Date}");
                         }
                     }
                 }
@@ -473,6 +473,7 @@ namespace BankApplikationForm
             {
                 loggedInUser.Name = newName;
                 loggedInAsLabel.Text = "You are logged in as:\n" + loggedInUser.Name;
+                accountNameLabel2.Text = "Account Name:\n" + loggedInUser.accounts[0].AccountName;
                 newNameTextBox.Text = "";
             }
 

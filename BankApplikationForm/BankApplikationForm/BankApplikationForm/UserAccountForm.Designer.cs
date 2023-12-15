@@ -580,10 +580,10 @@
             // 
             transactionHistoryListBox.FormattingEnabled = true;
             transactionHistoryListBox.ItemHeight = 20;
-            transactionHistoryListBox.Location = new Point(233, 178);
+            transactionHistoryListBox.Location = new Point(168, 154);
             transactionHistoryListBox.Margin = new Padding(3, 4, 3, 4);
             transactionHistoryListBox.Name = "transactionHistoryListBox";
-            transactionHistoryListBox.Size = new Size(500, 264);
+            transactionHistoryListBox.Size = new Size(611, 324);
             transactionHistoryListBox.TabIndex = 0;
             // 
             // UserAccountForm

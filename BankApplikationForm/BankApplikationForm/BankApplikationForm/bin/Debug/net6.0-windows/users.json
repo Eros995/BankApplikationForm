@@ -177,9 +177,17 @@
             "Type": "Withdrawal",
             "Amount": -1000.0,
             "Date": "2023-12-14"
+          },
+          {
+            "TransactionId": 188,
+            "SenderAccountId": 14,
+            "ReceiverAccountId": 4,
+            "Type": "Transfer",
+            "Amount": 65.0,
+            "Date": "2023-12-15"
           }
         ],
-        "Balance": 20366.0,
+        "Balance": 20431.0,
         "AccountId": 4,
         "AccountName": "Money"
       },
@@ -216,41 +224,250 @@
   {
     "accounts": [
       {
-        "transactions": [],
-        "Balance": 0.0,
+        "transactions": [
+          {
+            "TransactionId": 138,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 98.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 162,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Withdrawal",
+            "Amount": -8.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 187,
+            "SenderAccountId": 14,
+            "ReceiverAccountId": 4,
+            "Type": "Transfer",
+            "Amount": -65.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 54,
+            "SenderAccountId": 14,
+            "ReceiverAccountId": 48,
+            "Type": "Transfer",
+            "Amount": -10.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 58,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 88,
+            "SenderAccountId": 14,
+            "ReceiverAccountId": 48,
+            "Type": "Transfer",
+            "Amount": -23.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 132,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 203.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 203,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 332.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 374,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 12.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 477,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 123.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 584,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 32.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 170,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 287,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 408,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 533,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 662,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 795,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 932,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 1073,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 100.0,
+            "Date": "2023-12-15"
+          }
+        ],
+        "Balance": 1594.0,
         "AccountId": 14,
         "AccountName": "bobsnormal"
       },
       {
-        "transactions": [],
-        "Balance": 0.0,
+        "transactions": [
+          {
+            "TransactionId": 89,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 31,
+            "Type": "Transfer",
+            "Amount": 233.0,
+            "Date": "2023-12-15"
+          }
+        ],
+        "Balance": 233.0,
         "AccountId": 31,
         "AccountName": "savings"
       },
       {
-        "transactions": [],
-        "Balance": 0.0,
+        "transactions": [
+          {
+            "TransactionId": 55,
+            "SenderAccountId": 14,
+            "ReceiverAccountId": 48,
+            "Type": "Transfer",
+            "Amount": 10.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 89,
+            "SenderAccountId": 14,
+            "ReceiverAccountId": 48,
+            "Type": "Transfer",
+            "Amount": 23.0,
+            "Date": "2023-12-15"
+          }
+        ],
+        "Balance": 33.0,
         "AccountId": 48,
         "AccountName": "travel"
-      }
-    ],
-    "UserId": 5,
-    "Name": "bobisokay",
-    "Password": "1",
-    "Email": "bob@mail.com",
-    "Address": "bobbadstreet"
-  },
-  {
-    "accounts": [
-      {
-        "transactions": [],
-        "Balance": 0.0,
-        "AccountId": 7,
-        "AccountName": "harry"
       },
       {
         "transactions": [],
         "Balance": 0.0,
+        "AccountId": 45,
+        "AccountName": "test"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 95,
+        "AccountName": "testtest"
+      }
+    ],
+    "UserId": 5,
+    "Name": "bob",
+    "Password": "123",
+    "Email": "bob@mail.com",
+    "Address": "bobokgatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [
+          {
+            "TransactionId": 81,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 7,
+            "Type": "Transfer",
+            "Amount": 432.0,
+            "Date": "2023-12-15"
+          }
+        ],
+        "Balance": 432.0,
+        "AccountId": 7,
+        "AccountName": "harry"
+      },
+      {
+        "transactions": [
+          {
+            "TransactionId": 180,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 129,
+            "Type": "Transfer",
+            "Amount": 212.0,
+            "Date": "2023-12-15"
+          }
+        ],
+        "Balance": 212.0,
         "AccountId": 129,
         "AccountName": "savings"
       }
@@ -264,8 +481,33 @@
   {
     "accounts": [
       {
-        "transactions": [],
-        "Balance": 0.0,
+        "transactions": [
+          {
+            "TransactionId": 77,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 9,
+            "Type": "Transfer",
+            "Amount": 323.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 85,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 9,
+            "Type": "Transfer",
+            "Amount": 21.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 275,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 9,
+            "Type": "Transfer",
+            "Amount": 12.0,
+            "Date": "2023-12-15"
+          }
+        ],
+        "Balance": 356.0,
         "AccountId": 9,
         "AccountName": "thomas"
       }
@@ -290,5 +532,227 @@
     "Password": "123",
     "Email": "james@mail.com",
     "Address": "jamesgatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 17,
+        "AccountName": "test1"
+      }
+    ],
+    "UserId": 5,
+    "Name": "test1",
+    "Password": "123",
+    "Email": "test@mail.com",
+    "Address": "testgatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 18,
+        "AccountName": "test"
+      }
+    ],
+    "UserId": 6,
+    "Name": "test",
+    "Password": "123",
+    "Email": "test1@mail.com",
+    "Address": "testgatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [
+          {
+            "TransactionId": 64,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 2003.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 97,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Withdrawal",
+            "Amount": -10.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 131,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -203.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 202,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -332.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 76,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 9,
+            "Type": "Transfer",
+            "Amount": -323.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 80,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 7,
+            "Type": "Transfer",
+            "Amount": -432.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 84,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 9,
+            "Type": "Transfer",
+            "Amount": -21.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 88,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 31,
+            "Type": "Transfer",
+            "Amount": -233.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 179,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 129,
+            "Type": "Transfer",
+            "Amount": -212.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 274,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 9,
+            "Type": "Transfer",
+            "Amount": -12.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 373,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -12.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 476,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -123.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 583,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -32.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 112,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 10020.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 169,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 286,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 407,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 532,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 661,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 794,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 931,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -100.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 1072,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -100.0,
+            "Date": "2023-12-15"
+          }
+        ],
+        "Balance": 9278.0,
+        "AccountId": 19,
+        "AccountName": "jonny"
+      }
+    ],
+    "UserId": 7,
+    "Name": "bobt",
+    "Password": "123",
+    "Email": "neymar@mail.com",
+    "Address": "jonnygatan"
   }
 ]
