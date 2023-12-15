@@ -376,9 +376,41 @@
             "Type": "Transfer",
             "Amount": 100.0,
             "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 336,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 120.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 509,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 22.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 686,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": 158.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 182,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 12.0,
+            "Date": "2023-12-15"
           }
         ],
-        "Balance": 1594.0,
+        "Balance": 1906.0,
         "AccountId": 14,
         "AccountName": "bobsnormal"
       },
@@ -822,6 +854,46 @@
             "Type": "Transfer",
             "Amount": -201.0,
             "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 166,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 332.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 250,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Withdrawal",
+            "Amount": -32.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 335,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -120.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 508,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -22.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 685,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 14,
+            "Type": "Transfer",
+            "Amount": -158.0,
+            "Date": "2023-12-15"
           }
         ],
         "Balance": 0.0,
@@ -830,7 +902,7 @@
       }
     ],
     "UserId": 7,
-    "Name": "bobt",
+    "Name": "bobby",
     "Password": "123",
     "Email": "neymar@mail.com",
     "Address": "jonnygatan"

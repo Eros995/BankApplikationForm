@@ -43,16 +43,16 @@ namespace BankApplikationForm
         {
             this.Close();
         }
-        private void DisplayAccountInfo()
+        private void DisplayAccountInfo() // Visar information om userns account i accountListBoxen.
         {
             List<string> accountInfoList = loggedInUser.GetAccountInfo();
             accountsListBox.Items.AddRange(accountInfoList.ToArray());
         }
 
-        private void createNewAccountButton_Click(object sender, EventArgs e)
+        private void createNewAccountButton_Click(object sender, EventArgs e) 
         {
-            createNewAccountButton.Visible = false;
-            newAccountNameLabel.Visible = true;
+            createNewAccountButton.Visible = false; //Gömmer knappen och gör text labels tydliga.
+            newAccountNameLabel.Visible = true; 
             newAccountNameLabel2.Visible = true;
             newAccountNameTextBox.Visible = true;
             newAccountNameTextBox.Focus();
@@ -70,7 +70,7 @@ namespace BankApplikationForm
 
         private void accountNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter) // När enter trycks så körs koden för att en ny account skapas.
             {
                 string accountName = newAccountNameTextBox.Text.Trim();
                 if (!string.IsNullOrEmpty(accountName))
@@ -80,7 +80,7 @@ namespace BankApplikationForm
                 }
 
                 newAccountNameTextBox.Visible = false;
-                newAccountNameLabel.Visible = false;
+                newAccountNameLabel.Visible = false; //Gömmer textlabels och gör knappen tydlig igen.
                 newAccountNameLabel2.Visible = false;
                 createNewAccountButton.Visible = true;
             }
@@ -148,7 +148,7 @@ namespace BankApplikationForm
                                     UpdateTransactionHistory();
                                 }
 
-                                balanceLabel2.Text = $"Balance: {loggedInUserAccount.Balance} kr";
+                                balanceLabel2.Text = $"Balance:\n {loggedInUserAccount.Balance} kr";
                                 balanceLabel.Text = $"Balance:\n {loggedInUserAccount.Balance} kr";
                             }
                         }
@@ -157,18 +157,18 @@ namespace BankApplikationForm
             }
         }
 
-        private void LoadAccount()
+        private void LoadAccount() //textlabels för account info.
         {
-            accountNameLabel.Text = "Account Name:\n" + loggedInUser.accounts[0].AccountName;
-            accountIdLabel.Text = "Account ID:\n" + loggedInUser.accounts[0].AccountId;
-            balanceLabel.Text = "Balance:\n" + loggedInUser.accounts[0].Balance + " kr";
+            accountNameLabel.Text = "Account Name:\nNot Loaded";
+            accountIdLabel.Text = "Account ID:\nNot Loaded";
+            balanceLabel.Text = "Balance:\nNot Loaded";
 
-            accountNameLabel2.Text = "Account Name:\n" + loggedInUser.accounts[0].AccountName;
-            accountIdLabel2.Text = "Account ID:\n" + loggedInUser.accounts[0].AccountId;
-            balanceLabel2.Text = "Balance:\n" + loggedInUser.accounts[0].Balance + " kr";
+            accountNameLabel2.Text = "Account Name:\nNot Loaded";
+            accountIdLabel2.Text = "Account ID:\nNot Loaded";
+            balanceLabel2.Text = "Balance:\nNot Loaded";
         }
 
-        private void loadAccountButton_Click(object sender, EventArgs e)
+        private void loadAccountButton_Click(object sender, EventArgs e) //Laddar accounten som är vald i listbox.
         {
             if (selectedAccountInfo != null)
             {
@@ -185,9 +185,9 @@ namespace BankApplikationForm
                     accountIdLabel.Text = "Account ID:\n " + accountId;
                     balanceLabel.Text = $"Balance:\n {balance.ToString()}";
 
-                    accountNameLabel2.Text = "Name: " + accountName;
-                    balanceLabel2.Text = "Balance: " + balance;
-                    accountIdLabel2.Text = "Account ID: " + accountId;
+                    accountNameLabel2.Text = "Name:\n " + accountName;
+                    balanceLabel2.Text = "Balance:\n " + balance;
+                    accountIdLabel2.Text = "Account ID:\n " + accountId;
 
                     loadedAccountId = Convert.ToInt32(accountId);
                     ListLoadedAccountTransactions();
@@ -281,7 +281,7 @@ namespace BankApplikationForm
                         UpdateTransactionHistory();
                     }
 
-                    balanceLabel2.Text = $"Balance: {account.Balance} kr";
+                    balanceLabel2.Text = $"Balance:\n {account.Balance} kr";
                     balanceLabel.Text = $"Balance:\n {account.Balance} kr";
                 }
             }
@@ -331,7 +331,7 @@ namespace BankApplikationForm
                             UpdateTransactionHistory();
                         }
 
-                        balanceLabel2.Text = $"Balance: {account.Balance} kr";
+                        balanceLabel2.Text = $"Balance:\n {account.Balance} kr";
                         balanceLabel.Text = $"Balance:\n {account.Balance} kr";
                     }
                     else

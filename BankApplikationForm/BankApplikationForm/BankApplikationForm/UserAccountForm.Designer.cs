@@ -150,9 +150,10 @@
             // loggedInAsLabel
             // 
             loggedInAsLabel.AutoSize = true;
-            loggedInAsLabel.Location = new Point(520, 152);
+            loggedInAsLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            loggedInAsLabel.Location = new Point(494, 119);
             loggedInAsLabel.Name = "loggedInAsLabel";
-            loggedInAsLabel.Size = new Size(147, 20);
+            loggedInAsLabel.Size = new Size(192, 28);
             loggedInAsLabel.TabIndex = 6;
             loggedInAsLabel.Text = "You are logged in as:";
             // 

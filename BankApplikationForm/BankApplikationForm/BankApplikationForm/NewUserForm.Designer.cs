@@ -44,7 +44,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(49, 88);
             label1.Name = "label1";
-            label1.Size = new Size(42, 15);
+            label1.Size = new Size(54, 20);
             label1.TabIndex = 0;
             label1.Text = "Name:";
             // 
@@ -53,7 +53,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(49, 143);
             label2.Name = "label2";
-            label2.Size = new Size(63, 15);
+            label2.Size = new Size(81, 20);
             label2.TabIndex = 1;
             label2.Text = "Password :";
             // 
@@ -62,7 +62,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(49, 253);
             label3.Name = "label3";
-            label3.Size = new Size(49, 15);
+            label3.Size = new Size(63, 20);
             label3.TabIndex = 2;
             label3.Text = "Address";
             // 
@@ -71,7 +71,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(49, 199);
             label4.Name = "label4";
-            label4.Size = new Size(36, 15);
+            label4.Size = new Size(46, 20);
             label4.TabIndex = 3;
             label4.Text = "Email";
             // 
@@ -79,28 +79,28 @@
             // 
             nameTextbox.Location = new Point(195, 88);
             nameTextbox.Name = "nameTextbox";
-            nameTextbox.Size = new Size(250, 23);
+            nameTextbox.Size = new Size(250, 27);
             nameTextbox.TabIndex = 7;
             // 
             // passwordTexbox
             // 
             passwordTexbox.Location = new Point(195, 140);
             passwordTexbox.Name = "passwordTexbox";
-            passwordTexbox.Size = new Size(250, 23);
+            passwordTexbox.Size = new Size(250, 27);
             passwordTexbox.TabIndex = 8;
             // 
             // emailTextbox
             // 
             emailTextbox.Location = new Point(195, 196);
             emailTextbox.Name = "emailTextbox";
-            emailTextbox.Size = new Size(250, 23);
+            emailTextbox.Size = new Size(250, 27);
             emailTextbox.TabIndex = 9;
             // 
             // addressTextbox
             // 
             addressTextbox.Location = new Point(195, 250);
             addressTextbox.Name = "addressTextbox";
-            addressTextbox.Size = new Size(250, 23);
+            addressTextbox.Size = new Size(250, 27);
             addressTextbox.TabIndex = 10;
             // 
             // createUserButton
@@ -115,7 +115,7 @@
             // 
             // NewUserForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
             BackgroundImageLayout = ImageLayout.Zoom;
@@ -132,7 +132,6 @@
             Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Name = "NewUserForm";
             Text = "NewUser";
-            BackgroundImageLayoutChanged += NewAccount_BackgroundImageLayoutChanged;
             ResumeLayout(false);
             PerformLayout();
         }

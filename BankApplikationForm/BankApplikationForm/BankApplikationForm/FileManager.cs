@@ -17,7 +17,7 @@ namespace BankApplikationForm
             File.WriteAllText(usersFile, json);
         }
 
-        public List<User> ReadUsers(List<User> users)
+        public List<User> ReadUsers(List<User> users) //Används utanför FileManager
         {
             if (File.Exists(usersFile))
             {
@@ -44,7 +44,7 @@ namespace BankApplikationForm
             }
         }
 
-        private List<User> ReadUsers()
+        private List<User> ReadUsers() //Används innanför filemanager
         {
             List<User> users = new List<User>();
 

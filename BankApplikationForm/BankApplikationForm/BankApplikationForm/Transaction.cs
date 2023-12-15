@@ -46,11 +46,5 @@ namespace BankApplikationForm
             Date = DateTime.Today.ToShortDateString();
         }
 
-
-
-        public void GetTransactionInformation()
-        {
-
-        }
     }
 }

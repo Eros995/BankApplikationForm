@@ -55,11 +55,6 @@ namespace BankApplikationForm
             transactions.Add(new Transaction(senderAccountId, AccountId, amount));
         }
 
-        public List<Transaction> GetTransactionHistory()
-        {
-            return transactions;
-        }
-
         public void RenameAccount(string newAccountName)
         {
             AccountName = newAccountName;

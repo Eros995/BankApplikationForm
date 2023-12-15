@@ -20,13 +20,6 @@ namespace BankApplikationForm
             this.bankManager = bankManager;
         }
 
-
-
-        private void NewAccount_BackgroundImageLayoutChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void createUserButton_Click(object sender, EventArgs e)
         {
             if (bankManager.CreateNewUser(nameTextbox.Text, passwordTexbox.Text, emailTextbox.Text, addressTextbox.Text))
