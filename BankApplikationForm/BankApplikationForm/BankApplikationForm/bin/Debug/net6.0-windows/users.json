@@ -450,9 +450,41 @@
             "Type": "Transfer",
             "Amount": 432.0,
             "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 147,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 7,
+            "Type": "Transfer",
+            "Amount": 322.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 296,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 7,
+            "Type": "Transfer",
+            "Amount": 322.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 449,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 7,
+            "Type": "Transfer",
+            "Amount": 322.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 242,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 7,
+            "Type": "Transfer",
+            "Amount": 201.0,
+            "Date": "2023-12-15"
           }
         ],
-        "Balance": 432.0,
+        "Balance": 1599.0,
         "AccountId": 7,
         "AccountName": "harry"
       },
@@ -742,9 +774,57 @@
             "Type": "Transfer",
             "Amount": -100.0,
             "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 146,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 7,
+            "Type": "Transfer",
+            "Amount": -322.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 295,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 7,
+            "Type": "Transfer",
+            "Amount": -322.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 448,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 7,
+            "Type": "Transfer",
+            "Amount": -322.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 605,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Withdrawal",
+            "Amount": -8311.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 160,
+            "SenderAccountId": null,
+            "ReceiverAccountId": null,
+            "Type": "Deposit",
+            "Amount": 200.0,
+            "Date": "2023-12-15"
+          },
+          {
+            "TransactionId": 241,
+            "SenderAccountId": 19,
+            "ReceiverAccountId": 7,
+            "Type": "Transfer",
+            "Amount": -201.0,
+            "Date": "2023-12-15"
           }
         ],
-        "Balance": 9278.0,
+        "Balance": 0.0,
         "AccountId": 19,
         "AccountName": "jonny"
       }

@@ -31,7 +31,7 @@ namespace BankApplikationForm
 
         public bool Withdrawal(double amount)
         {
-            if (amount < Balance)
+            if (amount <= Balance)
             {
                 Balance -= amount;
                 transactions.Add(new Transaction("Withdrawal", -amount));
@@ -42,7 +42,7 @@ namespace BankApplikationForm
 
         public void TransferMoney(int receiverAccountId, double amount)
         {
-            if (amount < Balance)
+            if (amount <= Balance)
             {
                 Balance -= amount;
                 transactions.Add(new Transaction(AccountId, receiverAccountId, -amount));
