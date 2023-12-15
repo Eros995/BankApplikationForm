@@ -20,7 +20,8 @@ namespace BankApplikationForm
         private int? loadedAccountId = null;
         private BankManager bankManager;
         private FileManager fileManager = new FileManager();
-        public UserAccountForm(User loggedInUser, BankManager bankManager)
+        private LoginForm loginForm;
+        public UserAccountForm(User loggedInUser, BankManager bankManager, LoginForm loginForm)
         {
             InitializeComponent();
             this.loggedInUser = loggedInUser;
@@ -30,13 +31,17 @@ namespace BankApplikationForm
             ListUsers();
             LoadAccount();
             ListTransactionsAtStart();
+            this.loginForm = loginForm;
         }
 
         private void UserAccountForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
             loginForm.Show();
 
+        }
+        private void userLogOutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         private void DisplayAccountInfo()
         {
@@ -76,6 +81,7 @@ namespace BankApplikationForm
 
                 newAccountNameTextBox.Visible = false;
                 newAccountNameLabel.Visible = false;
+                newAccountNameLabel2.Visible = false;
                 createNewAccountButton.Visible = true;
             }
         }
@@ -142,8 +148,8 @@ namespace BankApplikationForm
                                     UpdateTransactionHistory();
                                 }
 
-                                balanceLabel2.Text = $"Balance: {loggedInUserAccount.Balance}kr";
-                                balanceLabel.Text = $"Balance:\n {loggedInUserAccount.Balance}kr";
+                                balanceLabel2.Text = $"Balance: {loggedInUserAccount.Balance} kr";
+                                balanceLabel.Text = $"Balance:\n {loggedInUserAccount.Balance} kr";
                             }
                         }
                     }
@@ -155,7 +161,7 @@ namespace BankApplikationForm
         {
             accountNameLabel.Text = "Account Name:\n" + loggedInUser.accounts[0].AccountName;
             accountIdLabel.Text = "Account ID:\n" + loggedInUser.accounts[0].AccountId;
-            balanceLabel.Text = "Balance:\n" + loggedInUser.accounts[0].Balance + "kr";
+            balanceLabel.Text = "Balance:\n" + loggedInUser.accounts[0].Balance + " kr";
 
             accountNameLabel2.Text = "Name: " + loggedInUser.accounts[0].AccountName;
             accountIdLabel2.Text = "Account ID: " + loggedInUser.accounts[0].AccountId;
@@ -275,8 +281,8 @@ namespace BankApplikationForm
                         UpdateTransactionHistory();
                     }
 
-                    balanceLabel2.Text = $"Balance: {account.Balance}kr";
-                    balanceLabel.Text = $"Balance:\n {account.Balance}kr";
+                    balanceLabel2.Text = $"Balance: {account.Balance} kr";
+                    balanceLabel.Text = $"Balance:\n {account.Balance} kr";
                 }
             }
         }
@@ -325,8 +331,8 @@ namespace BankApplikationForm
                             UpdateTransactionHistory();
                         }
 
-                        balanceLabel2.Text = $"Balance: {account.Balance}kr";
-                        balanceLabel.Text = $"Balance:\n {account.Balance}kr";
+                        balanceLabel2.Text = $"Balance: {account.Balance} kr";
+                        balanceLabel.Text = $"Balance:\n {account.Balance} kr";
                     }
                     else
                     {
@@ -435,7 +441,7 @@ namespace BankApplikationForm
                     FileManager fileManager = new FileManager();
                     fileManager.UpdateUser(loggedInUser);
                     MessageBox.Show("Password updated successfully!");
-                    //usersPasswordLabel.Text = $"Password:\n{loggedInUser.Password}";
+
                 }
                 else
                 {
@@ -452,28 +458,42 @@ namespace BankApplikationForm
         {
             string newName = newNameTextBox.Text;
             string newAddress = newAddressTextBox.Text;
-            var selectedUser = loggedInUser;
+            string newEmail = newEmailTextBox.Text;
 
-            int originalId = selectedUser.UserId;
+            if (!string.IsNullOrEmpty(newEmail) &&
+                bankManager.GetUsers().Any(u => u.Email == newEmail && u.UserId != loggedInUser.UserId))
+            {
+                MessageBox.Show("This email is already in use by another user. Please choose a different email.");
+                return;
+            }
+
+            int originalId = loggedInUser.UserId;
+
             if (!string.IsNullOrEmpty(newName))
             {
-                selectedUser.Name = newName;
+                loggedInUser.Name = newName;
+                loggedInAsLabel.Text = "You are logged in as:\n" + loggedInUser.Name;
                 newNameTextBox.Text = "";
             }
 
             if (!string.IsNullOrEmpty(newAddress))
             {
-                selectedUser.Address = newAddress;
+                loggedInUser.Address = newAddress;
                 newAddressTextBox.Text = "";
             }
 
-            selectedUser.UserId = originalId;
+            if (!string.IsNullOrEmpty(newEmail))
+            {
+                loggedInUser.Email = newEmail;
+                newEmailTextBox.Text = "";
+            }
 
-            FileManager fileManager = new FileManager();
-            fileManager.UpdateUser(selectedUser);
-            loggedInAsLabel.Text = "You are logged in as:\n" + loggedInUser.Name;
+            loggedInUser.UserId = originalId;
+            fileManager.UpdateUser(loggedInUser);
+
             MessageBox.Show("User information updated!");
-
         }
+
+        
     }
 }

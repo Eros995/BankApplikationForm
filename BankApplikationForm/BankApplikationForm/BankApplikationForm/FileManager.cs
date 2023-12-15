@@ -28,15 +28,15 @@ namespace BankApplikationForm
         }
         public void UpdateUser(User userToUpdate)
         {
-            List<User> users = ReadUsers(); 
-            int index = users.FindIndex(u => u.Email == userToUpdate.Email); 
+            List<User> users = ReadUsers();
+            int index = users.FindIndex(u => u.UserId == userToUpdate.UserId);
 
             if (index != -1)
             {
-                users[index] = userToUpdate; 
+                users[index] = userToUpdate;
 
                 var json = JsonConvert.SerializeObject(users, Formatting.Indented);
-                File.WriteAllText(usersFile, json); 
+                File.WriteAllText(usersFile, json);
             }
             else
             {

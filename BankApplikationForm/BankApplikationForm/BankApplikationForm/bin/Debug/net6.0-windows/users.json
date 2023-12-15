@@ -216,73 +216,79 @@
   {
     "accounts": [
       {
-        "transactions": [
-          {
-            "TransactionId": 3,
-            "SenderAccountId": 0,
-            "ReceiverAccountId": 1,
-            "Type": "Transfer",
-            "Amount": 500.0,
-            "Date": "2023-12-14"
-          },
-          {
-            "TransactionId": 40,
-            "SenderAccountId": 4,
-            "ReceiverAccountId": 1,
-            "Type": "Transfer",
-            "Amount": 400.0,
-            "Date": "2023-12-14"
-          },
-          {
-            "TransactionId": 106,
-            "SenderAccountId": 4,
-            "ReceiverAccountId": 1,
-            "Type": "Transfer",
-            "Amount": 500.0,
-            "Date": "2023-12-14"
-          },
-          {
-            "TransactionId": 21,
-            "SenderAccountId": 5,
-            "ReceiverAccountId": 1,
-            "Type": "Transfer",
-            "Amount": 1000.0,
-            "Date": "2023-12-14"
-          },
-          {
-            "TransactionId": 64,
-            "SenderAccountId": 0,
-            "ReceiverAccountId": 1,
-            "Type": "Transfer",
-            "Amount": 1000.0,
-            "Date": "2023-12-14"
-          },
-          {
-            "TransactionId": 25,
-            "SenderAccountId": 0,
-            "ReceiverAccountId": 1,
-            "Type": "Transfer",
-            "Amount": 500.0,
-            "Date": "2023-12-14"
-          },
-          {
-            "TransactionId": 29,
-            "SenderAccountId": 0,
-            "ReceiverAccountId": 1,
-            "Type": "Transfer",
-            "Amount": 500.0,
-            "Date": "2023-12-14"
-          }
-        ],
-        "Balance": 4400.0,
-        "AccountId": 1,
-        "AccountName": "Messi"
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 14,
+        "AccountName": "bobsnormal"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 31,
+        "AccountName": "savings"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 48,
+        "AccountName": "travel"
       }
     ],
-    "UserId": 1,
-    "Name": "Messi",
-    "Password": "messi123",
-    "Email": "messi@gmail.com",
-    "Address": "messigatan 1"
+    "UserId": 5,
+    "Name": "bobisokay",
+    "Password": "1",
+    "Email": "bob@mail.com",
+    "Address": "bobbadstreet"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 7,
+        "AccountName": "harry"
+      },
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 129,
+        "AccountName": "savings"
+      }
+    ],
+    "UserId": 2,
+    "Name": "harry",
+    "Password": "123",
+    "Email": "harry@mail.com",
+    "Address": "harrygatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 9,
+        "AccountName": "thomas"
+      }
+    ],
+    "UserId": 3,
+    "Name": "jimmy",
+    "Password": "123",
+    "Email": "jimmy@mail.com",
+    "Address": "tomgatan"
+  },
+  {
+    "accounts": [
+      {
+        "transactions": [],
+        "Balance": 0.0,
+        "AccountId": 11,
+        "AccountName": "james"
+      }
+    ],
+    "UserId": 4,
+    "Name": "jamestest",
+    "Password": "123",
+    "Email": "james@mail.com",
+    "Address": "jamesgatan"
   }
 ]

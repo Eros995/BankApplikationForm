@@ -39,6 +39,10 @@ namespace BankApplikationForm
         {
             loginForm.Show();
         }
+        private void adminLogOutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -68,7 +72,7 @@ namespace BankApplikationForm
             {
                 User selectedUser = users[listBox1.SelectedIndex];
 
-                tabControl1.SelectedIndex = 1; // Navigate to userInfoTab
+                tabControl1.SelectedIndex = 1;
 
                 usersNameLabel.Text = $"Name:\n{selectedUser.Name}";
                 usersAdressLabel.Text = $"Address:\n{selectedUser.Address}";
@@ -123,43 +127,51 @@ namespace BankApplikationForm
                     string newAddress = usersAddressTextBox.Text;
                     string newEmail = usersEmailTextBox.Text;
 
-                    if (!string.IsNullOrEmpty(newEmail) && // kollar att emailen inte används av någonannan user.
-                users.Any(u => u.Email == newEmail && u.UserId != selectedUser.UserId))
+                    bool isUpdated = false;
+
+                    if (!string.IsNullOrEmpty(newEmail) &&
+                        users.Any(u => u.Email == newEmail && u.UserId != selectedUser.UserId))
                     {
                         MessageBox.Show("This email is already in use by another user. Please choose a different email.");
                         return;
                     }
 
-                    int originalId = selectedUser.UserId; //ser till att userId inte blandas ihop.
-                    if (!string.IsNullOrEmpty(newName))
+
+                    if (!string.IsNullOrEmpty(newName) && newName != selectedUser.Name)
                     {
                         selectedUser.Name = newName;
-                        usersNameLabel.Text = $"Name:\n{selectedUser.Name}";
-                        usersNameTextBox.Text = "";
-                        listBox1.Items[listBox1.SelectedIndex] = $"User: {selectedUser.Name} | User Id: {selectedUser.UserId}";
+                        usersNameLabel.Text = $"Name:\n{newName}";
+                        listBox1.Items[listBox1.SelectedIndex] = $"User: {newName} | User Id: {selectedUser.UserId}";
+                        isUpdated = true;
                     }
 
-                    if (!string.IsNullOrEmpty(newAddress))
+
+                    if (!string.IsNullOrEmpty(newAddress) && newAddress != selectedUser.Address)
                     {
                         selectedUser.Address = newAddress;
-                        usersAdressLabel.Text = $"Address:\n{selectedUser.Address}";
-                        usersAddressTextBox.Text = "";
-                        listBox1.Items[listBox1.SelectedIndex] = $"User: {selectedUser.Name} | User Id: {selectedUser.UserId}";
+                        usersAdressLabel.Text = $"Address:\n{newAddress}";
+                        isUpdated = true;
                     }
 
-                    if (!string.IsNullOrEmpty(newEmail))
+
+                    if (!string.IsNullOrEmpty(newEmail) && newEmail != selectedUser.Email)
                     {
                         selectedUser.Email = newEmail;
-                        usersEmailLabel.Text = $"Email:\n{selectedUser.Email}";
-                        usersEmailTextBox.Text = "";
-                        listBox1.Items[listBox1.SelectedIndex] = $"User: {selectedUser.Name} | User Id: {selectedUser.UserId}";
+                        usersEmailLabel.Text = $"Email:\n{newEmail}";
+                        isUpdated = true;
                     }
-                    selectedUser.UserId = originalId;
 
-                    FileManager fileManager = new FileManager();
-                    fileManager.CreateNewUser(users);
 
-                    MessageBox.Show("User information updated!");
+                    if (isUpdated)
+                    {
+                        FileManager fileManager = new FileManager();
+                        fileManager.CreateNewUser(users);
+                        usersNameTextBox.Text = "";
+                        usersAddressTextBox.Text = "";
+                        usersEmailTextBox.Text = "";
+
+                        MessageBox.Show("User information updated!");
+                    }
                 }
             }
             else
@@ -173,7 +185,7 @@ namespace BankApplikationForm
             if (listBox1.SelectedIndex != -1)
             {
                 string selectedItem = listBox1.SelectedItem.ToString();
-                string selectedUserName = selectedItem.Split('|')[0].Trim().Substring(6); // Extract the user name from the list item
+                string selectedUserName = selectedItem.Split('|')[0].Trim().Substring(6);
 
                 User selectedUser = users.FirstOrDefault(user => user.Name == selectedUserName);
 
@@ -187,9 +199,9 @@ namespace BankApplikationForm
                         listBox1.Items.RemoveAt(listBox1.SelectedIndex);
 
                         FileManager fileManager = new FileManager();
-                        fileManager.CreateNewUser(users); // Save the updated user list to the JSON file
+                        fileManager.CreateNewUser(users);
 
-                        ClearUserInfo(selectedUserName); // Function to clear user information
+                        ClearUserInfo(selectedUserName);
 
                         MessageBox.Show("User deleted successfully.");
                     }
@@ -208,6 +220,7 @@ namespace BankApplikationForm
             usersEmailTextBox.Text = "";
         }
 
+        
     }
 
 }

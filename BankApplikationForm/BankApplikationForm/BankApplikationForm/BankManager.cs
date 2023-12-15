@@ -62,7 +62,10 @@ namespace BankApplikationForm
         {
             return users;
         }
-    
+        public void ReloadUsers()
+        {
+            users = fileManager.ReadUsers(users);
+        }
 
     }
 }

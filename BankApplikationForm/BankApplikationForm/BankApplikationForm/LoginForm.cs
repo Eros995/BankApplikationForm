@@ -25,7 +25,7 @@ namespace BankApplikationForm
         {
             string username = userNameTextbox.Text;
             string password = passwordTextBox.Text;
-
+            bankManager.ReloadUsers();
 
             if (bankManager.LoginAsAdmin(username, password))
             {
@@ -36,7 +36,7 @@ namespace BankApplikationForm
             }
             else if (bankManager.LoginAsUser(username, password, out loggedInUser) && loggedInUser != null)
             {
-                UserAccountForm userForm = new UserAccountForm(loggedInUser, bankManager);
+                UserAccountForm userForm = new UserAccountForm(loggedInUser, bankManager, this);
                 MessageBox.Show("Welcome " + loggedInUser.Name + "!");
                 userForm.Show();
                 this.Hide();
